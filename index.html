@@ -4,7 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paisa Pathshala</title>
-<meta name="description" content="Free money lessons as short illustrated story books in English, Hindi and Marathi.">
+<meta name="description" content="Free money lessons as short illustrated story books in English, Hindi and Marathi. You are the hero of every story.">
+<meta name="theme-color" content="#ffd166">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paisa Pathshala">
+<meta property="og:title" content="Paisa Pathshala: money stories where you are the hero">
+<meta property="og:description" content="Free illustrated money stories for Grades 6 to 10 in English, Hindi and Marathi.">
+<meta property="og:image" content="https://vallouis.github.io/paisapathshala/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap">
 <link rel="stylesheet" href="style.css">
@@ -12,42 +22,99 @@
 <body>
 <header class="top" id="top"></header>
 <main class="wrap">
-  <section class="hero">
-    <h1 id="h1"></h1>
-    <p id="tag"></p>
+  <section class="hero2">
+    <div class="herotext">
+      <h1 id="h1"></h1>
+      <p id="tag"></p>
+      <div id="herochip" class="chipwrap"></div>
+      <p class="count" id="count"></p>
+    </div>
+    <div class="heroart" id="heroart" aria-hidden="true"></div>
   </section>
+
+  <section class="how" aria-labelledby="how-t">
+    <h2 class="section" id="how-t"></h2>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
   <h2 class="section" id="lib"></h2>
+  <div class="chips" id="chips"></div>
   <div class="grid" id="grid"></div>
+
+  <section class="about">
+    <h2 id="about-t"></h2>
+    <p id="about-p"></p>
+  </section>
 </main>
 <footer id="foot"></footer>
 <script src="books.js"></script>
+<script src="art.js"></script>
 <script src="app.js"></script>
 <script>
 (function () {
   var lang = App.getLang();
   var t = UI[lang];
   App.chrome(lang);
+  var $ = function (id) { return document.getElementById(id); };
   document.title = SITE.name[lang];
-  document.getElementById("h1").textContent = SITE.name[lang];
-  document.getElementById("tag").textContent = t.tagline;
-  document.getElementById("lib").textContent = t.library;
+  $("h1").textContent = SITE.name[lang];
+  $("tag").textContent = t.tagline;
+  $("lib").textContent = t.library;
+  $("how-t").textContent = t.howT;
+  $("about-t").textContent = t.aboutT;
+  $("about-p").textContent = t.aboutP;
 
-  var html = BOOKS.map(function (b, i) {
-    var live = b.status === "live";
-    var inner =
-      '<div class="thumb" style="background:' + b.color + '" aria-hidden="true">' + (live ? "📖" : "✏️") + "</div>" +
-      '<div class="body">' +
-      '<span class="tag">' + App.esc(b.topic[lang]) + "</span>" +
-      '<span class="name">' + App.esc(b.title[lang]) + "</span>" +
-      (live
-        ? '<span class="pill">' + App.esc(t.read) + "</span>"
-        : '<span class="pill grey">' + App.esc(t.soon) + "</span>") +
-      '<span class="meta">' + App.esc(t.level) + " · " + App.esc(t.pages) + "</span></div>";
-    return live
-      ? '<a class="card" href="book.html?b=' + b.slug + "&lang=" + lang + '">' + inner + "</a>"
-      : '<div class="card soon">' + inner + "</div>";
+  var ready = BOOKS.filter(function (b) { return b.status === "live"; }).length;
+  $("count").textContent = t.ready.replace("{n}", ready) + " · " + t.moreSoon;
+
+  $("steps").innerHTML = [t.s1, t.s2, t.s3].map(function (s, i) {
+    return "<li><b>" + (i + 1) + "</b><span>" + App.esc(s) + "</span></li>";
   }).join("");
-  document.getElementById("grid").innerHTML = html;
+
+  var hero = App.readHero(lang);
+
+  /* Hero picture: the first book's cover, with the reader's own look */
+  function drawHeroArt() {
+    var h = $("heroart");
+    h.style.background = Art.sky("needs-vs-wants")[0];
+    h.innerHTML = Art.scene(0, hero ? hero.g : "g", "needs-vs-wants");
+  }
+
+  /* Topic filter */
+  var topics = [];
+  BOOKS.forEach(function (b) { var k = b.topic[lang]; if (topics.indexOf(k) < 0) topics.push(k); });
+  var current = "";
+  function drawChips() {
+    $("chips").innerHTML = [""].concat(topics).map(function (k) {
+      return '<button type="button" data-k="' + App.esc(k) + '" aria-pressed="' + (k === current) + '">' + App.esc(k || t.all) + "</button>";
+    }).join("");
+    document.querySelectorAll("#chips button").forEach(function (b) {
+      b.addEventListener("click", function () { current = b.getAttribute("data-k"); drawChips(); drawGrid(); });
+    });
+  }
+
+  /* Cards show the reader's own name in the title and their own look on the cover */
+  function drawGrid() {
+    $("grid").innerHTML = BOOKS.filter(function (b) { return !current || b.topic[lang] === current; }).map(function (b) {
+      var live = b.status === "live";
+      var plain = (b.cardTitle && b.cardTitle[lang]) || b.title[lang].replace("{name}", "").trim();
+      var title = live && hero ? App.tpl(b.title[lang], hero) : plain;
+      var thumb = live
+        ? '<div class="thumb art" style="background:' + Art.sky(b.slug)[0] + '" aria-hidden="true">' + Art.scene(0, hero ? hero.g : "g", b.slug) + "</div>"
+        : '<div class="thumb" style="background:' + b.color + '" aria-hidden="true">✏️</div>';
+      var inner = thumb +
+        '<div class="body"><span class="tag">' + App.esc(b.topic[lang]) + "</span>" +
+        '<span class="name">' + App.esc(title) + "</span>" +
+        (live ? '<span class="pill">' + App.esc(t.read) + "</span>" : '<span class="pill grey">' + App.esc(t.soon) + "</span>") +
+        '<span class="meta">' + App.esc(t.level) + " · " + App.esc(t.pages) + "</span></div>";
+      return live
+        ? '<a class="card" href="book.html?b=' + b.slug + "&lang=" + lang + '">' + inner + "</a>"
+        : '<div class="card soon">' + inner + "</div>";
+    }).join("");
+  }
+
+  App.heroChip($("herochip"), lang, function (h) { hero = h; drawHeroArt(); drawGrid(); });
+  drawHeroArt(); drawChips(); drawGrid();
 })();
 </script>
 </body>

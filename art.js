@@ -21,10 +21,12 @@
   }
 
   /* HERO: the reader. pose: down | up | high | give | recv */
-  function hero(x, y, s, gender, pose, mood) {
+  function hero(x, y, s, gender, pose, mood, custom) {
     var girl = gender === "g";
-    var top = girl ? "#ffd23f" : "#3a86ff";
-    var low = girl ? "#3a86ff" : "#8d5a3b";
+    custom = custom || {};
+    var top = custom.top || (girl ? "#ffd23f" : "#3a86ff");
+    var low = custom.low || (girl ? "#3a86ff" : "#8d5a3b");
+    var hair = custom.hair || HAIR;
     var b = "";
     b += `<rect x="-20" y="-62" width="16" height="56" rx="6" fill="${girl ? low : SKIN}"${S}/>`;
     b += `<rect x="4" y="-62" width="16" height="56" rx="6" fill="${girl ? low : SKIN}"${S}/>`;
@@ -41,10 +43,10 @@
     }
     b += `<circle cx="0" cy="-138" r="27" fill="${SKIN}"${S}/>`;
     if (girl) {
-      b += `<path d="M-26 -140 C-44 -126 -40 -106 -35 -96" fill="none" stroke="${HAIR}" stroke-width="11" stroke-linecap="round"/><circle cx="-35" cy="-93" r="6" fill="#e63946"${S}/>`;
-      b += `<path d="M26 -140 C44 -126 40 -106 35 -96" fill="none" stroke="${HAIR}" stroke-width="11" stroke-linecap="round"/><circle cx="35" cy="-93" r="6" fill="#e63946"${S}/>`;
+      b += `<path d="M-26 -140 C-44 -126 -40 -106 -35 -96" fill="none" stroke="${hair}" stroke-width="11" stroke-linecap="round"/><circle cx="-35" cy="-93" r="6" fill="#e63946"${S}/>`;
+      b += `<path d="M26 -140 C44 -126 40 -106 35 -96" fill="none" stroke="${hair}" stroke-width="11" stroke-linecap="round"/><circle cx="35" cy="-93" r="6" fill="#e63946"${S}/>`;
     }
-    b += `<path d="M-28 -138 C-31 -174 31 -174 28 -138 C20 -154 -20 -154 -28 -138 Z" fill="${HAIR}"${S}/>`;
+    b += `<path d="M-28 -138 C-31 -174 31 -174 28 -138 C20 -154 -20 -154 -28 -138 Z" fill="${hair}"${S}/>`;
     b += face(-136, mood || "happy");
     return T(`translate(${x} ${y}) scale(${s})`, b);
   }
@@ -149,8 +151,10 @@
   var hills = h => `<ellipse cx="60" cy="${h}" rx="190" ry="62" fill="#9bdc95"/><ellipse cx="330" cy="${h}" rx="210" ry="48" fill="#86cf86"/>`;
 
   var SKY = ["#bfe9ff", "#d6f0ff", "#bfe9ff", "#ffe3b3", "#ffd9a8"];
+  var S2 = S.replace('stroke-width="3"', 'stroke-width="2"');
+  var FONT = 'font-family="Baloo 2, Noto Sans Devanagari, Arial, sans-serif"';
 
-  function scene(n, g) {
+  function sceneNeeds(n, g) {
     var o = "";
     if (n === 0) {
       o += sky(SKY[0], 280) + hills(280) + `<circle cx="335" cy="78" r="28" fill="#ffd23f"/>` + cloud(210, 70, 1) + cloud(80, 50, 0.8);
@@ -186,13 +190,314 @@
       o += aaji(338, 398, 0.78, true, "give") + jalebi(288, 331, 0.7);
       o += hero(165, 398, 1.1, g, "high", "happy") + coin(224, 196, 0.9) + `<path d="M216 176 L216 184 M232 176 L232 184" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/>` + spark(262, 190, 0.8) + spark(205, 166, 0.7);
     }
-    return `<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block;overflow:visible" aria-hidden="true">${o}</svg>`;
+    return o;
   }
+
+
+  /* ---------- New cast and props for books 2 to 5 ---------- */
+
+  /* DIDI: the bank clerk (Meena Didi), drawn from the counter top upwards */
+  function didi(x, y, s) {
+    var b = "";
+    b += arm(-30, -84, -50, -8, "#2a9d8f") + arm(30, -84, 50, -8, "#2a9d8f");
+    b += `<path d="M-36 -96 Q-36 -102 -28 -102 L28 -102 Q36 -102 36 -96 L36 0 L-36 0 Z" fill="#2a9d8f"${S}/>`;
+    b += `<path d="M-34 -98 L-8 -98 L36 -34 L36 -62 Z" fill="#f4a261"${S}/>`;
+    b += `<rect x="8" y="-74" width="20" height="13" rx="2" fill="#fff"${S2}/><line x1="12" y1="-68" x2="24" y2="-68" stroke="${INK}" stroke-width="1.8"/>`;
+    b += `<circle cx="0" cy="-124" r="27" fill="${SKIN}"${S}/>`;
+    b += `<circle cx="0" cy="-163" r="13" fill="${HAIR}"${S}/><path d="M-27 -126 C-29 -160 29 -160 27 -126 C18 -142 -18 -142 -27 -126 Z" fill="${HAIR}"${S}/>`;
+    b += `<circle cx="-10" cy="-128" r="3" fill="${INK}"/><circle cx="10" cy="-128" r="3" fill="${INK}"/>`;
+    b += `<circle cx="-18" cy="-118" r="4.5" fill="#f4a6a0" opacity=".85"/><circle cx="18" cy="-118" r="4.5" fill="#f4a6a0" opacity=".85"/>`;
+    b += `<path d="M-9 -112 Q0 -103 9 -112 Z" fill="#fff"${S}/>`;
+    b += `<circle cx="0" cy="-141" r="2.8" fill="#e63946"/>`;
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+
+  function football(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<circle r="24" fill="#fff"${S}/><path d="M0 -9 L9 -2 L5 9 L-5 9 L-9 -2 Z" fill="${INK}"${S2}/><path d="M0 -9 L0 -23 M9 -2 L21 -8 M5 9 L13 20 M-5 9 L-13 20 M-9 -2 L-21 -8" stroke="${INK}" stroke-width="2.5" fill="none" stroke-linecap="round"/>`); }
+  function oldball(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<ellipse rx="25" ry="16" fill="#c9a27a"${S}/><path d="M-16 -6 L-7 -1 M6 -10 L11 -1 M-9 9 L1 5" stroke="#8d5a3b" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="-6" y="-5" width="13" height="9" rx="2" fill="#e9d3a8"${S2}/>`); }
+  function tag(x, y, s, txt) { return T(`translate(${x} ${y}) rotate(-8) scale(${s})`, `<path d="M-32 -15 L18 -15 L34 0 L18 15 L-32 15 Z" fill="#fff3b0"${S}/><circle cx="22" cy="0" r="3" fill="${INK}"/><text x="-6" y="6" text-anchor="middle" font-size="17" font-weight="700" ${FONT} fill="${INK}">${txt}</text>`); }
+  function bubble(cx, cy, rx, ry, tx, ty) {
+    var bx = cx, by = cy + ry;
+    function d(t) { return [tx + (bx - tx) * t, ty + (by - ty) * t]; }
+    var a = d(0.2), b = d(0.55);
+    return `<circle cx="${a[0]}" cy="${a[1]}" r="5" fill="#fff"${S2}/><circle cx="${b[0]}" cy="${b[1]}" r="8" fill="#fff"${S2}/><ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="#fff"${S}/>`;
+  }
+  function coinStack(x, y, s, n) {
+    var o = "";
+    for (var i = 0; i < n; i++) o += `<rect x="-15" y="${-(i + 1) * 6}" width="30" height="6" fill="#ffd23f"${S2}/>`;
+    o += `<ellipse cx="0" cy="${-n * 6}" rx="15" ry="5" fill="#ffe37a"${S2}/>`;
+    return T(`translate(${x} ${y}) scale(${s})`, o);
+  }
+  function calendar(x, y, s, k) {
+    var o = `<rect x="-34" y="-40" width="68" height="80" rx="6" fill="#fff"${S}/><path d="M-34 -34 Q-34 -40 -28 -40 L28 -40 Q34 -40 34 -34 L34 -20 L-34 -20 Z" fill="#e63946"${S}/><circle cx="-18" cy="-42" r="3.5" fill="${INK}"/><circle cx="18" cy="-42" r="3.5" fill="${INK}"/>`;
+    for (var i = 0; i < 9; i++) {
+      var cx = -20 + (i % 3) * 20, cy = -4 + Math.floor(i / 3) * 17;
+      o += i < k ? `<path d="M${cx - 6} ${cy} l4.5 6 l9 -12" fill="none" stroke="#2e9a3a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>` : `<rect x="${cx - 6}" y="${cy - 6}" width="12" height="12" rx="2" fill="#efe6cf"/>`;
+    }
+    return T(`translate(${x} ${y}) scale(${s})`, o);
+  }
+  function bank(x, y, s) {
+    var b = `<rect x="-112" y="-10" width="224" height="10" fill="#d9d9e3"${S}/><rect x="-102" y="-20" width="204" height="10" fill="#e6e6ee"${S}/>`;
+    b += `<rect x="-92" y="-112" width="184" height="92" fill="#f6e7c8"${S}/>`;
+    [-72, -46, 46, 72].forEach(function (cx) { b += `<rect x="${cx - 8}" y="-108" width="16" height="86" fill="#fffaf0"${S2}/>`; });
+    b += `<path d="M-17 -20 L-17 -58 Q0 -78 17 -58 L17 -20 Z" fill="#8d5a3b"${S}/><line x1="0" y1="-70" x2="0" y2="-20" stroke="${INK}" stroke-width="2"/>`;
+    b += `<rect x="-104" y="-124" width="208" height="14" fill="#e9c88f"${S}/><path d="M-108 -124 L0 -168 L108 -124 Z" fill="#b5543a"${S}/>`;
+    b += `<circle cx="0" cy="-140" r="14" fill="#ffd23f"${S2}/><text x="0" y="-134" text-anchor="middle" font-size="18" font-weight="700" ${FONT} fill="${INK}">₹</text>`;
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+  function passbook(x, y, s, r) { return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, `<rect x="-17" y="-22" width="34" height="44" rx="3" fill="#2a9d8f"${S}/><circle cy="-5" r="10" fill="#ffd23f"${S2}/><text y="0" text-anchor="middle" font-size="13" font-weight="700" ${FONT} fill="${INK}">₹</text><rect x="-10" y="11" width="20" height="4" rx="2" fill="#fff"/>`); }
+  function stamp(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<rect x="-16" y="-7" width="32" height="9" rx="2" fill="#8d5a3b"${S}/><rect x="-5" y="-26" width="10" height="19" rx="4" fill="#e63946"${S}/><rect x="-10" y="-32" width="20" height="8" rx="3" fill="#e63946"${S}/>`); }
+  function lock(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<path d="M-9 -4 L-9 -14 Q-9 -27 0 -27 Q9 -27 9 -14 L9 -4" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/><rect x="-15" y="-6" width="30" height="24" rx="5" fill="#ffd23f"${S}/><circle cy="4" r="3.5" fill="${INK}"/><rect x="-1.5" y="4" width="3" height="8" fill="${INK}"/>`); }
+  function phone(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<rect x="-14" y="-23" width="28" height="46" rx="5" fill="${INK}"/><rect x="-11" y="-18" width="22" height="32" rx="2" fill="#bde0fe"/><text y="-1" text-anchor="middle" font-size="10" font-weight="700" ${FONT} fill="${INK}">4 8 2</text><circle cy="18" r="2" fill="#fff"/>`); }
+  function card(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<rect x="-25" y="-16" width="50" height="32" rx="4" fill="#3a86ff"${S}/><rect x="-18" y="-8" width="13" height="10" rx="2" fill="#ffd23f"/><line x1="-18" y1="9" x2="17" y2="9" stroke="#fff" stroke-width="2.5"/>`); }
+  function nametag(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<rect x="-23" y="-17" width="46" height="34" rx="4" fill="#fff"${S}/><circle cx="-10" cy="-3" r="5.5" fill="${SKIN}"${S2}/><path d="M-18 12 Q-10 0 -2 12 Z" fill="#3a86ff"/><line x1="5" y1="-6" x2="18" y2="-6" stroke="${INK}" stroke-width="2.5"/><line x1="5" y1="3" x2="15" y2="3" stroke="${INK}" stroke-width="2.5"/>`); }
+  function clock(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<circle r="22" fill="#fff"${S}/><path d="M0 0 L0 -14 M0 0 L10 6" stroke="${INK}" stroke-width="3" stroke-linecap="round"/><circle r="2.5" fill="${INK}"/>`); }
+  function trunk(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<rect x="-44" y="-50" width="88" height="50" rx="5" fill="#4a6fa5"${S}/><path d="M-44 -50 Q0 -80 44 -50 Z" fill="#5b82bb"${S}/><rect x="-44" y="-28" width="88" height="6" fill="#2f4d7a"/>` + lock(0, -24, 0.85)); }
+  function envelope(x, y, s, col, r) { return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, `<rect x="-26" y="-18" width="52" height="36" rx="4" fill="#fffaf0"${S}/><path d="M-26 -18 L0 3 L26 -18 Z" fill="${col}"${S}/><path d="M-25 17 L-8 0 M25 17 L8 0" stroke="${INK}" stroke-width="2" fill="none"/>`); }
+  function cot(x, y, w) {
+    var o = `<rect x="${x + 8}" y="${y + 24}" width="9" height="34" fill="#a8683a"${S}/><rect x="${x + w - 17}" y="${y + 24}" width="9" height="34" fill="#a8683a"${S}/>`;
+    o += `<rect x="${x}" y="${y}" width="${w}" height="24" rx="5" fill="#d9a566"${S}/>`;
+    for (var i = 1; i < w / 14; i++) o += `<line x1="${x + i * 14}" y1="${y + 3}" x2="${x + i * 14}" y2="${y + 21}" stroke="#a06a35" stroke-width="1.8"/>`;
+    return o + `<line x1="${x + 4}" y1="${y + 12}" x2="${x + w - 4}" y2="${y + 12}" stroke="#a06a35" stroke-width="1.8"/>`;
+  }
+  function cooker(x, y, s, broken) {
+    var b = `<path d="M-34 0 L-34 -46 Q-34 -50 -30 -50 L30 -50 Q34 -50 34 -46 L34 0 Z" fill="#c4cad2"${S}/><rect x="34" y="-40" width="22" height="9" rx="4" fill="${INK}"/><rect x="-56" y="-40" width="22" height="9" rx="4" fill="${INK}"/>`;
+    if (broken) {
+      b += `<g transform="translate(8 -8) rotate(14)"><path d="M-36 -50 Q-36 -78 0 -78 Q36 -78 36 -50 Z" fill="#d8dde3"${S}/><circle cx="0" cy="-84" r="6" fill="${INK}"/></g>`;
+      b += `<path d="M-6 -48 L4 -30 L-3 -20 L6 -4" fill="none" stroke="${INK}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+    } else {
+      b += `<path d="M-36 -50 Q-36 -78 0 -78 Q36 -78 36 -50 Z" fill="#d8dde3"${S}/><circle cx="0" cy="-84" r="6" fill="${INK}"/>`;
+    }
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+  function puff(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<ellipse rx="18" ry="12" fill="#e9ecef"${S2}/><ellipse cx="-14" cy="6" rx="12" ry="9" fill="#e9ecef"${S2}/><ellipse cx="14" cy="6" rx="13" ry="9" fill="#e9ecef"${S2}/>`); }
+  function mango(x, y, s, r) { return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, `<ellipse rx="9" ry="12" fill="#ffb703"${S2}/><path d="M0 -12 Q6 -20 12 -16 Q6 -10 0 -12 Z" fill="#2e9a3a"${S2}/><ellipse cx="-3" cy="-3" rx="2" ry="4" fill="#fff" opacity=".5"/>`); }
+  function coinFruit(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<circle r="10" fill="#ffd23f"${S2}/><circle r="5.5" fill="none" stroke="#e0a800" stroke-width="2.2"/>`); }
+  function mangoTree(x, y, s, kind, n) {
+    var b = `<path d="M-15 0 L-10 -92 L10 -92 L15 0 Z" fill="#8d5a3b"${S}/><path d="M-3 -10 L-2 -70 M6 -22 L5 -60" stroke="#6b4129" stroke-width="2" fill="none" stroke-linecap="round"/>`;
+    b += `<circle cx="-48" cy="-118" r="50" fill="#4f9d4f"${S}/><circle cx="48" cy="-118" r="50" fill="#4f9d4f"${S}/><circle cx="0" cy="-160" r="56" fill="#5fb85f"${S}/><circle cx="0" cy="-112" r="46" fill="#5fb85f"${S}/>`;
+    var P = [[-62, -126], [-28, -154], [20, -182], [52, -146], [-6, -124], [34, -100], [-46, -92], [72, -112], [-8, -170]];
+    for (var i = 0; i < (n || 0) && i < P.length; i++) {
+      var k = kind === "mix" ? (i % 2 ? "coin" : "mango") : kind;
+      b += k === "coin" ? coinFruit(P[i][0], P[i][1], 1) : mango(P[i][0], P[i][1], 1, (i * 25) % 40 - 20);
+    }
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+  function seed(x, y, s, r) { return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, `<ellipse rx="14" ry="8" fill="#c9a06a"${S}/><path d="M-9 0 Q0 -4 9 0" stroke="#a07a45" stroke-width="2" fill="none"/>`); }
+  function chalkboard(x, y, w, h, lines, size) {
+    var o = `<rect x="${x - w / 2}" y="${y - h / 2}" width="${w}" height="${h}" rx="8" fill="#2f6f4f" stroke="#8d5a3b" stroke-width="8"/>`;
+    var gap = h / (lines.length + 1);
+    lines.forEach(function (t, i) { o += `<text x="${x}" y="${y - h / 2 + gap * (i + 1) + (size || 28) * 0.35}" text-anchor="middle" font-size="${size || 28}" font-weight="700" ${FONT} fill="#fff">${t}</text>`; });
+    return o;
+  }
+  function counterFront(y) {
+    return `<rect x="-400" y="${y}" width="1200" height="400" fill="#b9824a"/><rect x="-400" y="${y - 6}" width="1200" height="14" fill="#d9a566"${S}/><path d="M-400 ${y + 70} L800 ${y + 70}" stroke="#a06a35" stroke-width="3"/>`;
+  }
+  var room = (wall, fy, floor) => `<rect x="-400" y="-400" width="1200" height="1200" fill="${wall}"/><rect x="-400" y="${fy}" width="1200" height="800" fill="${floor}"/><rect x="-400" y="${fy - 4}" width="1200" height="8" fill="#00000026"/>`;
+  function goal(x, y, w, h) {
+    var d = `M${x} ${y} L${x} ${y - h} L${x + w} ${y - h} L${x + w} ${y}`, net = "";
+    for (var i = 1; i < 5; i++) net += `M${x + (w / 5) * i} ${y - h} L${x + (w / 5) * i} ${y} `;
+    for (var j = 1; j < 3; j++) net += `M${x} ${y - (h / 3) * j} L${x + w} ${y - (h / 3) * j} `;
+    return `<path d="${net}" stroke="#fff" stroke-opacity=".75" stroke-width="1.5" fill="none"/><path d="${d}" fill="none" stroke="${INK}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`;
+  }
+  function window2(x, y, w, h, night) {
+    var o = `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="${night ? "#2a3d66" : "#bde0fe"}"${S}/>`;
+    if (night) o += `<circle cx="${x + w * 0.62}" cy="${y + h * 0.35}" r="${w * 0.17}" fill="#fff3b0"/><circle cx="${x + w * 0.2}" cy="${y + h * 0.25}" r="2" fill="#fff"/><circle cx="${x + w * 0.35}" cy="${y + h * 0.8}" r="2" fill="#fff"/>`;
+    else o += `<circle cx="${x + w * 0.68}" cy="${y + h * 0.32}" r="${w * 0.16}" fill="#ffd23f"/>`;
+    return o + `<line x1="${x + w / 2}" y1="${y}" x2="${x + w / 2}" y2="${y + h}" stroke="${INK}" stroke-width="3"/><line x1="${x}" y1="${y + h / 2}" x2="${x + w}" y2="${y + h / 2}" stroke="${INK}" stroke-width="3"/>`;
+  }
+  function sweat(x, y) { return `<path d="M${x} ${y} q6 10 0 16 q-6 -6 0 -16 Z" fill="#4cc9f0"${S2}/>`; }
+
+  /* ---------- BOOK 2: The Big Wish (piggy-jar) ---------- */
+  function sceneWish(n, g) {
+    var o = "";
+    var FR = { top: "#e63946", low: "#8d5a3b" }, FR2 = { top: "#9b5de5", low: "#2a9d8f" };
+    if (n === 0) {
+      o += sky("#bfe9ff", 280) + hills(280) + `<circle cx="338" cy="72" r="28" fill="#ffd23f"/>` + cloud(205, 66, 1) + cloud(78, 48, 0.8) + ground("#79c86a", 280);
+      o += goal(14, 300, 96, 62);
+      o += gullu(325, 380, 0.95) + coinStack(66, 392, 1, 5) + coin(358, 300, 0.8) + coin(300, 292, 0.7);
+      o += hero(200, 384, 1.2, g, "up", "happy") + football(262, 172, 1.3) + spark(300, 130, 1) + spark(224, 118, 0.8) + spark(318, 188, 0.7);
+    } else if (n === 1) {
+      o += sky("#d6f0ff", 285) + hills(285) + cloud(318, 56, 0.9) + ground("#8bcf73", 285) + goal(292, 304, 92, 60);
+      o += oldball(62, 376, 1.0);
+      o += hero(135, 394, 1.1, g, "down", "think") + gullu(245, 394, 0.9);
+      o += bubble(262, 112, 90, 58, 168, 206) + football(226, 108, 1.5) + tag(318, 138, 0.95, "₹200") + spark(312, 92, 0.8);
+    } else if (n === 2) {
+      o += sky("#e4f4ff", 250) + hills(250) + cloud(80, 50, 0.8) + ground("#8bcf73", 250);
+      o += stall(292, 214, "#ff70a6", "#fff") + lolly(262, 190, 0.9) + lolly(290, 190, 0.9) + lolly(318, 190, 0.9);
+      o += hero(330, 394, 1.0, "b", "up", "happy", FR) + lolly(376, 226, 0.8);
+      o += hero(168, 394, 1.05, g, "down", "think") + note(214, 322, 0.6, 18);
+      o += gullu(64, 394, 1.0) + `<path d="M16 346 Q6 358 16 370 M112 346 Q122 358 112 370" fill="none" stroke="${INK}" stroke-width="3" stroke-linecap="round"/>` + sweat(98, 316);
+    } else if (n === 3) {
+      o += room("#ffe9c7", 332, "#c98f5a");
+      o += `<rect x="50" y="48" width="300" height="28" rx="14" fill="#fff"${S}/><rect x="52" y="50" width="146" height="24" rx="12" fill="#7bd88f"/><line x1="200" y1="40" x2="200" y2="84" stroke="${INK}" stroke-width="3"/>`;
+      o += `<text x="50" y="106" font-size="20" font-weight="700" ${FONT} fill="${INK}">0</text><text x="200" y="106" text-anchor="middle" font-size="20" font-weight="700" ${FONT} fill="${INK}">100</text><text x="350" y="106" text-anchor="end" font-size="20" font-weight="700" ${FONT} fill="${INK}">200</text>`;
+      o += football(374, 62, 0.8) + calendar(334, 190, 1.15, 5);
+      o += `<rect x="120" y="300" width="270" height="12" rx="3" fill="#a8683a"${S}/><rect x="130" y="312" width="9" height="58" fill="#a8683a"/><rect x="370" y="312" width="9" height="58" fill="#a8683a"/>`;
+      [150, 186, 222, 258, 294].forEach(function (x) { o += coinStack(x, 300, 1, 4); });
+      o += gullu(352, 300, 0.78);
+      o += hero(66, 398, 1.1, g, "up", "happy") + spark(110, 190, 0.9) + spark(150, 150, 0.7);
+    } else {
+      o += sky("#bfe9ff", 285) + hills(285) + `<circle cx="344" cy="66" r="26" fill="#ffd23f"/>` + cloud(210, 54, 0.9) + ground("#79c86a", 285) + goal(8, 300, 92, 60);
+      o += gullu(58, 396, 0.8);
+      o += hero(140, 394, 1.15, g, "up", "happy") + football(196, 176, 1.25);
+      o += hero(276, 394, 1.0, "b", "high", "happy", FR) + hero(338, 394, 0.92, "g", "up", "happy", FR2);
+      o += spark(250, 120, 1) + spark(320, 110, 0.8) + spark(196, 110, 0.7) + `<circle cx="122" cy="120" r="4" fill="#ff70a6"/><circle cx="270" cy="82" r="4" fill="#4cc9f0"/><circle cx="366" cy="130" r="4" fill="#e63946"/>`;
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 3: Inside a Bank ---------- */
+  function sceneBank(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + cloud(70, 56, 0.9) + cloud(330, 80, 0.8) + ground("#8bcf73", 300);
+      o += `<path d="M-50 400 L150 300 L250 300 L450 400 Z" fill="#e9c88f" opacity=".8"/>` + bank(200, 306, 1.2);
+      o += hero(104, 394, 1.1, g, "up", "happy") + passbook(156, 214, 1.1, 12) + spark(190, 180, 0.9);
+      o += gullu(205, 396, 0.85) + aaji(306, 394, 0.95, true, "give");
+    } else if (n === 1) {
+      o += sky("#d6f0ff", 292) + hills(292) + cloud(80, 54, 0.9) + ground("#8bcf73", 292);
+      o += mangoTree(36, 306, 0.5, "mango", 4) + bank(326, 308, 0.62);
+      o += `<rect x="-400" y="318" width="1200" height="120" fill="#e9c88f"/><path d="M-400 318 L800 318" stroke="${INK}" stroke-width="3"/>`;
+      o += aaji(64, 396, 0.95, false, "down") + hero(176, 396, 1.05, g, "down", "happy");
+      o += gullu(236, 366, 0.78) + sweat(268, 306) + sweat(204, 292);
+    } else if (n === 2) {
+      o += room("#e6f2ff", 334, "#d9c7a0");
+      o += clock(334, 78, 1.1) + `<circle cx="78" cy="102" r="34" fill="#ffd23f"${S}/><text x="78" y="118" text-anchor="middle" font-size="46" font-weight="700" ${FONT} fill="${INK}">₹</text>`;
+      o += didi(214, 264, 1.15) + passbook(256, 246, 0.8, 8) + stamp(172, 250, 1);
+      o += counterFront(264);
+      o += hero(96, 402, 1.1, g, "down", "wow") + aaji(334, 402, 0.9, true, "down");
+    } else if (n === 3) {
+      o += room("#e6f2ff", 334, "#d9c7a0");
+      o += clock(60, 70, 1.0) + `<rect x="120" y="40" width="80" height="48" rx="6" fill="#fff"${S}/><circle cx="144" cy="64" r="10" fill="#ffd23f"${S2}/><line x1="162" y1="58" x2="188" y2="58" stroke="${INK}" stroke-width="3"/><line x1="162" y1="70" x2="182" y2="70" stroke="${INK}" stroke-width="3"/>`;
+      o += didi(296, 264, 1.15) + stamp(352, 250, 1) + passbook(250, 246, 0.8, -8);
+      o += counterFront(264);
+      o += gullu(176, 266, 0.85) + coinStack(222, 262, 1, 5) + coinStack(124, 262, 1, 3) + spark(176, 190, 0.9);
+      o += hero(70, 402, 1.1, g, "give", "happy");
+    } else {
+      o += `<rect x="-400" y="-400" width="1200" height="1200" fill="#ffd9a8"/><rect x="-400" y="320" width="1200" height="400" fill="#b98150"/>`;
+      o += window2(40, 66, 90, 90, true);
+      o += trunk(340, 384, 1.05);
+      o += hero(112, 398, 1.1, g, "high", "happy") + passbook(168, 190, 1.0, -10) + spark(206, 168, 0.8) + spark(132, 150, 0.7);
+      o += gullu(204, 398, 0.8) + aaji(262, 398, 0.85, false, "give") + passbook(314, 324, 0.7, 20);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 4: The Four Envelopes (family-budget) ---------- */
+  function sceneBudget(n, g) {
+    var o = "";
+    var EC = ["#e63946", "#3a86ff", "#2a9d8f", "#ff70a6"];
+    if (n === 0) {
+      o += sky("#bfe9ff", 280) + hills(280) + `<circle cx="340" cy="74" r="28" fill="#ffd23f"/>` + cloud(60, 90, 0.8) + ground("#79c86a", 280);
+      o += `<path d="M170 400 L205 280 L235 280 L300 400 Z" fill="#e9c88f" opacity=".7"/>`;
+      o += envelope(86, 112, 1.2, EC[0], -14) + envelope(160, 76, 1.2, EC[1], -5) + envelope(240, 76, 1.2, EC[2], 5) + envelope(314, 112, 1.2, EC[3], 14);
+      o += spark(200, 52, 1) + spark(50, 76, 0.7) + spark(356, 70, 0.8);
+      o += aaji(88, 378, 0.95, false, "down") + gullu(324, 380, 0.95) + hero(205, 382, 1.2, g, "high", "happy");
+    } else if (n === 1) {
+      o += room("#ffe9c7", 340, "#c98f5a");
+      o += window2(34, 52, 96, 86, false) + `<path d="M34 138 L130 138" stroke="${INK}" stroke-width="4"/>`;
+      o += cot(104, 300, 200);
+      for (var i = 0; i < 10; i++) o += note(130 + (i % 5) * 36, 304 + Math.floor(i / 5) * 9, 0.62, (i % 3 - 1) * 8);
+      o += gullu(284, 300, 0.7);
+      o += aaji(58, 398, 1.0, false, "give") + hero(344, 398, 1.05, g, "down", "think");
+      o += bubble(236, 120, 80, 46, 332, 214) + note(206, 112, 0.9, -6) + note(246, 118, 0.9, 6) + `<text x="226" y="150" text-anchor="middle" font-size="26" font-weight="700" ${FONT} fill="${INK}">?</text>`;
+    } else if (n === 2) {
+      o += room("#fff1d6", 328, "#c98f5a");
+      o += window2(160, 46, 80, 70, false);
+      o += hero(84, 322, 0.95, g, "give", "happy") + aaji(326, 322, 0.9, true, "down");
+      o += bread(140, 214, 1.2) + notebook(188, 212, 1.0, -6) + coin(234, 214, 1.5) + balloon(280, 198, 0.8, "#ff70a6");
+      [140, 186, 232, 278].forEach(function (x, k) { o += `<line x1="${x}" y1="236" x2="${x}" y2="262" stroke="${INK}" stroke-width="2" stroke-dasharray="3 4"/>`; });
+      o += `<rect x="20" y="300" width="360" height="16" rx="4" fill="#d9a566"${S}/><rect x="30" y="316" width="340" height="90" fill="#c07a44"${S}/>`;
+      [140, 186, 232, 278].forEach(function (x, k) { o += envelope(x, 282, 0.92, EC[k], (k - 1.5) * 3); });
+    } else if (n === 3) {
+      o += room("#fde8c8", 332, "#b98150");
+      o += `<rect x="236" y="120" width="140" height="8" rx="3" fill="#a8683a"${S}/>` + `<ellipse cx="270" cy="104" rx="20" ry="16" fill="#8d8d99"${S}/><ellipse cx="318" cy="108" rx="16" ry="12" fill="#c58b4e"${S}/>` + gullu(352, 122, 0.55);
+      o += `<rect x="96" y="298" width="150" height="106" fill="#8d8d99"${S}/><rect x="96" y="290" width="150" height="14" rx="3" fill="#b8bfc7"${S}/>`;
+      o += cooker(168, 292, 1.25, true) + puff(150, 170, 1.0) + puff(190, 140, 1.2) + puff(222, 176, 0.8);
+      o += hero(46, 398, 1.1, g, "down", "wow");
+      o += aaji(328, 398, 0.95, true, "give") + envelope(268, 312, 1.0, "#2a9d8f", -8) + spark(300, 262, 0.8);
+    } else {
+      o += `<rect x="-400" y="-400" width="1200" height="1200" fill="#ffd9a8"/><rect x="-400" y="320" width="1200" height="400" fill="#b98150"/>`;
+      o += window2(34, 66, 90, 90, true) + calendar(344, 128, 1.1, 9);
+      o += `<rect x="150" y="290" width="12" height="75" fill="#a8683a"${S}/><rect x="368" y="290" width="12" height="75" fill="#a8683a"${S}/><rect x="140" y="276" width="250" height="14" rx="3" fill="#c07a44"${S}/>`;
+      o += envelope(300, 262, 0.8, EC[0], -6) + envelope(336, 262, 0.8, EC[1], 6);
+      o += gullu(262, 276, 1) + aaji(352, 398, 0.78, true, "down");
+      o += hero(150, 398, 1.1, g, "high", "happy") + coin(244, 190, 0.9) + `<path d="M236 170 L236 178 M252 170 L252 178" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/>` + spark(290, 188, 0.8) + spark(200, 160, 0.7);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 5: The Money Tree (what-is-interest) ---------- */
+  function sceneInterest(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 280) + hills(280) + `<circle cx="342" cy="66" r="26" fill="#ffd23f"/>` + cloud(60, 60, 0.8) + ground("#79c86a", 280);
+      o += mangoTree(214, 318, 1.2, "mix", 9);
+      o += hero(84, 392, 1.1, g, "up", "happy") + gullu(334, 392, 0.95) + coin(318, 300, 0.8) + coin(300, 340, 0.7) + spark(130, 190, 0.9) + spark(350, 244, 0.7);
+    } else if (n === 1) {
+      o += sky("#d6f0ff", 290) + hills(290) + cloud(300, 50, 0.9) + ground("#8bcf73", 290);
+      o += mangoTree(74, 318, 1.0, "mango", 7);
+      o += kaka(318, 300, 1.0) + `<rect x="240" y="300" width="170" height="110" fill="#c07a44"${S}/><rect x="234" y="294" width="182" height="12" rx="3" fill="#e0a86a"${S}/>`;
+      o += mango(268, 284, 1.2, -10) + mango(294, 288, 1.2, 8) + mango(346, 288, 1.2, -6) + mango(372, 284, 1.2, 12);
+      o += gullu(118, 396, 0.75);
+      o += hero(172, 396, 1.1, g, "up", "wow") + seed(228, 222, 1.2, -20) + spark(206, 194, 0.8);
+    } else if (n === 2) {
+      o += room("#e6f2ff", 334, "#d9c7a0");
+      o += chalkboard(150, 128, 220, 104, ["₹100", "+ ₹5"], 34);
+      o += didi(318, 264, 1.15) + passbook(262, 246, 0.8, 8);
+      o += counterFront(264);
+      o += coinStack(196, 262, 1, 8) + coinStack(228, 262, 1, 1) + spark(232, 232, 0.8) + gullu(120, 266, 0.7);
+      o += hero(70, 402, 1.05, g, "down", "wow");
+    } else if (n === 3) {
+      o += room("#e8f1e0", 336, "#c9a46a");
+      o += chalkboard(222, 138, 280, 168, ["₹1000", "+ ₹50", "= ₹1050"], 34);
+      o += `<line x1="150" y1="168" x2="294" y2="168" stroke="#fff" stroke-width="3"/>`;
+      o += hero(66, 398, 1.1, g, "high", "happy") + gullu(340, 398, 0.9) + spark(310, 262, 0.8);
+    } else {
+      o += sky("#bfe9ff", 290) + hills(290) + `<circle cx="346" cy="60" r="26" fill="#ffd23f"/>` + cloud(70, 56, 0.9) + ground("#79c86a", 290);
+      o += mangoTree(206, 322, 1.35, "mix", 9);
+      o += hero(80, 396, 1.1, g, "high", "happy") + aaji(334, 396, 0.9, true, "down") + gullu(272, 398, 0.8);
+      o += coin(262, 330, 0.8) + coin(290, 290, 0.7) + spark(120, 170, 0.8) + spark(350, 196, 0.7);
+    }
+    return o;
+  }
+
+  var SCENES = { "needs-vs-wants": sceneNeeds, "piggy-jar": sceneWish, "inside-a-bank": sceneBank, "family-budget": sceneBudget, "what-is-interest": sceneInterest };
+  var SKIES = {
+    "needs-vs-wants": ["#bfe9ff", "#d6f0ff", "#bfe9ff", "#ffe3b3", "#ffd9a8"],
+    "piggy-jar": ["#bfe9ff", "#d6f0ff", "#e4f4ff", "#ffe9c7", "#bfe9ff"],
+    "inside-a-bank": ["#bfe9ff", "#d6f0ff", "#e6f2ff", "#e6f2ff", "#ffd9a8"],
+    "family-budget": ["#bfe9ff", "#ffe9c7", "#fff1d6", "#fde8c8", "#ffd9a8"],
+    "what-is-interest": ["#bfe9ff", "#d6f0ff", "#e6f2ff", "#e8f1e0", "#bfe9ff"]
+  };
+
+  /* Art.scene(n, gender, slug): n = 0 (cover) to 4. Returns an SVG string. */
+  function scene(n, g, slug) {
+    var f = SCENES[slug || "needs-vs-wants"] || sceneNeeds;
+    return `<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block;overflow:visible" aria-hidden="true">${f(n, g)}</svg>`;
+  }
+  function skyOf(slug) { return SKIES[slug || "needs-vs-wants"] || SKIES["needs-vs-wants"]; }
 
   /* Small avatar for the setup screen */
-  function avatar(g) {
-    return `<svg viewBox="-50 -185 100 195" xmlns="http://www.w3.org/2000/svg" style="width:70px;height:130px" aria-hidden="true">${hero(0, 0, 1, g, "down", "happy")}</svg>`;
+  function avatar(g, w) {
+    return `<svg viewBox="-50 -185 100 195" xmlns="http://www.w3.org/2000/svg" style="width:${w || 70}px;height:${Math.round((w || 70) * 1.86)}px" aria-hidden="true">${hero(0, 0, 1, g, "down", "happy")}</svg>`;
   }
 
-  window.Art = { scene: scene, avatar: avatar, sky: SKY };
+  /* Head and shoulders only, for the small "your hero" button */
+  function headshot(g, w) {
+    return `<svg viewBox="-48 -184 96 96" xmlns="http://www.w3.org/2000/svg" style="width:${w || 40}px;height:${w || 40}px;display:block" aria-hidden="true">${hero(0, 0, 1, g, "down", "happy")}</svg>`;
+  }
+
+  /* Small icons for the sorting quizzes */
+  function prop(name) {
+    var m = {
+      notebook: notebook(0, 0, 1.3), car: car(0, 2, 0.95), bottle: bottle(0, 2, 1.35), balloon: balloon(0, -10, 0.62, "#ff70a6"), bread: bread(0, 4, 1.35),
+      coin: coin(0, 0, 1.9), lolly: lolly(0, -6, 1.0), jalebi: jalebi(0, 0, 1.6), football: football(0, 0, 1.3), calendar: calendar(0, 0, 0.8, 5),
+      lock: lock(0, 4, 1.3), phone: phone(0, 0, 1.2), card: card(0, 0, 1.2), nametag: nametag(0, 0, 1.3), passbook: passbook(0, 0, 1.2),
+      bank: bank(0, 26, 0.29), note: note(0, 0, 1.3), envelope: envelope(0, 0, 1.1, "#e63946"), seed: seed(0, 0, 2.2), tree: mangoTree(0, 32, 0.28, "mango", 5), mango: mango(0, 0, 1.8)
+    };
+    return `<svg viewBox="-34 -34 68 68" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;flex:none" aria-hidden="true">${m[name] || ""}</svg>`;
+  }
+
+  window.Art = { scene: scene, avatar: avatar, headshot: headshot, prop: prop, sky: skyOf };
 })();

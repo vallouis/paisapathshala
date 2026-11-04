@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Book</title>
+<meta name="theme-color" content="#ffd166">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paisa Pathshala">
+<meta property="og:title" content="A money story where you are the hero">
+<meta property="og:description" content="Free illustrated money stories for Grades 6 to 10 in English, Hindi and Marathi.">
+<meta property="og:image" content="https://vallouis.github.io/paisapathshala/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap">
 <link rel="stylesheet" href="style.css">
@@ -14,7 +24,7 @@
   <div class="bookbar">
     <a class="btn" id="back" href="index.html"></a>
     <div class="btns">
-      <button type="button" class="btn" id="change" hidden></button>
+      <span id="herochip"></span>
       <button type="button" class="btn" id="print" hidden></button>
       <a class="btn primary" id="wa" target="_blank" rel="noopener"></a>
     </div>
@@ -23,11 +33,7 @@
   <section class="pg setup" id="setup" hidden>
     <h1 id="s-title"></h1>
     <p id="s-sub"></p>
-    <label for="name" id="s-label"></label>
-    <input id="name" type="text" maxlength="20" autocomplete="off">
-    <div class="pick" id="pick"></div>
-    <button type="button" class="btn primary big" id="go"></button>
-    <p class="hint" id="hint" role="alert"></p>
+    <div id="s-form"></div>
   </section>
 
   <div id="book"></div>
@@ -62,54 +68,33 @@
   var shareUrl = location.origin + location.pathname + "?b=" + book.slug + "&lang=" + lang;
   if (location.protocol === "file:") shareUrl = location.href.split("?")[0] + "?b=" + book.slug + "&lang=" + lang;
   $("wa").textContent = t.share;
-  $("wa").href = "https://wa.me/?text=" + encodeURIComponent(book.title[lang].replace("{name}", "").trim() + " " + shareUrl);
+  $("wa").href = "https://wa.me/?text=" + encodeURIComponent(((book.cardTitle && book.cardTitle[lang]) || book.title[lang].replace("{name}", "").trim()) + " " + shareUrl);
   $("print").textContent = t.print;
   $("print").addEventListener("click", function () { window.print(); });
-  $("change").textContent = t.change;
 
-  var hero = { name: qs.get("n") || "", g: qs.get("g") === "g" ? "g" : (qs.get("g") === "b" ? "b" : "") };
-  var saved = {};
-  try { saved = JSON.parse(localStorage.getItem("pp-hero") || "{}"); } catch (e) {}
-
-  /* Fill a text template: {name}, and [[boy|girl]] endings. */
-  function tpl(s) {
-    var g = hero.g === "g" ? 1 : 0;
-    return s.replace(/\{name\}/g, hero.name).replace(/\[\[([^|\]]*)\|([^\]]*)\]\]/g, function (m, a, b) { return g ? b : a; });
+  /* The hero comes from the saved choice (asked once, used by every book).
+     A link can also carry ?n=Name&g=b or g to override it for one visit. */
+  var hero = App.readHero(lang);
+  if (qs.get("n") && (qs.get("g") === "b" || qs.get("g") === "g")) hero = { name: qs.get("n"), g: qs.get("g") };
+  function tpl(s) { return App.tpl(s, hero); }
+  function forgetLinkName() {
+    if (!qs.get("n")) return;
+    var u = new URL(location.href); u.searchParams.delete("n"); u.searchParams.delete("g");
+    history.replaceState(null, "", u.toString()); qs = new URLSearchParams(location.search);
   }
+  var SKY = Art.sky(book.slug);
 
-  /* ---------- Setup screen ---------- */
+  /* ---------- First visit only: pick a name and a look ---------- */
   function showSetup() {
     $("book").innerHTML = "";
     $("print").hidden = true;
-    $("change").hidden = true;
+    $("herochip").innerHTML = "";
     $("setup").hidden = false;
-    document.title = tpl(book.title[lang]).replace(hero.name, "").trim() + " | " + SITE.name[lang];
+    document.title = (book.cardTitle ? book.cardTitle[lang] : "") + " | " + SITE.name[lang];
     $("s-title").textContent = t.heroTitle;
     $("s-sub").textContent = t.heroSub;
-    $("s-label").textContent = t.nameLabel;
-    $("go").textContent = t.start;
-    $("name").value = hero.name || saved.name || "";
-    var g = hero.g || saved.g || "g";
-    function drawPick() {
-      $("pick").innerHTML = ["g", "b"].map(function (k) {
-        return '<button type="button" class="avatar" data-g="' + k + '" aria-pressed="' + (k === g) + '">' + Art.avatar(k) + "<span>" + esc(k === "g" ? t.girl : t.boy) + "</span></button>";
-      }).join("");
-      document.querySelectorAll(".avatar").forEach(function (b) {
-        b.addEventListener("click", function () { g = b.getAttribute("data-g"); drawPick(); });
-      });
-    }
-    drawPick();
-    $("go").onclick = function () {
-      var n = $("name").value.trim();
-      if (!n) { $("hint").textContent = t.needName; $("name").focus(); return; }
-      hero = { name: n, g: g };
-      try { localStorage.setItem("pp-hero", JSON.stringify(hero)); } catch (e) {}
-      var u = new URL(location.href);
-      u.searchParams.set("n", n); u.searchParams.set("g", g);
-      history.replaceState(null, "", u.toString());
-      showBook();
-    };
-    $("name").onkeydown = function (e) { if (e.key === "Enter") $("go").click(); };
+    var input = App.heroForm($("s-form"), lang, null, function (h) { hero = h; forgetLinkName(); showBook(); });
+    input.focus();
   }
 
   /* ---------- The book ---------- */
@@ -123,22 +108,17 @@
   function art(n) {
     var a = document.createElement("section");
     a.className = "pg art";
-    a.style.background = Art.sky[n];
+    a.style.background = SKY[n];
     a.setAttribute("role", "img");
     a.setAttribute("aria-label", n ? book.scenes[n - 1] : tpl(book.title[lang]));
-    a.innerHTML = Art.scene(n, hero.g);
+    a.innerHTML = Art.scene(n, hero.g, book.slug);
     return a;
   }
 
   function showBook() {
     $("setup").hidden = true;
     $("print").hidden = false;
-    $("change").hidden = false;
-    $("change").onclick = function () {
-      var u = new URL(location.href); u.searchParams.delete("n"); u.searchParams.delete("g");
-      history.replaceState(null, "", u.toString());
-      showSetup();
-    };
+    App.heroChip($("herochip"), lang, function (h) { hero = h; forgetLinkName(); showBook(); });
     var title = tpl(book.title[lang]);
     document.title = title + " | " + SITE.name[lang];
     var root = $("book");
@@ -149,8 +129,8 @@
     cover.className = "pg cover";
     cover.style.background = book.color;
     cover.innerHTML = '<p class="starring">' + esc(t.starring) + ": " + esc(hero.name) + "</p><h1>" + esc(title) + '</h1><p class="sub">' + esc(book.subtitle[lang]) + '</p><div class="coverart"></div><span class="pn">1</span>';
-    cover.querySelector(".coverart").style.background = Art.sky[0];
-    cover.querySelector(".coverart").innerHTML = Art.scene(0, hero.g);
+    cover.querySelector(".coverart").style.background = SKY[0];
+    cover.querySelector(".coverart").innerHTML = Art.scene(0, hero.g, book.slug);
     root.appendChild(cover);
 
     /* Pages 2 to 9: four story spreads (text page, then picture page) */
@@ -168,20 +148,120 @@
       root.appendChild(s);
     });
 
-    /* Page 10: remember, quiz, personal promise */
+    /* Pages 10 to 12: remember, quizzes, promise */
     var r = book.recap[lang];
-    var rc = document.createElement("section");
-    rc.className = "pg recap";
-    rc.innerHTML =
-      "<h2>" + esc(t.remember) + "</h2><ul>" + r.remember.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" +
-      "<h2>" + esc(t.quiz) + "</h2>" +
-      r.quiz.map(function (x) { return "<details><summary>" + esc(x.q) + "</summary><p>" + esc(x.a) + "</p></details>"; }).join("") +
-      '<div class="promise"><h2>' + esc(t.promise) + "</h2><p>" + esc(tpl(r.promise)) + "</p><p class=\"sig\">" + esc(t.sign) + ": ____________ &nbsp; " + esc(t.date) + ': ________</p></div><span class="pn">10</span>';
-    root.appendChild(rc);
+    function mk(tag, cls, html) { var x = document.createElement(tag); if (cls) x.className = cls; if (html) x.innerHTML = html; return x; }
+
+    function section(title) {
+      var sec = mk("div", "qsec", '<h2>' + esc(title) + '</h2><span class="score no-print"></span>');
+      sec.update = function () {
+        var rows = sec.querySelectorAll("[data-row]"), ok = sec.querySelectorAll('[data-row][data-state="1"]');
+        sec.querySelector(".score").textContent = t.score + ": " + ok.length + "/" + rows.length;
+      };
+      return sec;
+    }
+
+    /* A row with several buttons, one of them correct */
+    function choiceRow(labelHtml, opts, ans) {
+      var row = mk("div", "crow", '<div class="clabel">' + labelHtml + '</div><div class="copts"></div><span class="mark" aria-live="polite"></span>');
+      row.setAttribute("data-row", "1");
+      opts.forEach(function (o) {
+        var bt = mk("button", "opt"); bt.type = "button"; bt.textContent = o.t;
+        bt.addEventListener("click", function () {
+          var good = o.k === ans;
+          row.querySelectorAll(".opt").forEach(function (x) { x.classList.remove("ok", "bad"); });
+          bt.classList.add(good ? "ok" : "bad");
+          row.setAttribute("data-state", good ? "1" : "0");
+          row.querySelector(".mark").textContent = good ? "✓ " + t.correct : "✗ " + t.tryagain;
+          row.querySelector(".mark").className = "mark " + (good ? "good" : "no");
+          row.parentNode.update && row.parentNode.update();
+        });
+        row.querySelector(".copts").appendChild(bt);
+      });
+      return row;
+    }
+
+    /* Page 10: remember + fill in the blanks */
+    var p10 = mk("section", "pg recap");
+    p10.appendChild(mk("h2", "", esc(t.remember)));
+    p10.appendChild(mk("ul", "", r.remember.map(function (x) { return "<li>" + esc(tpl(x)) + "</li>"; }).join("")));
+    var fs = section(t.fillT);
+    fs.appendChild(mk("p", "bank", "<b>" + esc(t.bankT) + ":</b> " + r.fill.bank.map(function (w) { return "<span>" + esc(w) + "</span>"; }).join("")));
+    r.fill.items.forEach(function (it) {
+      var parts = tpl(it[0]).split("@@");
+      var row = mk("div", "frow");
+      row.setAttribute("data-row", "1");
+      var sel = mk("select"); sel.setAttribute("aria-label", t.choose);
+      sel.innerHTML = '<option value="">' + esc(t.choose) + "</option>" + r.fill.bank.map(function (w) { return '<option value="' + esc(w) + '">' + esc(w) + "</option>"; }).join("");
+      var mark = mk("span", "mark");
+      sel.addEventListener("change", function () {
+        var good = sel.value === it[1];
+        sel.className = sel.value ? (good ? "ok" : "bad") : "";
+        row.setAttribute("data-state", good ? "1" : "0");
+        mark.textContent = !sel.value ? "" : good ? "✓" : "✗ " + t.tryagain;
+        mark.className = "mark " + (good ? "good" : "no");
+        fs.update();
+      });
+      row.appendChild(mk("span", "", esc(parts[0])));
+      row.appendChild(sel);
+      row.appendChild(mk("span", "bl", "__________"));
+      row.appendChild(mk("span", "", esc(parts[1] || "")));
+      row.appendChild(mark);
+      fs.appendChild(row);
+    });
+    p10.appendChild(fs); fs.update();
+    p10.appendChild(mk("span", "pn", "10"));
+    root.appendChild(p10);
+
+    /* Page 11: sorting quiz + true or false */
+    var p11 = mk("section", "pg recap");
+    var sortOpts = r.sortOpts || [{ k: "need", t: t.need }, { k: "want", t: t.want }];
+    var ss = section(r.sortTitle || t.sortT);
+    r.sort.forEach(function (it) {
+      ss.appendChild(choiceRow((it.icon ? Art.prop(it.icon) : "") + "<span>" + esc(tpl(it.label)) + "</span>", sortOpts, it.a));
+    });
+    p11.appendChild(ss); ss.update();
+    var ts = section(t.tfT);
+    r.tf.forEach(function (it) {
+      ts.appendChild(choiceRow("<span>" + esc(tpl(it.q)) + "</span>", [{ k: "t", t: t.tru }, { k: "f", t: t.fls }], it.a ? "t" : "f"));
+    });
+    p11.appendChild(ts); ts.update();
+    p11.appendChild(mk("span", "pn", "11"));
+    root.appendChild(p11);
+
+    /* Page 12: think it through + promise + answer key (key shows on paper only) */
+    var p12 = mk("section", "pg recap");
+    var hs = section(t.thinkT);
+    r.think.forEach(function (it) {
+      hs.appendChild(choiceRow("<span>" + esc(tpl(it.q)) + "</span>", it.opts.map(function (o, i) { return { k: i, t: tpl(o) }; }), it.a));
+    });
+    p12.appendChild(hs); hs.update();
+    p12.appendChild(mk("div", "promise", "<h2>" + esc(t.promise) + "</h2><p>" + esc(tpl(r.promise)) + '</p><p class="sig">' + esc(t.sign) + ": ____________ &nbsp; " + esc(t.date) + ": ________</p>"));
+    function optText(k) { var f = sortOpts.filter(function (o) { return o.k === k; })[0]; return f ? f.t : k; }
+    var key = [
+      t.fillT + ": " + r.fill.items.map(function (i) { return i[1]; }).join(", "),
+      (r.sortTitle || t.sortT) + " " + r.sort.map(function (i) { return optText(i.a); }).join(", "),
+      t.tfT + " " + r.tf.map(function (i) { return i.a ? t.tru : t.fls; }).join(", "),
+      t.thinkT + ": " + r.think.map(function (i) { return tpl(i.opts[i.a]); }).join(", ")
+    ];
+    p12.appendChild(mk("p", "key", "<b>" + esc(t.answers) + "</b><br>" + key.map(esc).join("<br>")));
+    p12.appendChild(mk("span", "pn", "12"));
+    root.appendChild(p12);
+    var live = BOOKS.filter(function (b) { return b.status === "live"; });
+    var idx = live.indexOf(book), next = live.length > 1 ? live[(idx + 1) % live.length] : null;
+    var end = mk("div", "endcap no-print");
+    if (next) {
+      var nt = App.tpl((next.cardTitle && next.cardTitle[lang]) || next.title[lang], hero);
+      end.innerHTML = '<p class="nextline">' + esc(t.nextBook) + '</p><a class="btn primary big" href="book.html?b=' + next.slug + "&lang=" + lang + '">' + esc(nt) + " →</a>" +
+        '<p><a class="btn" href="index.html?lang=' + lang + '">' + esc(t.more) + "</a></p>";
+    } else {
+      end.innerHTML = '<a class="btn primary big" href="index.html?lang=' + lang + '">' + esc(t.more) + "</a>";
+    }
+    root.appendChild(end);
     window.scrollTo(0, 0);
   }
 
-  if (hero.name && hero.g) showBook(); else showSetup();
+  if (hero) showBook(); else showSetup();
 })();
 </script>
 </body>
