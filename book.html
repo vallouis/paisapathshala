@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top" id="top"></header>
+<main class="wrap">
+  <div class="bookbar">
+    <a class="btn" id="back" href="index.html"></a>
+    <div class="btns">
+      <button type="button" class="btn" id="change" hidden></button>
+      <button type="button" class="btn" id="print" hidden></button>
+      <a class="btn primary" id="wa" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+
+  <section class="pg setup" id="setup" hidden>
+    <h1 id="s-title"></h1>
+    <p id="s-sub"></p>
+    <label for="name" id="s-label"></label>
+    <input id="name" type="text" maxlength="20" autocomplete="off">
+    <div class="pick" id="pick"></div>
+    <button type="button" class="btn primary big" id="go"></button>
+    <p class="hint" id="hint" role="alert"></p>
+  </section>
+
+  <div id="book"></div>
+</main>
+<footer id="foot"></footer>
+<script src="books.js"></script>
+<script src="art.js"></script>
+<script src="app.js"></script>
+<script>
+(function () {
+  var lang = App.getLang();
+  var t = UI[lang];
+  App.chrome(lang);
+  var esc = App.esc;
+
+  var qs = new URLSearchParams(location.search);
+  var slug = qs.get("b");
+  var book = null;
+  BOOKS.forEach(function (b) { if (b.slug === slug && b.status === "live") book = b; });
+
+  var $ = function (id) { return document.getElementById(id); };
+  $("back").textContent = "← " + t.back;
+  $("back").href = "index.html?lang=" + lang;
+
+  if (!book) {
+    $("book").innerHTML = "<p>" + esc(t.notfound) + "</p>";
+    $("wa").hidden = true;
+    return;
+  }
+
+  /* The share link carries no name, so a friend can enter their own. */
+  var shareUrl = location.origin + location.pathname + "?b=" + book.slug + "&lang=" + lang;
+  if (location.protocol === "file:") shareUrl = location.href.split("?")[0] + "?b=" + book.slug + "&lang=" + lang;
+  $("wa").textContent = t.share;
+  $("wa").href = "https://wa.me/?text=" + encodeURIComponent(book.title[lang].replace("{name}", "").trim() + " " + shareUrl);
+  $("print").textContent = t.print;
+  $("print").addEventListener("click", function () { window.print(); });
+  $("change").textContent = t.change;
+
+  var hero = { name: qs.get("n") || "", g: qs.get("g") === "g" ? "g" : (qs.get("g") === "b" ? "b" : "") };
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem("pp-hero") || "{}"); } catch (e) {}
+
+  /* Fill a text template: {name}, and [[boy|girl]] endings. */
+  function tpl(s) {
+    var g = hero.g === "g" ? 1 : 0;
+    return s.replace(/\{name\}/g, hero.name).replace(/\[\[([^|\]]*)\|([^\]]*)\]\]/g, function (m, a, b) { return g ? b : a; });
+  }
+
+  /* ---------- Setup screen ---------- */
+  function showSetup() {
+    $("book").innerHTML = "";
+    $("print").hidden = true;
+    $("change").hidden = true;
+    $("setup").hidden = false;
+    document.title = tpl(book.title[lang]).replace(hero.name, "").trim() + " | " + SITE.name[lang];
+    $("s-title").textContent = t.heroTitle;
+    $("s-sub").textContent = t.heroSub;
+    $("s-label").textContent = t.nameLabel;
+    $("go").textContent = t.start;
+    $("name").value = hero.name || saved.name || "";
+    var g = hero.g || saved.g || "g";
+    function drawPick() {
+      $("pick").innerHTML = ["g", "b"].map(function (k) {
+        return '<button type="button" class="avatar" data-g="' + k + '" aria-pressed="' + (k === g) + '">' + Art.avatar(k) + "<span>" + esc(k === "g" ? t.girl : t.boy) + "</span></button>";
+      }).join("");
+      document.querySelectorAll(".avatar").forEach(function (b) {
+        b.addEventListener("click", function () { g = b.getAttribute("data-g"); drawPick(); });
+      });
+    }
+    drawPick();
+    $("go").onclick = function () {
+      var n = $("name").value.trim();
+      if (!n) { $("hint").textContent = t.needName; $("name").focus(); return; }
+      hero = { name: n, g: g };
+      try { localStorage.setItem("pp-hero", JSON.stringify(hero)); } catch (e) {}
+      var u = new URL(location.href);
+      u.searchParams.set("n", n); u.searchParams.set("g", g);
+      history.replaceState(null, "", u.toString());
+      showBook();
+    };
+    $("name").onkeydown = function (e) { if (e.key === "Enter") $("go").click(); };
+  }
+
+  /* ---------- The book ---------- */
+  function trail(i) {
+    var stops = book.stops[lang];
+    return '<ol class="trail" aria-label="' + esc(t.trail) + '">' + stops.map(function (s, k) {
+      return '<li class="' + (k < i ? "done" : k === i ? "now" : "") + '"><i></i><span>' + esc(s) + "</span></li>";
+    }).join("") + "</ol>";
+  }
+
+  function art(n) {
+    var a = document.createElement("section");
+    a.className = "pg art";
+    a.style.background = Art.sky[n];
+    a.setAttribute("role", "img");
+    a.setAttribute("aria-label", n ? book.scenes[n - 1] : tpl(book.title[lang]));
+    a.innerHTML = Art.scene(n, hero.g);
+    return a;
+  }
+
+  function showBook() {
+    $("setup").hidden = true;
+    $("print").hidden = false;
+    $("change").hidden = false;
+    $("change").onclick = function () {
+      var u = new URL(location.href); u.searchParams.delete("n"); u.searchParams.delete("g");
+      history.replaceState(null, "", u.toString());
+      showSetup();
+    };
+    var title = tpl(book.title[lang]);
+    document.title = title + " | " + SITE.name[lang];
+    var root = $("book");
+    root.innerHTML = "";
+
+    /* Page 1: cover, personalised */
+    var cover = document.createElement("section");
+    cover.className = "pg cover";
+    cover.style.background = book.color;
+    cover.innerHTML = '<p class="starring">' + esc(t.starring) + ": " + esc(hero.name) + "</p><h1>" + esc(title) + '</h1><p class="sub">' + esc(book.subtitle[lang]) + '</p><div class="coverart"></div><span class="pn">1</span>';
+    cover.querySelector(".coverart").style.background = Art.sky[0];
+    cover.querySelector(".coverart").innerHTML = Art.scene(0, hero.g);
+    root.appendChild(cover);
+
+    /* Pages 2 to 9: four story spreads (text page, then picture page) */
+    book.story[lang].forEach(function (text, i) {
+      var s = document.createElement("div");
+      s.className = "spread";
+      var tp = document.createElement("section");
+      tp.className = "pg text";
+      tp.innerHTML = trail(i) + "<p>" + esc(tpl(text)) + '</p><span class="pn">' + (2 + i * 2) + "</span>";
+      var ap = art(i + 1);
+      var pn = document.createElement("span");
+      pn.className = "pn"; pn.textContent = String(3 + i * 2);
+      ap.appendChild(pn);
+      s.appendChild(tp); s.appendChild(ap);
+      root.appendChild(s);
+    });
+
+    /* Page 10: remember, quiz, personal promise */
+    var r = book.recap[lang];
+    var rc = document.createElement("section");
+    rc.className = "pg recap";
+    rc.innerHTML =
+      "<h2>" + esc(t.remember) + "</h2><ul>" + r.remember.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" +
+      "<h2>" + esc(t.quiz) + "</h2>" +
+      r.quiz.map(function (x) { return "<details><summary>" + esc(x.q) + "</summary><p>" + esc(x.a) + "</p></details>"; }).join("") +
+      '<div class="promise"><h2>' + esc(t.promise) + "</h2><p>" + esc(tpl(r.promise)) + "</p><p class=\"sig\">" + esc(t.sign) + ": ____________ &nbsp; " + esc(t.date) + ': ________</p></div><span class="pn">10</span>';
+    root.appendChild(rc);
+    window.scrollTo(0, 0);
+  }
+
+  if (hero.name && hero.g) showBook(); else showSetup();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paisa Pathshala</title>
+<meta name="description" content="Free money lessons as short illustrated story books in English, Hindi and Marathi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top" id="top"></header>
+<main class="wrap">
+  <section class="hero">
+    <h1 id="h1"></h1>
+    <p id="tag"></p>
+  </section>
+  <h2 class="section" id="lib"></h2>
+  <div class="grid" id="grid"></div>
+</main>
+<footer id="foot"></footer>
+<script src="books.js"></script>
+<script src="app.js"></script>
+<script>
+(function () {
+  var lang = App.getLang();
+  var t = UI[lang];
+  App.chrome(lang);
+  document.title = SITE.name[lang];
+  document.getElementById("h1").textContent = SITE.name[lang];
+  document.getElementById("tag").textContent = t.tagline;
+  document.getElementById("lib").textContent = t.library;
+
+  var html = BOOKS.map(function (b, i) {
+    var live = b.status === "live";
+    var inner =
+      '<div class="thumb" style="background:' + b.color + '" aria-hidden="true">' + (live ? "📖" : "✏️") + "</div>" +
+      '<div class="body">' +
+      '<span class="tag">' + App.esc(b.topic[lang]) + "</span>" +
+      '<span class="name">' + App.esc(b.title[lang]) + "</span>" +
+      (live
+        ? '<span class="pill">' + App.esc(t.read) + "</span>"
+        : '<span class="pill grey">' + App.esc(t.soon) + "</span>") +
+      '<span class="meta">' + App.esc(t.level) + " · " + App.esc(t.pages) + "</span></div>";
+    return live
+      ? '<a class="card" href="book.html?b=' + b.slug + "&lang=" + lang + '">' + inner + "</a>"
+      : '<div class="card soon">' + inner + "</div>";
+  }).join("");
+  document.getElementById("grid").innerHTML = html;
+})();
+</script>
+</body>
+</html>
