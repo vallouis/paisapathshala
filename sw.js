@@ -1,6 +1,6 @@
 /* Offline support. Network first, so updates always show when online;
    the saved copy is used only when there is no internet. */
-var V = "pp-v2";
+var V = "pp-v3";
 var CORE = ["./", "index.html", "book.html", "style.css", "app.js", "art.js", "books.js", "icon.svg", "manifest.webmanifest"];
 
 self.addEventListener("install", function (e) {
