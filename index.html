@@ -103,7 +103,7 @@
         ? '<div class="thumb art" style="background:' + Art.sky(b.slug)[0] + '" aria-hidden="true">' + Art.scene(0, hero ? hero.g : "g", b.slug) + "</div>"
         : '<div class="thumb" style="background:' + b.color + '" aria-hidden="true">✏️</div>';
       var inner = thumb +
-        '<div class="body"><span class="tag">' + App.esc(b.topic[lang]) + "</span>" +
+        '<div class="body"><span class="tag"><b class="num">' + (BOOKS.indexOf(b) + 1) + "</b> · " + App.esc(b.topic[lang]) + "</span>" +
         '<span class="name">' + App.esc(title) + "</span>" +
         (live ? '<span class="pill">' + App.esc(t.read) + "</span>" : '<span class="pill grey">' + App.esc(t.soon) + "</span>") +
         '<span class="meta">' + App.esc(t.level) + " · " + App.esc(t.pages) + "</span></div>";

@@ -1210,9 +1210,9 @@
       o += hero(54, 398, 1.0, g, "down", "think") + gullu(356, 398, 0.78);
     } else if (n === 3) {
       o += room("#fff1d6", 334, "#c98f5a");
-      o += callPhone(176, 270, 1.1) + noSign(176, 270, 1.55);
+      o += lock(176, 270, 2.0);
       o += bubble(296, 100, 88, 50, 214, 220) + `<text x="296" y="116" text-anchor="middle" font-size="36" font-weight="700" ${FONT} fill="${INK}">• • • •</text>` + noSign(296, 100, 2.1);
-      o += hero(70, 398, 1.1, g, "give", "think") + gullu(262, 398, 0.78) + aaji(350, 398, 0.85, true, "down");
+      o += hero(70, 398, 1.1, g, "give", "think") + gullu(262, 398, 0.78) + hero(352, 398, 0.85, g === "g" ? "b" : "g", "down", "wow");
     } else {
       o += sky("#bfe9ff", 300) + hills(300) + ground("#9ccf7e", 300) + cloud(80, 56, 0.8);
       o += kaka(300, 290, 1.0) + kiosk(300, 290, "#e63946", "#fff");
@@ -1254,8 +1254,117 @@
     return o;
   }
 
-  var SCENES = { "needs-vs-wants": sceneNeeds, "piggy-jar": sceneWish, "inside-a-bank": sceneBank, "family-budget": sceneBudget, "what-is-interest": sceneInterest, "why-prices-rise": sceneInflation, "phone-scams": sceneScam, "moneylender-or-bank": sceneBorrow, "insurance": sceneInsure, "emergency-fund": sceneEmergency, "buy-now-trap": sceneEmi, "shop-bill": sceneBill, "safe-place": sceneSafe, "kite-company": sceneKite, "nimbu-pani-stall": sceneStall, "shared-well": sceneWell, "too-good-sale": sceneSale, "growing-staircase": sceneStairs, "journey-of-50": sceneUpi, "first-salary": sceneSalary };
+  /* ---------- NEW PROPS (books: money-swap, better-buy, two-currencies) ---------- */
+  function rupeeCoin(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<circle r="26" fill="#ffd23f"${S}/><circle r="19" fill="none" stroke="#e0a800" stroke-width="3"/><text y="9" text-anchor="middle" font-size="26" font-weight="700" ${FONT} fill="${INK}">₹</text>`); }
+  function dollarCoin(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<circle r="26" fill="#c9d6df"${S}/><circle r="19" fill="none" stroke="#8da2b0" stroke-width="3"/><text y="9" text-anchor="middle" font-size="26" font-weight="700" ${FONT} fill="${INK}">$</text>`); }
+  function dollarNote(x, y, s, r) { return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, `<rect x="-26" y="-14" width="52" height="28" rx="3" fill="#bfe3b4"${S}/><circle r="8" fill="#8fce73"${S2}/><text y="5" text-anchor="middle" font-size="13" font-weight="700" ${FONT} fill="${INK}">$</text>`); }
+  function arrowL(x1, y, x2, c) { return `<path d="M${x1} ${y} L${x2} ${y} M${x2 + 11} ${y - 9} L${x2} ${y} L${x2 + 11} ${y + 9}" fill="none" stroke="${c || INK}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`; }
+  function swapArrows(x1, y, x2, c) { return arrowR(x1, y - 9, x2, c) + arrowL(x2, y + 11, x1, c); }
+  function txt(x, y, size, str, col) { return `<text x="${x}" y="${y}" text-anchor="middle" font-size="${size}" font-weight="700" ${FONT} fill="${col || INK}">${str}</text>`; }
+
+  /* ---------- BOOK 1: What is Money? (money-swap) ---------- */
+  function sceneSwap(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + cloud(70, 56, 0.8) + cloud(310, 40, 0.7) + ground("#9ccf7e", 300);
+      o += football(80, 100, 1.1) + bread(320, 106, 1.9) + swapArrows(134, 102, 266, "#e63946");
+      o += rupeeCoin(200, 190, 1.0) + spark(160, 170, 0.8) + spark(244, 164, 0.8);
+      o += hero(100, 394, 1.15, g, "up", "happy") + kaka(312, 394, 1.05) + gullu(204, 396, 0.8);
+    } else if (n === 1) {
+      o += room("#fff1d6", 336, "#c98f5a");
+      o += bubble(104, 80, 64, 42, 104, 200) + bread(104, 84, 1.45);
+      o += bubble(304, 80, 64, 42, 304, 200) + football(304, 80, 0.85) + noSign(304, 80, 1.5);
+      o += hero(80, 398, 1.1, g, "give", "think") + football(154, 266, 0.95) + kaka(322, 398, 1.0, "sad") + gullu(214, 398, 0.78);
+    } else if (n === 2) {
+      o += room("#e8f1e0", 336, "#c9a46a");
+      o += football(62, 142, 0.95) + arrowR(104, 142, 144, "#e63946") + sack(192, 178, 1.0) + arrowR(236, 142, 276, "#e63946") + bread(330, 146, 1.8);
+      o += clock(200, 262, 1.9);
+      o += hero(60, 398, 1.0, g, "down", "think") + sweat(86, 244) + gullu(340, 398, 0.82) + sweat(360, 336);
+    } else if (n === 3) {
+      o += room("#fff1d6", 336, "#c98f5a");
+      o += table(112, 304, 276);
+      o += bread(160, 292, 1.6) + tag(160, 236, 0.78, "₹10", 15) + sack(256, 300, 0.92) + tag(256, 226, 0.78, "₹40", 15) + football(346, 280, 0.95) + tag(346, 226, 0.78, "₹100", 13);
+      o += hero(52, 398, 1.0, g, "up", "wow") + coin(112, 190, 1.5) + spark(150, 150, 0.8) + spark(300, 150, 0.8);
+    } else {
+      o += sky("#bfe9ff", 300) + hills(300) + cloud(80, 56, 0.8) + ground("#9ccf7e", 300);
+      o += kaka(304, 290, 1.0) + kiosk(304, 290, "#e3a857", "#fff");
+      o += hero(98, 398, 1.15, g, "give", "happy") + coin(170, 296, 1.15) + bread(214, 222, 1.6) + arrowR(172, 250, 204, "#2a9d8f");
+      o += spark(130, 130, 0.8) + spark(250, 150, 0.8) + gullu(194, 396, 0.78);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 6: The Better Buy (better-buy) ---------- */
+  function sceneBetter(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += room("#fff1d6", 336, "#c98f5a") + window2(24, 44, 84, 76, false);
+      o += table(112, 304, 276);
+      o += sack(186, 298, 0.74) + tag(186, 244, 0.75, "₹50", 15) + txt(186, 214, 22, "500 g");
+      o += sack(310, 298, 1.14) + tag(310, 214, 0.8, "₹90", 16) + txt(310, 178, 24, "1 kg");
+      o += hero(52, 398, 1.0, g, "up", "think") + gullu(380, 398, 0.7);
+    } else if (n === 1) {
+      o += room("#fff1d6", 336, "#c98f5a");
+      o += bubble(110, 80, 74, 46, 100, 200) + `<text x="110" y="102" text-anchor="middle" font-size="58" font-weight="700" ${FONT} fill="#e63946">?</text>`;
+      o += table(172, 304, 216) + sack(236, 298, 0.74) + tag(236, 244, 0.75, "₹50", 15) + sack(332, 298, 1.1) + tag(332, 218, 0.8, "₹90", 16);
+      o += hero(70, 398, 1.1, g, "down", "think") + gullu(152, 398, 0.66);
+    } else if (n === 2) {
+      o += room("#e8f1e0", 336, "#c9a46a");
+      o += chalkboard(200, 120, 340, 176, ["500 g = ₹50", "× 2", "1 kg = ₹100"], 30);
+      o += hero(60, 398, 1.05, g, "high", "happy") + gullu(340, 398, 0.85) + spark(352, 250, 0.8);
+    } else if (n === 3) {
+      o += room("#e8f1e0", 336, "#c9a46a");
+      o += chalkboard(200, 124, 344, 190, [], 20);
+      o += sack(112, 160, 0.78) + txt(112, 190, 22, "₹100/kg", "#fff");
+      o += sack(290, 168, 1.02) + txt(290, 192, 22, "₹90/kg", "#fff") + tick(340, 70, 1.1);
+      o += hero(96, 398, 1.1, g, "high", "happy") + gullu(322, 398, 0.9);
+    } else {
+      o += room("#fde8c8", 336, "#b98150");
+      o += table(120, 306, 190) + sack(190, 300, 1.1) + tick(244, 244, 1.1) + calendar(336, 110, 0.9, 9);
+      o += hero(58, 398, 1.05, g, "give", "happy") + aaji(348, 398, 0.95, true, "give");
+      o += spark(150, 190, 0.8) + spark(268, 150, 0.8) + gullu(250, 398, 0.7);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 20: Money Across Borders (two-currencies) ---------- */
+  function sceneBorders(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + cloud(80, 56, 0.8) + cloud(320, 80, 0.7) + ground("#9ccf7e", 300);
+      o += rupeeCoin(100, 150, 1.5) + dollarCoin(300, 150, 1.5) + swapArrows(150, 148, 250, "#e63946");
+      o += spark(200, 90, 0.9) + spark(200, 220, 0.7);
+      o += hero(130, 394, 1.1, g, "high", "happy") + gullu(270, 396, 0.85);
+    } else if (n === 1) {
+      o += room("#fff1d6", 336, "#c98f5a") + window2(24, 44, 84, 76, false);
+      o += trunk(204, 336, 0.7);
+      o += hero(84, 398, 1.1, g, "recv", "wow") + dollarNote(150, 268, 1.1, -8) + didi(318, 398, 1.0) + gullu(206, 398, 0.7);
+      o += spark(124, 200, 0.8) + spark(340, 150, 0.8);
+    } else if (n === 2) {
+      o += room("#e6f2ff", 336, "#b98150");
+      o += chalkboard(200, 110, 340, 150, ["$1 = ₹80"], 54);
+      o += dollarCoin(156, 262, 0.8) + swapArrows(194, 262, 270, "#e63946") + rupeeCoin(310, 262, 0.8);
+      o += hero(56, 398, 1.0, g, "down", "think") + gullu(352, 398, 0.78);
+    } else if (n === 3) {
+      o += room("#fde8c8", 336, "#b98150");
+      o += chalkboard(200, 118, 340, 170, ["$5 × 80", "= ₹400"], 42);
+      o += pencil(300, 270, 1.6, 20) + tag(300, 230, 0.8, "₹400", 15) + dollarNote(120, 252, 1.0, -6);
+      o += hero(52, 398, 1.0, g, "up", "happy") + gullu(350, 398, 0.78) + spark(210, 250, 0.8);
+    } else {
+      o += room("#e6f2ff", 336, "#b98150");
+      o += chalkboard(110, 90, 180, 90, ["$1 = ₹80"], 28) + chalkboard(300, 90, 180, 90, ["$1 = ₹85"], 28);
+      o += arrowR(160, 160, 250, "#e63946") + upG(205, 210, 1.1);
+      o += tag(104, 262, 0.9, "₹800", 15) + tag(300, 262, 0.9, "₹850", 15) + football(104, 300, 0.8) + football(300, 300, 0.8);
+      o += hero(206, 398, 1.0, g, "down", "think") + gullu(356, 398, 0.7);
+    }
+    return o;
+  }
+
+  var SCENES = { "money-swap": sceneSwap, "better-buy": sceneBetter, "two-currencies": sceneBorders, "needs-vs-wants": sceneNeeds, "piggy-jar": sceneWish, "inside-a-bank": sceneBank, "family-budget": sceneBudget, "what-is-interest": sceneInterest, "why-prices-rise": sceneInflation, "phone-scams": sceneScam, "moneylender-or-bank": sceneBorrow, "insurance": sceneInsure, "emergency-fund": sceneEmergency, "buy-now-trap": sceneEmi, "shop-bill": sceneBill, "safe-place": sceneSafe, "kite-company": sceneKite, "nimbu-pani-stall": sceneStall, "shared-well": sceneWell, "too-good-sale": sceneSale, "growing-staircase": sceneStairs, "journey-of-50": sceneUpi, "first-salary": sceneSalary };
   var SKIES = {
+    "money-swap": ["#bfe9ff", "#fff1d6", "#e8f1e0", "#fff1d6", "#bfe9ff"],
+    "better-buy": ["#fff1d6", "#fff1d6", "#e8f1e0", "#e8f1e0", "#fde8c8"],
+    "two-currencies": ["#bfe9ff", "#fff1d6", "#e6f2ff", "#fde8c8", "#e6f2ff"],
     "needs-vs-wants": ["#bfe9ff", "#d6f0ff", "#bfe9ff", "#ffe3b3", "#ffd9a8"],
     "piggy-jar": ["#bfe9ff", "#d6f0ff", "#e4f4ff", "#ffe9c7", "#bfe9ff"],
     "inside-a-bank": ["#bfe9ff", "#d6f0ff", "#e6f2ff", "#e6f2ff", "#ffd9a8"],
@@ -1310,7 +1419,7 @@
       cert: cert(0, 0, 1.0), lemon: lemon(0, 0, 1.5), glass: glassDrink(0, 22, 0.9), well: well(0, 30, 0.45), school: school(0, 26, 0.38), clinic: clinic(0, 26, 0.42),
       road: '<rect x="-30" y="-12" width="60" height="24" rx="3" fill="#8d96a3"' + S + '/><rect x="-22" y="-2" width="16" height="4" rx="2" fill="#fff"/><rect x="6" y="-2" width="16" height="4" rx="2" fill="#fff"/>',
       parcel: parcel(0, 0, 0.95), stairs: stairs(-24, 22, 4, 12, 10), payslip: payslip(0, 0, 0.8), cupboard: cupboard(0, 32, 0.45, false), mouse: mouse(0, 18, 0.85),
-      clock: clock(0, 0, 1.3), trunk: trunk(0, 22, 0.55), office: officeBldg(0, 32, 0.3), tick: tick(0, 0, 1.8), coinjar: coinJar(0, 34, 0.62, 6), umbrella: umbrella(0, 10, 0.5, "#e63946", 36), pot: pot(0, 34, 0.7), clipboard: clipboard(0, 0, 1.2), magnifier: magnifier(0, -6, 1.0), bucket: bucket(0, 20, 1.0)
+      clock: clock(0, 0, 1.3), trunk: trunk(0, 22, 0.55), office: officeBldg(0, 32, 0.3), tick: tick(0, 0, 1.8), coinjar: coinJar(0, 34, 0.62, 6), umbrella: umbrella(0, 10, 0.5, "#e63946", 36), pot: pot(0, 34, 0.7), clipboard: clipboard(0, 0, 1.2), magnifier: magnifier(0, -6, 1.0), bucket: bucket(0, 20, 1.0), sackp: sack(0, 28, 0.85), rupee: rupeeCoin(0, 0, 1.0), dollar: dollarCoin(0, 0, 1.0), dnote: dollarNote(0, 0, 1.1, 0), pencil: pencil(0, 0, 1.3, 20)
     };
     return `<svg viewBox="-34 -34 68 68" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;flex:none" aria-hidden="true">${m[name] || ""}</svg>`;
   }
