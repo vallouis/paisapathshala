@@ -1809,5 +1809,1385 @@ window.BOOKS = [
         promise: `मी, {name}, वचन देत[[ो|े]] की दर आठवड्याला थोडी बचत करीन, ती फक्त खऱ्या आणीबाणीसाठी ठेवीन, आणि वापरल्यानंतर ती पुन्हा भरीन.`
       }
     }
+  },
+{
+    slug: "buy-now-trap",
+    status: "live",
+    color: "#fdffb6",
+    title: { en: `{name} and the Buy-Now Trap`, hi: `{name} और "अभी ख़रीदो" का जाल`, mr: `{name} आणि "आत्ताच घ्या"चं जाळं` },
+    cardTitle: { en: `The Buy-Now Trap`, hi: `"अभी ख़रीदो" का जाल`, mr: `"आत्ताच घ्या"चं जाळं` },
+    subtitle: { en: `What does an EMI really cost?`, hi: `EMI की असली क़ीमत क्या है?`, mr: `EMI ची खरी किंमत किती?` },
+    topic: { en: `Borrowing`, hi: `कर्ज़`, mr: `कर्ज` },
+    stops: {
+      en: [`The Shop Window`, `The Blackboard Sums`, `The Saving Jar`, `Paid in Full`],
+      hi: [`दुकान की खिड़की`, `ब्लैकबोर्ड का हिसाब`, `बचत की बरनी`, `पूरा भुगतान`],
+      mr: [`दुकानाची खिडकी`, `फळ्यावरचं गणित`, `बचतीची बरणी`, `पूर्ण पेमेंट`]
+    },
+    scenes: [
+      `A shop assistant says "1,100 rupees a month" in a speech bubble while you look at the new phone on its stand with a worried face.`,
+      `On the blackboard, 1,100 times 12 makes 13,200, and the extra is 1,200. You think with your head tilted.`,
+      `You drop a coin into your jar while a calendar fills with ticks and a phone floats in your thought bubble.`,
+      `You hold up your new phone proudly at the counter, with 12,000 rupees paid in cash and no EMI.`
+    ],
+    story: {
+      en: [
+        `On Saturday you stopped at the mobile shop and saw a shiny new phone. The price tag said 12,000 rupees. "Too much!" you gasped. The shop assistant smiled. "No problem! Pay just 1,100 rupees a month and take it home today!" Only 1,100? That sounded so small. Gullu tugged your sleeve. "Wait, {name}. Let us count first."`,
+        `Back home, Gullu pointed at the blackboard. "An EMI means paying for something in small monthly parts," he said. "The assistant said twelve months. So 1,100 times 12 makes 13,200 rupees." Below it he wrote: 13,200 minus 12,000 makes 1,200. "The phone costs 12,000, but this EMI makes you pay 1,200 rupees extra. That is what paying slowly can cost."`,
+        `"So what can I do?" you asked. "Save first," said Gullu. "Put 1,000 rupees in the jar each month. In 12 months, 1,000 times 12 makes 12,000 rupees. No extra cost, no worry." You and Aaji agreed: 1,000 rupees every month from pocket money, birthday gifts and festival gifts. You marked the calendar and dropped in the first coin, dreaming of the phone. Some months were hard and you wanted to give up. But every tick on the calendar made the jar a little heavier.`,
+        `Twelve months later you carried the full jar to the shop. You paid 12,000 rupees in cash and walked out with the phone held high. No monthly bills, no extra 1,200 rupees. "Before you say yes to any EMI," said Gullu, "multiply the monthly amount by the months and compare it with the price. Ask about fees. Even a 'no-cost EMI' can hide a processing fee or take away a cash discount."`
+      ],
+      hi: [
+        `शनिवार को तुम मोबाइल की दुकान पर रुक[[े|ीं]] और एक चमचमाता नया फ़ोन देखा। क़ीमत का टैग था बारह हज़ार रुपये। "बहुत महँगा!" तुम्हारे मुँह से निकला। दुकान के सहायक ने मुस्कुराकर कहा, "कोई बात नहीं! बस हर महीने ग्यारह सौ रुपये दीजिए और आज ही घर ले जाइए!" सिर्फ़ ग्यारह सौ? यह तो बहुत कम लगा। गुल्लू ने तुम्हारी आस्तीन खींची। "रुको {name}, पहले गिन लेते हैं।"`,
+        `घर लौटकर गुल्लू ने ब्लैकबोर्ड की ओर इशारा किया। "EMI का मतलब है किसी चीज़ की क़ीमत छोटे-छोटे मासिक हिस्सों में चुकाना," उसने कहा। "सहायक ने बारह महीने बताए थे। तो ग्यारह सौ गुना बारह यानी तेरह हज़ार दो सौ रुपये।" उसके नीचे उसने लिखा: 13,200 में से 12,000 घटाओ तो 1,200। "फ़ोन की क़ीमत बारह हज़ार है, पर इस EMI में तुम्हें बारह सौ रुपये ज़्यादा देने पड़ेंगे। धीरे-धीरे चुकाने की यही क़ीमत हो सकती है।"`,
+        `"तो मैं क्या करूँ?" तुमने पूछा। "पहले बचाओ," गुल्लू बोला। "हर महीने बरनी में एक हज़ार रुपये डालो। बारह महीनों में एक हज़ार गुना बारह यानी बारह हज़ार रुपये। न कोई ज़्यादा ख़र्च, न कोई चिंता।" तुमने और दादी ने तय किया: जेब-ख़र्च, जन्मदिन और त्योहार के तोहफ़ों से हर महीने एक हज़ार। तुमने कैलेंडर पर निशान लगाया और पहला सिक्का डाला, फ़ोन के सपने देखते हुए। कुछ महीने मुश्किल थे और हार मानने का मन हुआ। पर कैलेंडर का हर निशान बरनी को थोड़ा और भारी करता गया।`,
+        `बारह महीने बाद तुम भरी बरनी लेकर दुकान पहुँच[[े|ीं]]। तुमने बारह हज़ार रुपये नक़द दिए और फ़ोन ऊँचा उठाए बाहर निकल[[े|ीं]]। न हर महीने की किस्त, न वे अतिरिक्त बारह सौ रुपये। "किसी भी EMI पर हाँ कहने से पहले," गुल्लू बोला, "महीने की रक़म को महीनों से गुणा करो और क़ीमत से मिलाओ। फ़ीस के बारे में पूछो। 'नो-कॉस्ट EMI' में भी प्रोसेसिंग फ़ीस छिपी हो सकती है या नक़द की छूट जा सकती है।"`
+      ],
+      mr: [
+        `शनिवारी तू मोबाइलच्या दुकानासमोर थांबल[[ास|ीस]] आणि एक चकचकीत नवा फोन पाहिलास. किमतीचा टॅग होता बारा हजार रुपये. "खूपच महाग!" तुझ्या तोंडून निघालं. दुकानातला सहायक हसून म्हणाला, "काही हरकत नाही! फक्त दर महिन्याला अकराशे रुपये द्या आणि आजच घरी न्या!" फक्त अकराशे? ते तर फारच कमी वाटलं. गल्लूने तुझी बाही ओढली. "थांब {name}, आधी मोजून पाहू."`,
+        `घरी आल्यावर गल्लूने फळ्याकडे बोट दाखवलं. "EMI म्हणजे एखादी वस्तू छोट्या मासिक हिश्श्यांत फेडणं," तो म्हणाला. "सहायकाने बारा महिने सांगितले. म्हणजे अकराशे गुणिले बारा म्हणजे तेरा हजार दोनशे रुपये." त्याखाली त्याने लिहिलं: 13,200 वजा 12,000 बरोबर 1,200. "फोनची किंमत बारा हजार आहे, पण या EMI मुळे तुला बाराशे रुपये जास्त द्यावे लागतील. हळूहळू फेडण्याची ही किंमत असू शकते."`,
+        `"मग मी काय करू?" तू विचारलंस. "आधी बचत कर," गल्लू म्हणाला. "दर महिन्याला बरणीत एक हजार रुपये टाक. बारा महिन्यांत एक हजार गुणिले बारा म्हणजे बारा हजार रुपये. जादा खर्च नाही, काळजी नाही." तू आणि आजीने ठरवलं: खाऊचे पैसे, वाढदिवस आणि सणाच्या भेटींतून दर महिन्याला एक हजार. तू कॅलेंडरवर खूण केलीस आणि पहिलं नाणं टाकलंस, फोनची स्वप्नं पाहत. काही महिने कठीण होते आणि हार मानावीशी वाटली. पण कॅलेंडरवरची प्रत्येक खूण बरणीला थोडं जड करत गेली.`,
+        `बारा महिन्यांनी तू भरलेली बरणी घेऊन दुकानात पोहोचल[[ास|ीस]]. तू बारा हजार रुपये रोख दिलेस आणि फोन उंच धरून बाहेर पडल[[ास|ीस]]. दर महिन्याचा हप्ता नाही, ते जादा बाराशे रुपयेही नाहीत. "कोणत्याही EMI ला हो म्हणण्याआधी," गल्लू म्हणाला, "महिन्याची रक्कम महिन्यांनी गुणून किमतीशी ताडून पाहा. फीबद्दल विचार. 'नो-कॉस्ट EMI' मध्येही प्रोसेसिंग फी लपलेली असू शकते किंवा रोखीची सवलत जाऊ शकते."`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`EMI means paying for something in small monthly parts, but the total can be more than the price.`, `Total cost = monthly amount × number of months. Compare it with the price.`, `Ask about fees, interest and penalties before you say yes. A "no-cost EMI" can still hide costs.`, `Saving first and paying in cash often costs less and keeps you free from monthly bills.`],
+        fill: {
+          bank: [`EMI`, `total`, `extra`, `months`, `interest`, `save`],
+          items: [
+            [`Paying for something in small monthly parts is called an @@.`, `EMI`],
+            [`1,100 × 12 months = 13,200 rupees is the @@ amount you pay.`, `total`],
+            [`13,200 − 12,000 = 1,200 rupees is the @@ cost.`, `extra`],
+            [`Before saying yes, count the number of @@ and multiply.`, `months`],
+            [`Saving first and buying with your own money avoids paying @@.`, `interest`]
+          ]
+        },
+        sortTitle: `Cheaper or costs more?`,
+        sortOpts: [{ k: "less", t: `Cheaper` }, { k: "more", t: `Costs more` }],
+        sort: [
+          { icon: "jar", label: `Save for 12 months, then pay in cash`, a: "less" },
+          { icon: "calendar", label: `Pay in 12 monthly parts with extra charges`, a: "more" },
+          { icon: "tag", label: `Buy in a sale with your own savings`, a: "less" },
+          { icon: "card", label: `Swipe a credit card and pay only the minimum`, a: "more" },
+          { icon: "phone", label: `Pick the phone that fits your savings`, a: "less" }
+        ],
+        tf: [
+          { q: `An EMI always costs exactly the shop price.`, a: false },
+          { q: `Monthly amount times months shows the real total.`, a: true },
+          { q: `A small monthly amount means the item is cheap.`, a: false }
+        ],
+        think: [
+          { q: `A bicycle costs 24,000 rupees. The EMI is 2,100 rupees for 12 months. What do you pay in total?`, opts: [`25,200`, `24,000`, `21,000`], a: 0 },
+          { q: `You save 500 rupees a month. How many months does it take to save 6,000 rupees?`, opts: [`6`, `12`, `10`], a: 1 }
+        ],
+        promise: `I, {name}, promise to multiply before I say yes to an EMI, to ask about extra costs, and to save first for the things I want.`
+      },
+      hi: {
+        remember: [`EMI का मतलब है किसी चीज़ को छोटे मासिक हिस्सों में चुकाना, पर कुल रक़म क़ीमत से ज़्यादा हो सकती है।`, `कुल ख़र्च = महीने की रक़म × महीनों की संख्या। उसे क़ीमत से मिलाओ।`, `हाँ कहने से पहले फ़ीस, ब्याज और जुर्माने के बारे में पूछो। "नो-कॉस्ट EMI" में भी ख़र्च छिपा हो सकता है।`, `पहले बचाकर नक़द देना अक्सर सस्ता पड़ता है और हर महीने की किस्त से आज़ादी देता है।`],
+        fill: {
+          bank: [`EMI`, `कुल`, `ज़्यादा`, `महीनों`, `ब्याज`, `बचाओ`],
+          items: [
+            [`किसी चीज़ को छोटे मासिक हिस्सों में चुकाने को @@ कहते हैं।`, `EMI`],
+            [`1,100 × 12 महीने = 13,200 रुपये, यही @@ रक़म है जो चुकानी पड़ती है।`, `कुल`],
+            [`13,200 − 12,000 = 1,200 रुपये @@ देने पड़े।`, `ज़्यादा`],
+            [`हाँ कहने से पहले @@ की संख्या गिनो और गुणा करो।`, `महीनों`],
+            [`पहले बचाकर अपने पैसों से ख़रीदने पर @@ नहीं देना पड़ता।`, `ब्याज`]
+          ]
+        },
+        sortTitle: `सस्ता या ज़्यादा महँगा?`,
+        sortOpts: [{ k: "less", t: `सस्ता` }, { k: "more", t: `ज़्यादा महँगा` }],
+        sort: [
+          { icon: "jar", label: `बारह महीने बचाकर नक़द देना`, a: "less" },
+          { icon: "calendar", label: `अतिरिक्त शुल्क के साथ बारह मासिक किस्तों में देना`, a: "more" },
+          { icon: "tag", label: `अपनी बचत से सेल में ख़रीदना`, a: "less" },
+          { icon: "card", label: `क्रेडिट कार्ड घिसकर सिर्फ़ न्यूनतम रक़म चुकाना`, a: "more" },
+          { icon: "phone", label: `अपनी बचत में आने वाला फ़ोन चुनना`, a: "less" }
+        ],
+        tf: [
+          { q: `EMI में हमेशा दुकान की क़ीमत ही चुकानी पड़ती है।`, a: false },
+          { q: `महीने की रक़म को महीनों से गुणा करने पर असली कुल रक़म पता चलती है।`, a: true },
+          { q: `महीने की छोटी रक़म का मतलब है कि चीज़ सस्ती है।`, a: false }
+        ],
+        think: [
+          { q: `एक साइकिल 24,000 रुपये की है। EMI 12 महीने तक 2,100 रुपये है। कुल कितना चुकाना पड़ेगा?`, opts: [`25,200`, `24,000`, `21,000`], a: 0 },
+          { q: `हर महीने 500 रुपये बचाए जाएँ, तो 6,000 रुपये बचाने में कितने महीने लगेंगे?`, opts: [`6`, `12`, `10`], a: 1 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि EMI पर हाँ कहने से पहले गुणा करूँग[[ा|ी]], अतिरिक्त ख़र्च के बारे में पूछूँग[[ा|ी]], और जो चाहिए उसके लिए पहले बचाऊँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`EMI म्हणजे एखादी वस्तू छोट्या मासिक हिश्श्यांत फेडणं, पण एकूण रक्कम किमतीपेक्षा जास्त असू शकते.`, `एकूण खर्च = महिन्याची रक्कम × महिन्यांची संख्या. ती किमतीशी ताडून पाहा.`, `हो म्हणण्याआधी फी, व्याज आणि दंडाबद्दल विचार. "नो-कॉस्ट EMI" मध्येही खर्च लपलेला असू शकतो.`, `आधी बचत करून रोख देणं अनेकदा स्वस्त पडतं आणि दर महिन्याच्या हप्त्यांपासून सुटका देतं.`],
+        fill: {
+          bank: [`EMI`, `एकूण`, `जास्त`, `महिन्यांची`, `व्याज`, `बचत`],
+          items: [
+            [`छोट्या मासिक हिश्श्यांत फेडण्याला @@ म्हणतात.`, `EMI`],
+            [`1,100 × 12 महिने = 13,200 रुपये, ही @@ रक्कम फेडावी लागते.`, `एकूण`],
+            [`13,200 − 12,000 = 1,200 रुपये @@ द्यावे लागले.`, `जास्त`],
+            [`हो म्हणण्याआधी @@ संख्या मोजून गुणाकार कर.`, `महिन्यांची`],
+            [`आधी बचत करून स्वतःच्या पैशांनी घेतलं तर @@ द्यावं लागत नाही.`, `व्याज`]
+          ]
+        },
+        sortTitle: `स्वस्त की जास्त महाग?`,
+        sortOpts: [{ k: "less", t: `स्वस्त` }, { k: "more", t: `जास्त महाग` }],
+        sort: [
+          { icon: "jar", label: `बारा महिने बचत करून रोख देणं`, a: "less" },
+          { icon: "calendar", label: `जादा शुल्कासह बारा मासिक हप्त्यांत देणं`, a: "more" },
+          { icon: "tag", label: `स्वतःच्या बचतीतून सेलमध्ये घेणं`, a: "less" },
+          { icon: "card", label: `क्रेडिट कार्ड वापरून फक्त किमान रक्कम भरणं`, a: "more" },
+          { icon: "phone", label: `बचतीत बसणारा फोन निवडणं`, a: "less" }
+        ],
+        tf: [
+          { q: `EMI मध्ये नेहमी दुकानाची किंमतच फेडावी लागते.`, a: false },
+          { q: `महिन्याची रक्कम महिन्यांनी गुणली की खरी एकूण रक्कम कळते.`, a: true },
+          { q: `महिन्याची छोटी रक्कम म्हणजे वस्तू स्वस्त असते.`, a: false }
+        ],
+        think: [
+          { q: `एका सायकलची किंमत 24,000 रुपये आहे. EMI 12 महिने 2,100 रुपये आहे. एकूण किती भरावे लागतील?`, opts: [`25,200`, `24,000`, `21,000`], a: 0 },
+          { q: `दर महिन्याला 500 रुपये वाचवले, तर 6,000 रुपये वाचवायला किती महिने लागतील?`, opts: [`6`, `12`, `10`], a: 1 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की EMI ला हो म्हणण्याआधी गुणाकार करीन, जादा खर्चाबद्दल विचारीन, आणि हवं असलेल्या गोष्टींसाठी आधी बचत करीन.`
+      }
+    }
+  },
+  {
+    slug: "shop-bill",
+    status: "live",
+    color: "#bdb2ff",
+    title: { en: `{name} and the Extra Five Rupees`, hi: `{name} और वे पाँच रुपये ज़्यादा`, mr: `{name} आणि ते जादा पाच रुपये` },
+    cardTitle: { en: `The Extra Five Rupees`, hi: `पाँच रुपये ज़्यादा क्यों?`, mr: `जादा पाच रुपये कुठून?` },
+    subtitle: { en: `How to read a shop bill`, hi: `दुकान का बिल कैसे पढ़ें?`, mr: `दुकानाचं बिल कसं वाचायचं?` },
+    topic: { en: `Shopping`, hi: `ख़रीदारी`, mr: `खरेदी` },
+    stops: {
+      en: [`Kaka's Shop`, `The Bill`, `Where the 5 Goes`, `Bills on the Board`],
+      hi: [`काका की दुकान`, `बिल`, `पाँच रुपये कहाँ गए`, `बोर्ड पर बिल`],
+      mr: [`काकांचं दुकान`, `बिल`, `पाच रुपये कुठे गेले`, `बोर्डवरची बिलं`]
+    },
+    scenes: [
+      `You hand Kaka a 100-rupee note at his shop while he writes on a slip, and a 100 rupee tag hangs by the shop.`,
+      `You study a big bill that says 100 plus 5 makes 105, with a magnifying glass over it.`,
+      `A bill sends coins along an arrow into a big clay pot that pays for a school, a clinic and a road.`,
+      `You hold your bill up with a green tick while three other checked bills hang on the board.`
+    ],
+    story: {
+      en: [
+        `You needed a new notebook for school, so you walked to Kaka's shop. The tag on the shelf said 100 rupees. You handed Kaka a 100-rupee note, feeling very smart. "Wait a moment," said Kaka, smiling, and he began writing something on a slip of paper.`,
+        `"Here is your bill," said Kaka. You looked at it. It said: price 100, plus 5, total 105. "But the tag said 100!" you cried. "Why is there an extra 5?" Kaka laughed gently. "That is GST, a tax. The government asks every shop to add it. See, it is written on the bill, so nothing is hidden." Gullu nodded. "A bill shows the shop's name, the date, the bill number, each price, the tax and the total."`,
+        `"Where do the 5 rupees go?" you asked. "Kaka sends them to the government," said Gullu. "They go into a shared pot that pays for roads, schools and clinics. Different things have different tax rates, but the idea is the same: tax is part of the price, and it is written on the bill." You paid the 5 rupees more and thought about the road you walk on every day.`,
+        `At home you stuck the bill on the board beside Aaji's old bills. "Always keep the bill, especially for bigger things," said Aaji. "It is your proof if something breaks and you need to exchange it." Gullu added, "Check the total before you leave, check the date, and ask politely if anything looks wrong. A bill you can read is a bill that protects you."`
+      ],
+      hi: [
+        `स्कूल के लिए तुम्हें नई कॉपी चाहिए थी, इसलिए तुम काका की दुकान गए। अलमारी पर टैग लगा था: सौ रुपये। तुमने काका को सौ का नोट थमाया और बड़ा समझदार महसूस किया। "ज़रा रुकना," काका ने मुस्कुराकर कहा और काग़ज़ की पर्ची पर कुछ लिखने लगे।`,
+        `"यह लो तुम्हारा बिल," काका बोले। तुमने देखा। उसमें लिखा था: क़ीमत 100, जमा 5, कुल 105। "पर टैग पर तो सौ लिखा था!" तुम चौंक उठ[[े|ीं]]। "यह पाँच रुपये ज़्यादा क्यों?" काका हल्के से हँसे। "यह GST है, यानी कर। सरकार हर दुकान से इसे जोड़ने को कहती है। देखो, बिल पर लिखा है, कुछ छिपा नहीं है।" गुल्लू ने सिर हिलाया। "बिल में दुकान का नाम, तारीख़, बिल का नंबर, हर चीज़ की क़ीमत, कर और कुल रक़म होती है।"`,
+        `"ये पाँच रुपये कहाँ जाते हैं?" तुमने पूछा। "काका इन्हें सरकार को भेज देते हैं," गुल्लू बोला। "ये एक साझा कोष में जाते हैं, जिससे सड़कें, स्कूल और क्लीनिक बनते हैं। अलग-अलग चीज़ों पर कर की दर अलग होती है, पर बात वही है: कर क़ीमत का हिस्सा है और बिल पर लिखा होता है।" तुमने पाँच रुपये और चुकाए और उस सड़क के बारे में सोचा जिस पर तुम रोज़ चलते हो।`,
+        `घर पहुँचकर तुमने बिल बोर्ड पर दादी के पुराने बिलों के पास चिपका दिया। "बिल हमेशा सँभालकर रखो, ख़ासकर बड़ी चीज़ों का," दादी ने कहा। "कुछ टूट जाए और बदलवाना पड़े तो यही तुम्हारा सबूत है।" गुल्लू ने जोड़ा, "निकलने से पहले कुल रक़म जाँचो, तारीख़ देखो, और कुछ ग़लत लगे तो विनम्रता से पूछो। जो बिल तुम पढ़ सकत[[े|ी]] हो, वही तुम्हारी रक्षा करता है।"`
+      ],
+      mr: [
+        `शाळेसाठी तुला नवी वही हवी होती, म्हणून तू काकांच्या दुकानात गेल[[ास|ीस]]. फळीवरच्या टॅगवर शंभर रुपये लिहिलं होतं. तू काकांना शंभराची नोट दिलीस आणि स्वतःला खूप हुशार समजलंस. "जरा थांब," काका हसून म्हणाले आणि कागदाच्या चिठ्ठीवर काहीतरी लिहू लागले.`,
+        `"हे घे तुझं बिल," काका म्हणाले. तू पाहिलंस. त्यात लिहिलं होतं: किंमत 100, अधिक 5, एकूण 105. "पण टॅगवर तर शंभर होते!" तू चकित झाल[[ास|ीस]]. "हे जादा पाच रुपये कशाचे?" काका हळूच हसले. "हा GST आहे, म्हणजे कर. सरकार प्रत्येक दुकानाला तो जोडायला सांगतं. बघ, बिलावर लिहिलं आहे, काही लपवलेलं नाही." गल्लूने मान डोलावली. "बिलात दुकानाचं नाव, तारीख, बिलाचा क्रमांक, प्रत्येक वस्तूची किंमत, कर आणि एकूण रक्कम असते."`,
+        `"हे पाच रुपये कुठे जातात?" तू विचारलंस. "काका ते सरकारला पाठवतात," गल्लू म्हणाला. "ते एका सामायिक निधीत जातात, ज्यातून रस्ते, शाळा आणि दवाखाने बांधले जातात. वेगवेगळ्या वस्तूंवर कराचे दर वेगवेगळे असतात, पण कल्पना तीच: कर हा किमतीचाच भाग आहे आणि तो बिलावर लिहिलेला असतो." तू आणखी पाच रुपये दिलेस आणि रोज ज्या रस्त्यावरून चालत[[ोस|ेस]] त्याचा विचार केलास.`,
+        `घरी आल्यावर तू बिल बोर्डवर आजीच्या जुन्या बिलांशेजारी चिकटवलंस. "बिल नेहमी जपून ठेव, विशेषतः मोठ्या वस्तूंचं," आजी म्हणाल्या. "काही तुटलं आणि बदलून घ्यायचं असेल तर तोच तुझा पुरावा आहे." गल्लूने भर घातली, "निघण्यापूर्वी एकूण रक्कम तपास, तारीख बघ आणि काही चुकीचं वाटलं तर नम्रपणे विचार. जे बिल तुला वाचता येतं तेच तुझं रक्षण करतं."`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`A bill shows the shop's name, date, bill number, price, tax and total.`, `Price + tax = total. 100 + 5 = 105.`, `GST is a tax that goes into a shared fund for roads, schools and clinics.`, `Keep bills for bigger things, and check the total before you leave.`],
+        fill: {
+          bank: [`bill`, `tax`, `total`, `proof`, `shared`, `date`],
+          items: [
+            [`A paper showing what you bought and what you paid is a @@.`, `bill`],
+            [`GST is a kind of @@ added to the price.`, `tax`],
+            [`Price plus tax gives the @@.`, `total`],
+            [`Keep the bill as @@ of your purchase.`, `proof`],
+            [`Tax money goes into a @@ fund for roads and schools.`, `shared`]
+          ]
+        },
+        sortTitle: `Which part of the bill?`,
+        sortOpts: [{ k: "price", t: `Price` }, { k: "tax", t: `Tax (GST)` }, { k: "total", t: `Total` }, { k: "info", t: `Date and number` }],
+        sort: [
+          { icon: "tag", label: `100 rupees for the notebook`, a: "price" },
+          { icon: "bank", label: `5 rupees that go to the shared fund`, a: "tax" },
+          { icon: "note", label: `105 rupees to pay at the end`, a: "total" },
+          { icon: "calendar", label: `The day you bought it`, a: "info" },
+          { icon: "paper", label: `Bill number printed at the top`, a: "info" }
+        ],
+        tf: [
+          { q: `The total on a bill is just the price without tax.`, a: false },
+          { q: `Keeping bills for bigger purchases is a good habit.`, a: true },
+          { q: `Tax paid in shops helps pay for shared things like roads and schools.`, a: true }
+        ],
+        think: [
+          { q: `A pen costs 40 rupees and the tax is 2 rupees. What is the total?`, opts: [`42`, `38`, `402`], a: 0 },
+          { q: `Your bill total is 105 rupees. You give 200 rupees. How much change should you get?`, opts: [`95`, `105`, `100`], a: 0 }
+        ],
+        promise: `I, {name}, promise to ask for a bill, to check the total before I leave, and to keep bills for bigger things.`
+      },
+      hi: {
+        remember: [`बिल में दुकान का नाम, तारीख़, बिल नंबर, क़ीमत, कर और कुल रक़म लिखी होती है।`, `क़ीमत + कर = कुल रक़म। 100 + 5 = 105।`, `GST वह कर है जो सड़क, स्कूल और क्लीनिक के साझा कोष में जाता है।`, `बड़ी चीज़ों के बिल सँभालकर रखो और निकलने से पहले कुल रक़म जाँचो।`],
+        fill: {
+          bank: [`बिल`, `कर`, `कुल`, `सबूत`, `साझा`, `तारीख़`],
+          items: [
+            [`ख़रीदी और चुकाई रक़म दिखाने वाला काग़ज़ @@ कहलाता है।`, `बिल`],
+            [`GST क़ीमत में जुड़ने वाला एक @@ है।`, `कर`],
+            [`क़ीमत और कर जोड़ने पर @@ रक़म मिलती है।`, `कुल`],
+            [`बिल को अपनी ख़रीद का @@ समझकर रखो।`, `सबूत`],
+            [`कर का पैसा सड़क और स्कूल के @@ कोष में जाता है।`, `साझा`]
+          ]
+        },
+        sortTitle: `बिल का कौन-सा हिस्सा?`,
+        sortOpts: [{ k: "price", t: `क़ीमत` }, { k: "tax", t: `कर (GST)` }, { k: "total", t: `कुल` }, { k: "info", t: `तारीख़ और नंबर` }],
+        sort: [
+          { icon: "tag", label: `कॉपी के सौ रुपये`, a: "price" },
+          { icon: "bank", label: `पाँच रुपये जो साझा कोष में जाते हैं`, a: "tax" },
+          { icon: "note", label: `अंत में चुकाने के 105 रुपये`, a: "total" },
+          { icon: "calendar", label: `जिस दिन ख़रीदा`, a: "info" },
+          { icon: "paper", label: `ऊपर छपा बिल नंबर`, a: "info" }
+        ],
+        tf: [
+          { q: `बिल की कुल रक़म कर के बिना सिर्फ़ क़ीमत होती है।`, a: false },
+          { q: `बड़ी ख़रीद के बिल सँभालकर रखना अच्छी आदत है।`, a: true },
+          { q: `दुकानों में चुकाया गया कर सड़क और स्कूल जैसी साझा चीज़ों में काम आता है।`, a: true }
+        ],
+        think: [
+          { q: `एक पेन 40 रुपये का है और कर 2 रुपये है। कुल कितना हुआ?`, opts: [`42`, `38`, `402`], a: 0 },
+          { q: `बिल की कुल रक़म 105 रुपये है। तुमने 200 रुपये दिए। कितने रुपये वापस मिलने चाहिए?`, opts: [`95`, `105`, `100`], a: 0 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि बिल माँगूँग[[ा|ी]], निकलने से पहले कुल रक़म जाँचूँग[[ा|ी]], और बड़ी चीज़ों के बिल सँभालकर रखूँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`बिलात दुकानाचं नाव, तारीख, बिल क्रमांक, किंमत, कर आणि एकूण रक्कम असते.`, `किंमत + कर = एकूण रक्कम. 100 + 5 = 105.`, `GST हा कर रस्ते, शाळा आणि दवाखान्यांच्या सामायिक निधीत जातो.`, `मोठ्या वस्तूंची बिलं जपून ठेव आणि निघण्यापूर्वी एकूण रक्कम तपास.`],
+        fill: {
+          bank: [`बिल`, `कर`, `एकूण`, `पुरावा`, `सामायिक`, `तारीख`],
+          items: [
+            [`काय घेतलं आणि किती दिले ते दाखवणारा कागद म्हणजे @@.`, `बिल`],
+            [`GST हा किमतीत जोडला जाणारा एक @@ आहे.`, `कर`],
+            [`किंमत आणि कर मिळून @@ रक्कम होते.`, `एकूण`],
+            [`बिल हा तुझ्या खरेदीचा @@ आहे, तो जपून ठेव.`, `पुरावा`],
+            [`कराचा पैसा रस्ते आणि शाळांच्या @@ निधीत जातो.`, `सामायिक`]
+          ]
+        },
+        sortTitle: `बिलाचा कोणता भाग?`,
+        sortOpts: [{ k: "price", t: `किंमत` }, { k: "tax", t: `कर (GST)` }, { k: "total", t: `एकूण` }, { k: "info", t: `तारीख आणि क्रमांक` }],
+        sort: [
+          { icon: "tag", label: `वहीचे शंभर रुपये`, a: "price" },
+          { icon: "bank", label: `पाच रुपये जे सामायिक निधीत जातात`, a: "tax" },
+          { icon: "note", label: `शेवटी द्यायचे 105 रुपये`, a: "total" },
+          { icon: "calendar", label: `ज्या दिवशी घेतलं`, a: "info" },
+          { icon: "paper", label: `वर छापलेला बिल क्रमांक`, a: "info" }
+        ],
+        tf: [
+          { q: `बिलावरची एकूण रक्कम म्हणजे कराशिवायची फक्त किंमत.`, a: false },
+          { q: `मोठ्या खरेदीची बिलं जपून ठेवणं चांगली सवय आहे.`, a: true },
+          { q: `दुकानांत भरलेला कर रस्ते आणि शाळा यांसारख्या सामायिक गोष्टींसाठी वापरला जातो.`, a: true }
+        ],
+        think: [
+          { q: `एका पेनची किंमत 40 रुपये आहे आणि कर 2 रुपये आहे. एकूण किती?`, opts: [`42`, `38`, `402`], a: 0 },
+          { q: `बिलाची एकूण रक्कम 105 रुपये आहे. तू 200 रुपये दिलेस. किती रुपये परत मिळायला हवेत?`, opts: [`95`, `105`, `100`], a: 0 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की बिल मागेन, निघण्यापूर्वी एकूण रक्कम तपासेन, आणि मोठ्या वस्तूंची बिलं जपून ठेवीन.`
+      }
+    }
+  },
+  {
+    slug: "safe-place",
+    status: "live",
+    color: "#9bf6ff",
+    title: { en: `{name} and the Safe Place`, hi: `{name} और पैसों की सुरक्षित जगह`, mr: `{name} आणि पैशांची सुरक्षित जागा` },
+    cardTitle: { en: `The Safe Place`, hi: `पैसों की सुरक्षित जगह`, mr: `पैशांची सुरक्षित जागा` },
+    subtitle: { en: `Where should you keep your savings?`, hi: `बचत कहाँ रखें?`, mr: `बचत कुठे ठेवावी?` },
+    topic: { en: `Saving`, hi: `बचत`, mr: `बचत` },
+    stops: {
+      en: [`The Cupboard`, `The Three Questions`, `The Fox in the Bush`, `The Coin Tree`],
+      hi: [`अलमारी`, `तीन सवाल`, `झाड़ी में लोमड़ी`, `सिक्कों का पेड़`],
+      mr: [`कपाट`, `तीन प्रश्न`, `झुडपातला कोल्हा`, `नाण्यांचं झाड`]
+    },
+    scenes: [
+      `A little mouse nibbles a note in Aaji's open cupboard while you look worried and Aaji frowns.`,
+      `Meena Didi at the bank counter shows a passbook, with a clock and a shield on the wall.`,
+      `A fox in a bush shows a speech bubble promising to turn 1,000 rupees into 2,000 while you hold up a hand to say no.`,
+      `You hold your passbook high under a tree full of golden coins, with a bank in the background.`
+    ],
+    story: {
+      en: [
+        `Aaji kept her savings in an old cupboard, tucked between her sarees. One day you opened the door and saw a little grey mouse nibbling the corner of a note! Squeak! The mouse ran away, but the note had a hole in it. "Oh dear," said Aaji. Gullu looked worried. "Is a cupboard really a safe place for money, {name}? Cash at home can be lost, stolen, burnt or chewed."`,
+        `Aaji took you to the bank. Meena Didi showed you a green passbook and a poster with three questions. "Before you keep your savings anywhere, ask: Is it safe? Is it easy to reach when I need it? Can it grow?" In a bank account, your money is looked after, you can take it out when needed, and it earns a little interest. Meena Didi added that deposits are insured up to a limit, which is 5,00,000 rupees per person in each bank at the time of writing.`,
+        `On the way home, a fox popped out of a bush. "Psst! Give me 1,000 rupees today and you will get 2,000 next week!" Your heart jumped. "Double money in one week?" Gullu pulled you back. "{name}, real money never doubles that fast. A promise that sounds too good to be true is a warning sign. Walk away and tell a grown-up."`,
+        `Years went by. Every month you added a little to your bank account, and the small interest added a little more. One day you stood under the coin tree with your passbook held high. "Look how it grew!" Gullu smiled. "Slowly, safely, and because you were patient. Keep some money easy to reach for emergencies, and let the rest grow."`
+      ],
+      hi: [
+        `दादी अपनी बचत पुरानी अलमारी में साड़ियों के बीच रखती थीं। एक दिन तुमने दरवाज़ा खोला तो देखा कि एक छोटा-सा स्लेटी चूहा नोट का कोना कुतर रहा है! चूँ! चूहा भाग गया, पर नोट में छेद हो गया था। "अरे बाप रे," दादी बोलीं। गुल्लू चिंतित दिखा। "क्या अलमारी सच में पैसों के लिए सुरक्षित जगह है, {name}? घर में रखा नक़द खो सकता है, चोरी हो सकता है, जल सकता है या कुतरा जा सकता है।"`,
+        `दादी तुम्हें बैंक ले गईं। मीना दीदी ने हरी पासबुक दिखाई और तीन सवालों वाला पोस्टर भी। "अपनी बचत कहीं भी रखने से पहले पूछो: क्या यह सुरक्षित है? ज़रूरत पड़ने पर क्या आसानी से मिल जाएगी? क्या यह बढ़ सकती है?" बैंक खाते में पैसों की देखभाल होती है, ज़रूरत पर निकाल भी सकते हैं, और थोड़ा ब्याज भी मिलता है। मीना दीदी ने बताया कि जमा रक़म एक सीमा तक बीमित होती है, जो लिखते समय हर बैंक में हर व्यक्ति के लिए 5,00,000 रुपये है।`,
+        `घर लौटते समय एक झाड़ी से एक चालाक लोमड़ी निकल आई। "सुनो! आज मुझे हज़ार रुपये दो, अगले हफ़्ते तुम्हें दो हज़ार मिलेंगे!" तुम्हारा दिल उछल पड़ा। "एक हफ़्ते में दुगुना पैसा?" गुल्लू ने तुम्हें पीछे खींचा। "{name}, असली पैसा इतनी जल्दी दुगुना नहीं होता। जो वादा हद से ज़्यादा अच्छा लगे, वह ख़तरे की घंटी है। दूर हटो और किसी बड़े को बताओ।"`,
+        `साल बीतते गए। हर महीने तुमने अपने बैंक खाते में थोड़ा-थोड़ा जमा किया और छोटे ब्याज ने थोड़ा और जोड़ा। एक दिन तुम पासबुक ऊँची उठाए सिक्कों वाले पेड़ के नीचे खड़[[े|ी]] थ[[े|ीं]]। "देखो कितना बढ़ गया!" गुल्लू मुस्कुराया। "धीरे-धीरे, सुरक्षित तरीक़े से, और इसलिए कि तुमने सब्र रखा। कुछ पैसे आपात स्थिति के लिए आसानी से निकल सकने लायक़ रखो, बाक़ी को बढ़ने दो।"`
+      ],
+      mr: [
+        `आजी आपली बचत जुन्या कपाटात, साड्यांच्या घड्यांमध्ये ठेवायच्या. एके दिवशी तू दार उघडलंस तर काय, एक छोटा राखाडी उंदीर नोटेचा कोपरा कुरतडत होता! चीं! उंदीर पळाला, पण नोटेला भोक पडलं होतं. "अरेरे," आजी म्हणाल्या. गल्लू काळजीत दिसला. "कपाट खरंच पैशांसाठी सुरक्षित जागा आहे का, {name}? घरात ठेवलेली रोकड हरवू शकते, चोरीला जाऊ शकते, जळू शकते किंवा कुरतडली जाऊ शकते."`,
+        `आजी तुला बँकेत घेऊन गेल्या. मीना ताईंनी हिरवं पासबुक दाखवलं आणि तीन प्रश्नांचं पोस्टरही. "तुझी बचत कुठेही ठेवण्याआधी विचार: ती सुरक्षित आहे का? गरज पडल्यावर सहज मिळेल का? ती वाढू शकते का?" बँक खात्यात पैशांची काळजी घेतली जाते, गरज असेल तेव्हा काढताही येतात, आणि थोडं व्याजही मिळतं. मीना ताईंनी सांगितलं की जमा रक्कम एका मर्यादेपर्यंत विमा संरक्षित असते, जी लिहिताना प्रत्येक बँकेत प्रत्येक व्यक्तीसाठी 5,00,000 रुपये आहे.`,
+        `घरी परतताना एका झुडपातून एक कोल्हा बाहेर आला. "ए, ऐक! आज मला हजार रुपये दे, पुढच्या आठवड्यात तुला दोन हजार मिळतील!" तुझं काळीज उडालं. "एका आठवड्यात दुप्पट पैसे?" गल्लूने तुला मागे ओढलं. "{name}, खरे पैसे एवढ्या लवकर दुप्पट होत नाहीत. जे वचन खूपच छान वाटतं ते धोक्याची घंटा असते. दूर हो आणि कोणा मोठ्याला सांग."`,
+        `वर्षं सरली. दर महिन्याला तू तुझ्या बँक खात्यात थोडी भर घातलीस आणि छोट्या व्याजाने आणखी थोडी भर घातली. एके दिवशी तू पासबुक उंच धरून नाण्यांच्या झाडाखाली उभ[[ा|ी]] राहिल[[ास|ीस]]. "बघ किती वाढलं!" गल्लू हसला. "हळूहळू, सुरक्षितपणे आणि तू संयम ठेवलास म्हणून. थोडे पैसे आणीबाणीसाठी सहज काढता येतील असे ठेव, बाकीचे वाढू दे."`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`Ask three questions: Is it safe? Is it easy to reach? Can it grow?`, `Cash kept at home can be lost, stolen, burnt or chewed by mice.`, `A promise to double your money fast is a warning sign.`, `Keep some savings easy to reach for emergencies, and let the rest grow slowly.`],
+        fill: {
+          bank: [`safe`, `reach`, `grow`, `bank`, `warning`, `slowly`],
+          items: [
+            [`The first question: is my money @@?`, `safe`],
+            [`The second question: is it easy to @@ when I need it?`, `reach`],
+            [`The third question: can it @@?`, `grow`],
+            [`Savings in a @@ account are safer than cash in a cupboard.`, `bank`],
+            [`A promise to double your money in a week is a @@ sign.`, `warning`]
+          ]
+        },
+        sortTitle: `Which question does it answer?`,
+        sortOpts: [{ k: "safe", t: `Safe` }, { k: "reach", t: `Easy to reach` }, { k: "grow", t: `Can grow` }, { k: "warn", t: `Warning sign` }],
+        sort: [
+          { icon: "shield", label: `A bank looks after and protects your savings`, a: "safe" },
+          { icon: "clock", label: `You can take money out when there is an emergency`, a: "reach" },
+          { icon: "tree", label: `Interest adds a little more each year`, a: "grow" },
+          { icon: "fox", label: `"Give 1,000 today and get 2,000 next week!"`, a: "warn" },
+          { icon: "cupboard", label: `Cash lying loose in a cupboard where mice and thieves can reach`, a: "warn" }
+        ],
+        tf: [
+          { q: `If someone promises to double your money in a week, you should trust them.`, a: false },
+          { q: `A bank account is usually safer than a lot of cash at home.`, a: true },
+          { q: `Savings can grow a little with interest if you are patient.`, a: true }
+        ],
+        think: [
+          { q: `You keep 500 rupees in a bank and it earns 20 rupees of interest in a year. How much do you have after a year?`, opts: [`520`, `480`, `700`], a: 0 },
+          { q: `A stranger says: give 5,000 rupees today and get 10,000 next week. What should you do?`, opts: [`Give it quickly`, `Say no and tell a grown-up`, `Give half`], a: 1 }
+        ],
+        promise: `I, {name}, promise to ask the three questions about my savings, to choose safe places, and to walk away from "double money" promises.`
+      },
+      hi: {
+        remember: [`तीन सवाल पूछो: क्या यह सुरक्षित है? क्या आसानी से मिल जाएगा? क्या यह बढ़ सकता है?`, `घर में रखा नक़द खो सकता है, चोरी हो सकता है, जल सकता है या चूहे कुतर सकते हैं।`, `पैसा जल्दी दुगुना करने का वादा ख़तरे की घंटी है।`, `कुछ बचत ज़रूरत पर निकालने लायक़ रखो और बाक़ी को धीरे-धीरे बढ़ने दो।`],
+        fill: {
+          bank: [`सुरक्षित`, `पहुँच`, `बढ़`, `बैंक`, `ख़तरे`, `धीरे-धीरे`],
+          items: [
+            [`पहला सवाल: क्या मेरा पैसा @@ है?`, `सुरक्षित`],
+            [`दूसरा सवाल: ज़रूरत पर क्या उस तक @@ आसान है?`, `पहुँच`],
+            [`तीसरा सवाल: क्या वह @@ सकता है?`, `बढ़`],
+            [`अलमारी के नक़द से @@ खाते की बचत ज़्यादा सुरक्षित है।`, `बैंक`],
+            [`एक हफ़्ते में पैसा दुगुना करने का वादा @@ का संकेत है।`, `ख़तरे`]
+          ]
+        },
+        sortTitle: `यह किस सवाल का जवाब है?`,
+        sortOpts: [{ k: "safe", t: `सुरक्षित` }, { k: "reach", t: `आसानी से मिले` }, { k: "grow", t: `बढ़ सकता है` }, { k: "warn", t: `ख़तरे का संकेत` }],
+        sort: [
+          { icon: "shield", label: `बैंक तुम्हारी बचत की देखभाल और हिफ़ाज़त करता है`, a: "safe" },
+          { icon: "clock", label: `आपात स्थिति में पैसे निकाले जा सकते हैं`, a: "reach" },
+          { icon: "tree", label: `ब्याज हर साल थोड़ा और जोड़ता है`, a: "grow" },
+          { icon: "fox", label: `"आज हज़ार दो, अगले हफ़्ते दो हज़ार पाओ!"`, a: "warn" },
+          { icon: "cupboard", label: `अलमारी में खुला पड़ा नक़द जहाँ चूहे और चोर पहुँच सकते हैं`, a: "warn" }
+        ],
+        tf: [
+          { q: `कोई एक हफ़्ते में पैसा दुगुना करने का वादा करे तो उस पर भरोसा करना चाहिए।`, a: false },
+          { q: `घर में ढेर सारे नक़द से बैंक खाता आम तौर पर ज़्यादा सुरक्षित होता है।`, a: true },
+          { q: `सब्र रखो तो ब्याज से बचत थोड़ी बढ़ सकती है।`, a: true }
+        ],
+        think: [
+          { q: `तुम 500 रुपये बैंक में रखते हो और साल भर में 20 रुपये ब्याज मिलता है। साल बाद कुल कितने रुपये होंगे?`, opts: [`520`, `480`, `700`], a: 0 },
+          { q: `कोई अजनबी कहता है: आज 5,000 रुपये दो, अगले हफ़्ते 10,000 पाओ। क्या करना चाहिए?`, opts: [`जल्दी से दे देना`, `मना करना और बड़े को बताना`, `आधे दे देना`], a: 1 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि अपनी बचत के बारे में तीन सवाल पूछूँग[[ा|ी]], सुरक्षित जगह चुनूँग[[ा|ी]], और "दुगुना पैसा" के वादों से दूर रहूँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`तीन प्रश्न विचार: ते सुरक्षित आहे का? सहज मिळेल का? ते वाढू शकतं का?`, `घरात ठेवलेली रोकड हरवू शकते, चोरीला जाऊ शकते, जळू शकते किंवा उंदीर कुरतडू शकतात.`, `पैसे लवकर दुप्पट करण्याचं वचन धोक्याची घंटा असते.`, `थोडी बचत गरजेला काढता येईल अशी ठेव आणि बाकीची हळूहळू वाढू दे.`],
+        fill: {
+          bank: [`सुरक्षित`, `पोहोच`, `वाढू`, `बँक`, `धोक्याचं`, `हळूहळू`],
+          items: [
+            [`पहिला प्रश्न: माझे पैसे @@ आहेत का?`, `सुरक्षित`],
+            [`दुसरा प्रश्न: गरज पडल्यावर त्यांच्यापर्यंत @@ सोपी आहे का?`, `पोहोच`],
+            [`तिसरा प्रश्न: ते @@ शकतात का?`, `वाढू`],
+            [`कपाटातल्या रोकडीपेक्षा @@ खात्यातली बचत जास्त सुरक्षित असते.`, `बँक`],
+            [`एका आठवड्यात पैसे दुप्पट करण्याचं वचन हे @@ लक्षण आहे.`, `धोक्याचं`]
+          ]
+        },
+        sortTitle: `हे कोणत्या प्रश्नाचं उत्तर आहे?`,
+        sortOpts: [{ k: "safe", t: `सुरक्षित` }, { k: "reach", t: `सहज मिळतं` }, { k: "grow", t: `वाढू शकतं` }, { k: "warn", t: `धोक्याचं लक्षण` }],
+        sort: [
+          { icon: "shield", label: `बँक तुझ्या बचतीची काळजी आणि संरक्षण करते`, a: "safe" },
+          { icon: "clock", label: `आणीबाणीच्या वेळी पैसे काढता येतात`, a: "reach" },
+          { icon: "tree", label: `व्याज दरवर्षी थोडं आणखी जोडतं`, a: "grow" },
+          { icon: "fox", label: `"आज हजार द्या, पुढच्या आठवड्यात दोन हजार मिळवा!"`, a: "warn" },
+          { icon: "cupboard", label: `कपाटात उघडी पडलेली रोकड जिथं उंदीर आणि चोर पोहोचू शकतात`, a: "warn" }
+        ],
+        tf: [
+          { q: `कोणी एका आठवड्यात पैसे दुप्पट करण्याचं वचन दिलं तर त्याच्यावर विश्वास ठेवावा.`, a: false },
+          { q: `घरातल्या भरपूर रोकडीपेक्षा बँक खातं सहसा जास्त सुरक्षित असतं.`, a: true },
+          { q: `संयम ठेवला तर व्याजामुळे बचत थोडी वाढू शकते.`, a: true }
+        ],
+        think: [
+          { q: `तू 500 रुपये बँकेत ठेवलेस आणि वर्षभरात 20 रुपये व्याज मिळालं. वर्षानंतर एकूण किती रुपये होतील?`, opts: [`520`, `480`, `700`], a: 0 },
+          { q: `एक अनोळखी माणूस म्हणतो: आज 5,000 रुपये द्या, पुढच्या आठवड्यात 10,000 मिळवा. काय करावं?`, opts: [`लगेच देऊन टाकावे`, `नाही म्हणावं आणि मोठ्याला सांगावं`, `निम्मे द्यावे`], a: 1 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की माझ्या बचतीबद्दल तीन प्रश्न विचारीन, सुरक्षित जागा निवडीन, आणि "दुप्पट पैसे"च्या वचनांपासून दूर राहीन.`
+      }
+    }
+  },
+{
+    slug: "kite-company",
+    status: "live",
+    color: "#ffc6ff",
+    title: { en: `{name} and the Kite Company`, hi: `{name} और पतंग कंपनी`, mr: `{name} आणि पतंग कंपनी` },
+    cardTitle: { en: `The Kite Company`, hi: `पतंग कंपनी`, mr: `पतंग कंपनी` },
+    subtitle: { en: `What is a share?`, hi: `शेयर क्या होता है?`, mr: `शेअर म्हणजे काय?` },
+    topic: { en: `Investing`, hi: `निवेश`, mr: `गुंतवणूक` },
+    stops: {
+      en: [`Three Friends`, `Ten Slices`, `Wind and Rain`, `Money to Leave Alone`],
+      hi: [`तीन दोस्त`, `दस टुकड़े`, `हवा और बारिश`, `छोड़कर रखा पैसा`],
+      mr: [`तीन मित्र`, `दहा तुकडे`, `वारा आणि पाऊस`, `सोडून ठेवलेले पैसे`]
+    },
+    scenes: [
+      `You and two friends stand in front of a table full of paper kites, with 1,000 rupees written on the blackboard.`,
+      `A round chart cut into 10 slices, with one slice pulled out beside a certificate and a 100 rupee tag.`,
+      `On one side a sunny day with high kites and a tag of 120 going up, on the other a rainy day with fallen kites and a tag of 80 going down.`,
+      `You stand proudly beside a full emergency jar, with the share certificate framed on the wall.`
+    ],
+    story: {
+      en: [
+        `Makar Sankranti was coming, and you and your two friends had a big idea: "Let us start a kite company!" You needed 1,000 rupees to buy paper, sticks and string. Each of you put in some money, and together you made a pile of 1,000 rupees. "We are not just friends now," said Gullu. "We are the owners of a little company!"`,
+        `Gullu drew a round chart on the board. "Let us cut the company into 10 equal slices," he said. "1,000 divided by 10 makes 100 rupees for each slice. Each slice is called a share. If you own one share, you own one tenth of the company." You gave 100 rupees, and a friend handed you a paper certificate with a little kite on it. "A share is a small piece of a company that you own," said Gullu.`,
+        `Festival week came with a strong, sunny wind. The kites sold out! People said the company was doing well, and each slice was now worth 120 rupees. Then came a rainy month with no wind, and nobody wanted kites. Each slice dropped to 80 rupees. You frowned. "The value of a share goes up and down," said Gullu. "Nobody can know ahead of time. It changes with how the company does and what people think of it."`,
+        `"Should I put all my savings into kite shares?" you asked. "No!" said Gullu firmly. "First fill your emergency jar. Use only money you can leave alone for a long time, never money you need for food or fees, and never borrowed money. Learn before you invest, and never believe anyone who promises 'sure profit'. Shares can earn money, but you can also lose some or all of it. Only a grown-up can open an account to buy real shares, through a registered broker." You hung the certificate on the wall beside your jar. "Slowly and carefully," you said.`
+      ],
+      hi: [
+        `मकर संक्रांति आने वाली थी और तुम्हें व तुम्हारे दो दोस्तों को एक बड़ा विचार सूझा: "चलो पतंग कंपनी शुरू करें!" काग़ज़, तीलियों और मांझे के लिए एक हज़ार रुपये चाहिए थे। हर किसी ने कुछ पैसे मिलाए और मिलकर एक हज़ार रुपये की ढेरी बन गई। "अब हम सिर्फ़ दोस्त नहीं," गुल्लू बोला, "एक छोटी-सी कंपनी के मालिक हैं!"`,
+        `गुल्लू ने बोर्ड पर एक गोल चार्ट बनाया। "कंपनी को दस बराबर टुकड़ों में काटते हैं," उसने कहा। "एक हज़ार भाग दस यानी हर टुकड़े के सौ रुपये। हर टुकड़े को शेयर कहते हैं। एक शेयर तुम्हारा हो तो कंपनी का दसवाँ हिस्सा तुम्हारा।" तुमने सौ रुपये दिए और एक दोस्त ने तुम्हें छोटी-सी पतंग वाला काग़ज़ का प्रमाणपत्र थमाया। "शेयर कंपनी का वह छोटा हिस्सा है जो तुम्हारा होता है," गुल्लू बोला।`,
+        `त्योहार का हफ़्ता तेज़, धूप वाली हवा लेकर आया। पतंगें हाथों-हाथ बिक गईं! लोग कहने लगे कि कंपनी अच्छा कर रही है और हर टुकड़े की क़ीमत अब 120 रुपये थी। फिर बारिश का एक महीना आया, हवा नहीं चली और पतंगें कोई नहीं ख़रीदता था। हर टुकड़ा 80 रुपये पर आ गया। तुमने माथे पर बल डाले। "शेयर की क़ीमत ऊपर-नीचे होती रहती है," गुल्लू बोला। "पहले से कोई नहीं जान सकता। क़ीमत इस पर बदलती है कि कंपनी कैसा कर रही है और लोग उसके बारे में क्या सोचते हैं।"`,
+        `"क्या मैं अपनी सारी बचत पतंग के शेयरों में लगा दूँ?" तुमने पूछा। "बिलकुल नहीं!" गुल्लू ने दृढ़ता से कहा। "पहले अपनी आपात बरनी भरो। सिर्फ़ वही पैसा लगाओ जिसे तुम लंबे समय तक छोड़कर रख सको, खाने या फ़ीस के पैसे कभी नहीं, और उधार का पैसा तो कभी नहीं। निवेश से पहले सीखो, और 'पक्का मुनाफ़ा' का वादा करने वाले पर कभी भरोसा मत करो। शेयर से कमाई हो सकती है, पर थोड़ा या सारा पैसा डूब भी सकता है। असली शेयर ख़रीदने का खाता सिर्फ़ कोई बड़ा खुलवा सकता है, पंजीकृत ब्रोकर के ज़रिए।" तुमने प्रमाणपत्र को बरनी के पास दीवार पर टाँग दिया। "धीरे-धीरे और सोच-समझकर," तुमने कहा।`
+      ],
+      mr: [
+        `मकर संक्रांत जवळ आली होती आणि तुला व तुझ्या दोन मित्रांना एक मोठी कल्पना सुचली: "चला पतंग कंपनी सुरू करू!" कागद, काड्या आणि मांजासाठी एक हजार रुपये हवे होते. प्रत्येकाने थोडे पैसे घातले आणि मिळून एक हजार रुपयांची रास झाली. "आता आपण फक्त मित्र नाही," गल्लू म्हणाला, "एका छोट्या कंपनीचे मालक आहोत!"`,
+        `गल्लूने फळ्यावर एक गोल चार्ट काढला. "कंपनीचे दहा समान तुकडे करू," तो म्हणाला. "एक हजार भागिले दहा म्हणजे प्रत्येक तुकड्याचे शंभर रुपये. प्रत्येक तुकड्याला शेअर म्हणतात. एक शेअर तुझा असेल तर कंपनीचा दहावा भाग तुझा." तू शंभर रुपये दिलेस आणि एका मित्राने तुला छोट्या पतंगाचं कागदी प्रमाणपत्र दिलं. "शेअर म्हणजे कंपनीचा तो छोटा भाग जो तुझा असतो," गल्लू म्हणाला.`,
+        `सणाचा आठवडा ऊन आणि जोराचा वारा घेऊन आला. पतंग हातोहात विकले गेले! लोक म्हणू लागले की कंपनी चांगली चालली आहे आणि प्रत्येक तुकड्याची किंमत आता 120 रुपये होती. मग पावसाचा एक महिना आला, वारा नव्हता आणि पतंग कोणी घेत नव्हतं. प्रत्येक तुकडा 80 रुपयांवर आला. तू कपाळाला आठ्या घातल्यास. "शेअरची किंमत वर-खाली होत असते," गल्लू म्हणाला. "आधीच कोणाला कळत नाही. किंमत कंपनी कशी चालते आणि लोक तिच्याबद्दल काय विचार करतात यावर बदलते."`,
+        `"मी माझी सगळी बचत पतंगाच्या शेअरांत घालू का?" तू विचारलंस. "अजिबात नाही!" गल्लू ठामपणे म्हणाला. "आधी तुझी आणीबाणीची बरणी भर. फक्त असेच पैसे लाव जे बराच काळ सोडून ठेवता येतील, जेवणाचे किंवा फीचे पैसे कधीच नाही, आणि उसने घेतलेले पैसे तर कधीच नाही. गुंतवणुकीआधी शिक, आणि 'खात्रीशीर नफा' असं वचन देणाऱ्यावर कधीच विश्वास ठेवू नकोस. शेअरमधून कमाई होऊ शकते, पण थोडे किंवा सगळे पैसे बुडूही शकतात. खरे शेअर घेण्याचं खातं फक्त मोठी व्यक्तीच उघडू शकते, नोंदणीकृत ब्रोकरमार्फत." तू प्रमाणपत्र बरणीशेजारी भिंतीवर टांगलंस. "हळूहळू आणि विचारपूर्वक," तू म्हणाल[[ास|ीस]].`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`A share is a small slice of a company that you own.`, `A company of 1,000 rupees cut into 10 slices makes each slice 100 rupees.`, `A share's value can go up or down, and no one can promise a profit.`, `Invest only money you can leave alone, after your emergency jar is full.`],
+        fill: {
+          bank: [`share`, `100`, `up`, `down`, `guarantee`, `company`],
+          items: [
+            [`A small slice of a company that you own is called a @@.`, `share`],
+            [`1,000 rupees ÷ 10 slices = @@ rupees for each slice.`, `100`],
+            [`When the kites sell well, a share's value may go @@.`, `up`],
+            [`When the kites do not sell, the value may go @@.`, `down`],
+            [`No one can @@ that a share will make a profit.`, `guarantee`]
+          ]
+        },
+        sortTitle: `May go up or down?`,
+        sortOpts: [{ k: "up", t: `May go up` }, { k: "down", t: `May go down` }],
+        sort: [
+          { icon: "kite", label: `Everyone wants the new kite design`, a: "up" },
+          { icon: "down", label: `A rainy month with no wind to fly kites`, a: "down" },
+          { icon: "up", label: `The company sells many more kites than last year`, a: "up" },
+          { icon: "pie", label: `The workshop floods and no kites can be made`, a: "down" },
+          { icon: "cert", label: `Customers complain about broken kites`, a: "down" }
+        ],
+        tf: [
+          { q: `A share means you own a small part of a company.`, a: true },
+          { q: `A share's price always goes up.`, a: false },
+          { q: `You should use next month's food money to buy shares.`, a: false }
+        ],
+        think: [
+          { q: `A company is worth 5,000 rupees and has 50 shares. What is one share worth?`, opts: [`100`, `50`, `250`], a: 0 },
+          { q: `You bought one share for 100 rupees and now it is worth 80 rupees. What happened?`, opts: [`The value went down by 20`, `The value went up by 20`, `Nothing changed`], a: 0 }
+        ],
+        promise: `I, {name}, promise to learn before I invest, to use only money I can leave alone, and never to believe "sure profit" promises.`
+      },
+      hi: {
+        remember: [`शेयर किसी कंपनी का वह छोटा हिस्सा है जो तुम्हारा होता है।`, `1,000 रुपये की कंपनी के 10 टुकड़े करें तो हर टुकड़ा 100 रुपये का होता है।`, `शेयर की क़ीमत ऊपर-नीचे हो सकती है और मुनाफ़े का वादा कोई नहीं कर सकता।`, `सिर्फ़ वही पैसा लगाओ जिसे छोड़ सको, और पहले आपात बरनी भरो।`],
+        fill: {
+          bank: [`शेयर`, `100`, `ऊपर`, `नीचे`, `गारंटी`, `कंपनी`],
+          items: [
+            [`कंपनी के उस छोटे हिस्से को, जो तुम्हारा होता है, @@ कहते हैं।`, `शेयर`],
+            [`1,000 रुपये ÷ 10 टुकड़े = हर टुकड़े के @@ रुपये।`, `100`],
+            [`पतंगें अच्छी बिकें तो शेयर की क़ीमत @@ जा सकती है।`, `ऊपर`],
+            [`पतंगें न बिकें तो क़ीमत @@ आ सकती है।`, `नीचे`],
+            [`शेयर से मुनाफ़े की @@ कोई नहीं दे सकता।`, `गारंटी`]
+          ]
+        },
+        sortTitle: `ऊपर जाएगा या नीचे?`,
+        sortOpts: [{ k: "up", t: `ऊपर जा सकता है` }, { k: "down", t: `नीचे आ सकता है` }],
+        sort: [
+          { icon: "kite", label: `सब नई पतंग का डिज़ाइन चाहते हैं`, a: "up" },
+          { icon: "down", label: `बारिश का महीना, पतंग उड़ाने लायक़ हवा नहीं`, a: "down" },
+          { icon: "up", label: `कंपनी पिछले साल से कहीं ज़्यादा पतंगें बेचती है`, a: "up" },
+          { icon: "pie", label: `कारख़ाने में पानी भर गया, पतंगें नहीं बन सकतीं`, a: "down" },
+          { icon: "cert", label: `ग्राहक टूटी पतंगों की शिकायत करते हैं`, a: "down" }
+        ],
+        tf: [
+          { q: `शेयर का मतलब है कि तुम कंपनी के एक छोटे हिस्से के मालिक हो।`, a: true },
+          { q: `शेयर की क़ीमत हमेशा बढ़ती ही है।`, a: false },
+          { q: `अगले महीने के खाने के पैसों से शेयर ख़रीदने चाहिए।`, a: false }
+        ],
+        think: [
+          { q: `एक कंपनी 5,000 रुपये की है और उसके 50 शेयर हैं। एक शेयर की क़ीमत कितनी है?`, opts: [`100`, `50`, `250`], a: 0 },
+          { q: `तुमने एक शेयर 100 रुपये में ख़रीदा और अब उसकी क़ीमत 80 रुपये है। क्या हुआ?`, opts: [`क़ीमत 20 घट गई`, `क़ीमत 20 बढ़ गई`, `कुछ नहीं बदला`], a: 0 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि निवेश से पहले सीखूँग[[ा|ी]], सिर्फ़ वही पैसा लगाऊँग[[ा|ी]] जिसे छोड़ सकूँ, और "पक्का मुनाफ़ा" के वादों पर कभी भरोसा नहीं करूँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`शेअर म्हणजे कंपनीचा तो छोटा भाग जो तुझा असतो.`, `1,000 रुपयांच्या कंपनीचे 10 तुकडे केले तर प्रत्येक तुकडा 100 रुपयांचा असतो.`, `शेअरची किंमत वर-खाली होऊ शकते आणि नफ्याचं वचन कोणीही देऊ शकत नाही.`, `फक्त तेच पैसे लाव जे सोडून ठेवता येतील, आणि आधी आणीबाणीची बरणी भर.`],
+        fill: {
+          bank: [`शेअर`, `100`, `वर`, `खाली`, `खात्री`, `कंपनी`],
+          items: [
+            [`कंपनीच्या तुझ्या मालकीच्या छोट्या भागाला @@ म्हणतात.`, `शेअर`],
+            [`1,000 रुपये ÷ 10 तुकडे = प्रत्येक तुकड्याचे @@ रुपये.`, `100`],
+            [`पतंग चांगले विकले गेले तर शेअरची किंमत @@ जाऊ शकते.`, `वर`],
+            [`पतंग विकले गेले नाहीत तर किंमत @@ येऊ शकते.`, `खाली`],
+            [`शेअरमधून नफ्याची @@ कोणीही देऊ शकत नाही.`, `खात्री`]
+          ]
+        },
+        sortTitle: `वर जाईल की खाली?`,
+        sortOpts: [{ k: "up", t: `वर जाऊ शकतं` }, { k: "down", t: `खाली येऊ शकतं` }],
+        sort: [
+          { icon: "kite", label: `सगळ्यांना नवीन पतंगाचं डिझाइन हवं आहे`, a: "up" },
+          { icon: "down", label: `पावसाचा महिना, पतंग उडवायला वारा नाही`, a: "down" },
+          { icon: "up", label: `कंपनी गेल्या वर्षीपेक्षा खूपच जास्त पतंग विकते`, a: "up" },
+          { icon: "pie", label: `कारखान्यात पाणी भरलं, पतंग बनवता येत नाहीत`, a: "down" },
+          { icon: "cert", label: `ग्राहक तुटक्या पतंगांबद्दल तक्रार करतात`, a: "down" }
+        ],
+        tf: [
+          { q: `शेअर म्हणजे कंपनीच्या एका छोट्या भागाची मालकी.`, a: true },
+          { q: `शेअरची किंमत नेहमी वाढतच जाते.`, a: false },
+          { q: `पुढच्या महिन्याच्या जेवणाच्या पैशांतून शेअर घ्यावेत.`, a: false }
+        ],
+        think: [
+          { q: `एका कंपनीची किंमत 5,000 रुपये आहे आणि तिचे 50 शेअर आहेत. एका शेअरची किंमत किती?`, opts: [`100`, `50`, `250`], a: 0 },
+          { q: `तू एक शेअर 100 रुपयांना घेतलास आणि आता त्याची किंमत 80 रुपये आहे. काय झालं?`, opts: [`किंमत 20 ने घटली`, `किंमत 20 ने वाढली`, `काही बदललं नाही`], a: 0 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की गुंतवणुकीआधी शिकेन, फक्त सोडून ठेवता येतील तेवढेच पैसे लावीन, आणि "खात्रीशीर नफा"च्या वचनांवर कधीच विश्वास ठेवणार नाही.`
+      }
+    }
+  },
+  {
+    slug: "nimbu-pani-stall",
+    status: "live",
+    color: "#ffe66d",
+    title: { en: `{name} and the Nimbu Pani Stall`, hi: `{name} और नींबू-पानी का ठेला`, mr: `{name} आणि लिंबू सरबताचा स्टॉल` },
+    cardTitle: { en: `The Nimbu Pani Stall`, hi: `नींबू-पानी का ठेला`, mr: `लिंबू सरबताचा स्टॉल` },
+    subtitle: { en: `Cost, price and profit`, hi: `लागत, क़ीमत और मुनाफ़ा`, mr: `खर्च, किंमत आणि नफा` },
+    topic: { en: `Earning`, hi: `कमाई`, mr: `कमाई` },
+    stops: {
+      en: [`Buying Supplies`, `Setting the Price`, `A Busy Afternoon`, `Counting Coins`],
+      hi: [`सामान की ख़रीद`, `क़ीमत तय करना`, `भीड़ वाली दोपहर`, `सिक्कों की गिनती`],
+      mr: [`सामानाची खरेदी`, `किंमत ठरवणं`, `गर्दीची दुपार`, `नाणी मोजणं`]
+    },
+    scenes: [
+      `You hand Kaka a note at his shop, where lemons and a sack of sugar sit on the counter beside a 6 rupee tag.`,
+      `On the blackboard, 10 minus 6 makes 4, with lemons tagged 6 and a glass tagged 10 on the table.`,
+      `Behind your stall you serve friends and neighbours who queue up, with a board saying 4 times 50 makes 200.`,
+      `At sunset you stand proudly beside four tall stacks of coins on a table, with a 200 tag.`
+    ],
+    story: {
+      en: [
+        `It was a very hot summer. "Everyone is thirsty," you said. "Let us open a nimbu pani stall!" You went to Kaka's shop to buy lemons, sugar, ice and paper cups. Kaka added it all up: "For each glass, the lemon, sugar, ice and cup cost you 6 rupees." Gullu squealed happily. "That 6 rupees is your cost, {name}. Cost is the money you spend to make something."`,
+        `"How much should we charge?" you asked. Gullu wrote on the blackboard. "If you sell each glass for 6 rupees, you only get back what you spent. No profit. If you charge 30 rupees, nobody will buy." After thinking, you chose 10 rupees. "The price is 10 rupees," said Gullu. "Profit is price minus cost. 10 minus 6 makes 4 rupees profit on every glass."`,
+        `That afternoon, the stall was busy. Kids, uncles and a rickshaw driver all asked for a cold glass. By evening you had sold 50 glasses. "Money in: 10 times 50 makes 500 rupees," said Gullu. "Cost: 6 times 50 makes 300 rupees. So 500 minus 300 leaves 200 rupees of profit. Or 4 times 50 makes 200, the same answer!"`,
+        `At sunset you counted the coins. "First, put aside the 300 rupees to buy tomorrow's lemons, sugar and ice," said Gullu. "Then split the 200 rupees of profit: some to save, some to spend." You smiled, but Gullu added gently, "Remember, on a rainy day you may sell fewer glasses and earn less. Profit is never promised. That is why we save a part of every profit."`
+      ],
+      hi: [
+        `गर्मी बहुत थी। "सब प्यासे हैं," तुमने कहा। "चलो, नींबू-पानी का ठेला लगाते हैं!" तुम नींबू, चीनी, बर्फ़ और काग़ज़ के गिलास लेने काका की दुकान पर ग[[ए|ईं]]। काका ने सबका हिसाब जोड़ा: "हर गिलास के पीछे नींबू, चीनी, बर्फ़ और गिलास पर तुम्हारे छह रुपये लगते हैं।" गुल्लू ख़ुशी से चहका। "यह छह रुपये तुम्हारी लागत है, {name}। लागत वह पैसा है जो किसी चीज़ को बनाने में ख़र्च होता है।"`,
+        `"हम कितने में बेचें?" तुमने पूछा। गुल्लू ने ब्लैकबोर्ड पर लिखा। "हर गिलास छह रुपये में बेचो तो बस ख़र्च हुआ पैसा लौटता है। कोई मुनाफ़ा नहीं। तीस रुपये माँगो तो कोई नहीं ख़रीदेगा।" सोचकर तुमने दस रुपये चुने। "क़ीमत दस रुपये," गुल्लू बोला। "मुनाफ़ा यानी क़ीमत में से लागत घटाना। दस में से छह घटाओ तो हर गिलास पर चार रुपये मुनाफ़ा।"`,
+        `उस दोपहर ठेले पर भीड़ रही। बच्चे, अंकल और एक रिक्शेवाले, सबने ठंडा गिलास माँगा। शाम तक तुमने पचास गिलास बेच दिए। "आया पैसा: दस गुना पचास यानी पाँच सौ रुपये," गुल्लू बोला। "लागत: छह गुना पचास यानी तीन सौ रुपये। तो पाँच सौ में से तीन सौ घटाओ, बचे दो सौ रुपये मुनाफ़ा। या चार गुना पचास यानी दो सौ, वही जवाब!"`,
+        `सूरज ढलते समय तुमने सिक्के गिने। "पहले तीन सौ रुपये अलग रखो, कल के नींबू, चीनी और बर्फ़ के लिए," गुल्लू बोला। "फिर दो सौ रुपये का मुनाफ़ा बाँटो: कुछ बचत के लिए, कुछ ख़र्च के लिए।" तुम मुस्कुरा[[ए|ईं]], पर गुल्लू ने नरमी से जोड़ा, "याद रखो, बरसात के दिन कम गिलास बिक सकते हैं और कमाई कम हो सकती है। मुनाफ़े का वादा कभी नहीं होता। इसीलिए हम हर मुनाफ़े का एक हिस्सा बचाते हैं।"`
+      ],
+      mr: [
+        `उन्हाळा खूप कडक होता. "सगळ्यांना तहान लागली आहे," तू म्हणाल[[ास|ीस]]. "चला, लिंबू सरबताचा स्टॉल लावू!" तू लिंबू, साखर, बर्फ आणि कागदी ग्लास घ्यायला काकांच्या दुकानात गेल[[ास|ीस]]. काकांनी सगळा हिशोब केला: "प्रत्येक ग्लासामागे लिंबू, साखर, बर्फ आणि ग्लास मिळून तुला सहा रुपये लागतात." गल्लू आनंदाने ओरडला. "हे सहा रुपये म्हणजे तुझा खर्च, {name}. खर्च म्हणजे एखादी गोष्ट बनवायला लागणारा पैसा."`,
+        `"आपण किती रुपयांना विकायचं?" तू विचारलंस. गल्लूने फळ्यावर लिहिलं. "प्रत्येक ग्लास सहा रुपयांना विकलास तर फक्त खर्च झालेले पैसे परत येतात. नफा नाही. तीस रुपये मागितलेस तर कोणी घेणार नाही." विचार करून तू दहा रुपये ठरवलेस. "किंमत दहा रुपये," गल्लू म्हणाला. "नफा म्हणजे किंमत वजा खर्च. दहा वजा सहा म्हणजे प्रत्येक ग्लासावर चार रुपये नफा."`,
+        `त्या दुपारी स्टॉलवर गर्दी होती. मुलं, काका लोक आणि एक रिक्षावाला, सगळ्यांनी थंड ग्लास मागितला. संध्याकाळपर्यंत तू पन्नास ग्लास विकलेस. "आलेले पैसे: दहा गुणिले पन्नास म्हणजे पाचशे रुपये," गल्लू म्हणाला. "खर्च: सहा गुणिले पन्नास म्हणजे तीनशे रुपये. म्हणजे पाचशे वजा तीनशे, उरले दोनशे रुपये नफा. किंवा चार गुणिले पन्नास म्हणजे दोनशे, तेच उत्तर!"`,
+        `सूर्यास्ताच्या वेळी तू नाणी मोजलीस. "आधी तीनशे रुपये बाजूला ठेव, उद्याच्या लिंबू, साखर आणि बर्फासाठी," गल्लू म्हणाला. "मग दोनशे रुपयांचा नफा वाटून घे: काही बचतीसाठी, काही खर्चासाठी." तू हसल[[ास|ीस]], पण गल्लू हळूच म्हणाला, "लक्षात ठेव, पावसाच्या दिवशी कमी ग्लास विकले जाऊ शकतात आणि कमाई कमी होऊ शकते. नफ्याचं वचन कधीच नसतं. म्हणूनच आपण प्रत्येक नफ्याचा एक भाग बचतीला ठेवतो."`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`Cost is the money you spend to make or buy something.`, `Price is what the customer pays. Profit = price − cost.`, `Total profit = profit on one glass × glasses sold: 4 × 50 = 200.`, `Keep money back for tomorrow's supplies, and save part of every profit. Profit is never promised.`],
+        fill: {
+          bank: [`cost`, `price`, `profit`, `200`, `lemons`, `loss`],
+          items: [
+            [`What you spend to make one glass is the @@.`, `cost`],
+            [`What a customer pays for one glass is the @@.`, `price`],
+            [`Price minus cost is the @@.`, `profit`],
+            [`4 rupees profit × 50 glasses = @@ rupees.`, `200`],
+            [`Keep money back to buy tomorrow's @@.`, `lemons`]
+          ]
+        },
+        sortTitle: `Money out or money in?`,
+        sortOpts: [{ k: "cost", t: `Cost (money out)` }, { k: "inc", t: `Income (money in)` }],
+        sort: [
+          { icon: "lemon", label: `Buying lemons for the day`, a: "cost" },
+          { icon: "note", label: `Customers paying for their glasses`, a: "inc" },
+          { icon: "sack", label: `Buying a sack of sugar`, a: "cost" },
+          { icon: "coin", label: `Selling the last glass of the day`, a: "inc" },
+          { icon: "bucket", label: `Buying water and ice`, a: "cost" }
+        ],
+        tf: [
+          { q: `Profit is the price you charge for a glass.`, a: false },
+          { q: `If price equals cost, you earn no profit.`, a: true },
+          { q: `Some days you may sell fewer glasses and earn less.`, a: true }
+        ],
+        think: [
+          { q: `A glass costs 8 rupees to make and sells for 15 rupees. What is the profit on one glass?`, opts: [`7`, `8`, `23`], a: 0 },
+          { q: `You earn 5 rupees profit on each of 40 glasses. What is the total profit?`, opts: [`45`, `200`, `400`], a: 1 }
+        ],
+        promise: `I, {name}, promise to count my costs before I set a price, to keep money back for tomorrow, and to save a part of every profit.`
+      },
+      hi: {
+        remember: [`लागत वह पैसा है जो कोई चीज़ बनाने या ख़रीदने में ख़र्च होता है।`, `क़ीमत वह है जो ग्राहक देता है। मुनाफ़ा = क़ीमत − लागत।`, `कुल मुनाफ़ा = एक गिलास का मुनाफ़ा × बिके गिलास: 4 × 50 = 200।`, `कल के सामान के लिए पैसा अलग रखो और हर मुनाफ़े का हिस्सा बचाओ। मुनाफ़े का वादा कभी नहीं होता।`],
+        fill: {
+          bank: [`लागत`, `क़ीमत`, `मुनाफ़ा`, `200`, `नींबू`, `घाटा`],
+          items: [
+            [`एक गिलास बनाने में जो ख़र्च होता है वह @@ है।`, `लागत`],
+            [`एक गिलास के लिए ग्राहक जो देता है वह @@ है।`, `क़ीमत`],
+            [`क़ीमत में से लागत घटाने पर @@ मिलता है।`, `मुनाफ़ा`],
+            [`4 रुपये मुनाफ़ा × 50 गिलास = @@ रुपये।`, `200`],
+            [`कल के @@ ख़रीदने के लिए पैसे अलग रखो।`, `नींबू`]
+          ]
+        },
+        sortTitle: `जाने वाला या आने वाला पैसा?`,
+        sortOpts: [{ k: "cost", t: `लागत (जाने वाला)` }, { k: "inc", t: `आमदनी (आने वाला)` }],
+        sort: [
+          { icon: "lemon", label: `दिन भर के नींबू ख़रीदना`, a: "cost" },
+          { icon: "note", label: `ग्राहकों का गिलास के पैसे देना`, a: "inc" },
+          { icon: "sack", label: `चीनी की बोरी ख़रीदना`, a: "cost" },
+          { icon: "coin", label: `दिन का आख़िरी गिलास बेचना`, a: "inc" },
+          { icon: "bucket", label: `पानी और बर्फ़ ख़रीदना`, a: "cost" }
+        ],
+        tf: [
+          { q: `मुनाफ़ा वही है जो तुम एक गिलास की क़ीमत रखते हो।`, a: false },
+          { q: `क़ीमत और लागत बराबर हो तो कोई मुनाफ़ा नहीं होता।`, a: true },
+          { q: `कुछ दिन कम गिलास बिक सकते हैं और कमाई कम हो सकती है।`, a: true }
+        ],
+        think: [
+          { q: `एक गिलास बनाने में 8 रुपये लगते हैं और वह 15 रुपये में बिकता है। एक गिलास पर मुनाफ़ा कितना है?`, opts: [`7`, `8`, `23`], a: 0 },
+          { q: `40 गिलासों में से हर एक पर 5 रुपये मुनाफ़ा होता है। कुल मुनाफ़ा कितना हुआ?`, opts: [`45`, `200`, `400`], a: 1 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि क़ीमत तय करने से पहले अपनी लागत गिनूँग[[ा|ी]], कल के लिए पैसा अलग रखूँग[[ा|ी]], और हर मुनाफ़े का एक हिस्सा बचाऊँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`खर्च म्हणजे एखादी गोष्ट बनवायला किंवा घ्यायला लागणारा पैसा.`, `किंमत म्हणजे ग्राहक जे देतो ते. नफा = किंमत − खर्च.`, `एकूण नफा = एका ग्लासावरचा नफा × विकलेले ग्लास: 4 × 50 = 200.`, `उद्याच्या सामानासाठी पैसे बाजूला ठेव आणि प्रत्येक नफ्याचा भाग वाचव. नफ्याचं वचन कधीच नसतं.`],
+        fill: {
+          bank: [`खर्च`, `किंमत`, `नफा`, `200`, `लिंबं`, `तोटा`],
+          items: [
+            [`एक ग्लास बनवायला जे लागतं तो @@.`, `खर्च`],
+            [`एका ग्लाससाठी ग्राहक जे देतो ती @@.`, `किंमत`],
+            [`किंमत वजा खर्च म्हणजे @@.`, `नफा`],
+            [`4 रुपये नफा × 50 ग्लास = @@ रुपये.`, `200`],
+            [`उद्याची @@ घ्यायला पैसे बाजूला ठेव.`, `लिंबं`]
+          ]
+        },
+        sortTitle: `जाणारा की येणारा पैसा?`,
+        sortOpts: [{ k: "cost", t: `खर्च (जाणारा)` }, { k: "inc", t: `उत्पन्न (येणारा)` }],
+        sort: [
+          { icon: "lemon", label: `दिवसभराचे लिंबू घेणं`, a: "cost" },
+          { icon: "note", label: `ग्राहकांनी ग्लासचे पैसे देणं`, a: "inc" },
+          { icon: "sack", label: `साखरेचं पोतं घेणं`, a: "cost" },
+          { icon: "coin", label: `दिवसाचा शेवटचा ग्लास विकणं`, a: "inc" },
+          { icon: "bucket", label: `पाणी आणि बर्फ घेणं`, a: "cost" }
+        ],
+        tf: [
+          { q: `नफा म्हणजे तू एका ग्लाससाठी ठेवलेली किंमत.`, a: false },
+          { q: `किंमत आणि खर्च सारखे असतील तर नफा होत नाही.`, a: true },
+          { q: `काही दिवशी कमी ग्लास विकले जाऊ शकतात आणि कमाई कमी होऊ शकते.`, a: true }
+        ],
+        think: [
+          { q: `एक ग्लास बनवायला 8 रुपये लागतात आणि तो 15 रुपयांना विकला जातो. एका ग्लासावर नफा किती?`, opts: [`7`, `8`, `23`], a: 0 },
+          { q: `40 ग्लासांपैकी प्रत्येकावर 5 रुपये नफा होतो. एकूण नफा किती?`, opts: [`45`, `200`, `400`], a: 1 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की किंमत ठरवण्याआधी माझा खर्च मोजीन, उद्यासाठी पैसे बाजूला ठेवीन, आणि प्रत्येक नफ्याचा एक भाग वाचवीन.`
+      }
+    }
+  },
+{
+    slug: "shared-well",
+    status: "live",
+    color: "#d0f4de",
+    title: { en: `{name} and the Shared Well`, hi: `{name} और साझा कुआँ`, mr: `{name} आणि गावची विहीर` },
+    cardTitle: { en: `The Shared Well`, hi: `साझा कुआँ`, mr: `गावची विहीर` },
+    subtitle: { en: `Where do taxes go?`, hi: `कर का पैसा कहाँ जाता है?`, mr: `कराचा पैसा कुठे जातो?` },
+    topic: { en: `Taxes`, hi: `कर`, mr: `कर` },
+    stops: {
+      en: [`The Big Pot`, `Roads, School and Clinic`, `From Bill to Well`, `The School Gate`],
+      hi: [`बड़ा मटका`, `सड़क, स्कूल और क्लीनिक`, `बिल से कुएँ तक`, `स्कूल का फाटक`],
+      mr: [`मोठं मडकं`, `रस्ता, शाळा आणि दवाखाना`, `बिलापासून विहिरीपर्यंत`, `शाळेचं फाटक`]
+    },
+    scenes: [
+      `Aaji and you drop coins into a big clay pot under the open sky while coins fall from above.`,
+      `You stand on a road beside a school and a clinic, all built from the shared pot.`,
+      `A bill sends an arrow to the clay pot and another arrow to a well, drawn on a board while you think.`,
+      `You and a friend cheer at the gate of the freshly painted school beside a new road.`
+    ],
+    story: {
+      en: [
+        `One summer the village well went dry, and the whole village gathered under the old tree. "Digging a new well costs a lot," said the elders. "No single family can pay for it. But if everyone puts a little money into one big pot, we can." Aaji dropped in a coin. You dropped in a coin. Soon the pot was full. "This is how a shared fund works," Gullu whispered.`,
+        `With the pot's money, the village dug a new well, mended the muddy road and even built a small clinic next to the school. "Who paid for all this?" you asked. "Everyone, a little each," said Gullu. "In a country, this shared pot is made of taxes. People pay taxes on what they earn and what they buy. The government uses them for roads, schools, clinics, water, police and more. Things that everybody uses are paid for by everybody."`,
+        `You remembered the shop bill with its extra 5 rupees of GST. You drew arrows on the blackboard: bill, then shared pot, then well and school. "So when I buy a notebook, a tiny part of my money goes into the pot?" you asked. "Yes," said Gullu. "Grown-ups also pay income tax on what they earn, but only when their income is above a limit. Tax is not a gift to someone. It is our share of the things we use together."`,
+        `Months later, you stood with your friends at the gate of the freshly painted school. A bright new road ran past it, and clean water flowed from the well. "Taxes are not magic," said Gullu. "Someone has to decide how to spend them well, and citizens can ask questions and read how the money is used. When you grow up and earn, you will pay your share too, and you will know why."`
+      ],
+      hi: [
+        `एक गर्मी में गाँव का कुआँ सूख गया और पूरा गाँव पुराने पेड़ के नीचे जमा हुआ। "नया कुआँ खोदने में बहुत ख़र्च आता है," बुज़ुर्गों ने कहा। "कोई अकेला परिवार इसे नहीं उठा सकता। पर सब थोड़ा-थोड़ा पैसा एक बड़े मटके में डालें तो हो सकता है।" दादी ने सिक्का डाला। तुमने भी सिक्का डाला। जल्दी ही मटका भर गया। "साझा कोष ऐसे ही काम करता है," गुल्लू ने फुसफुसाकर कहा।`,
+        `मटके के पैसों से गाँव ने नया कुआँ खोदा, कीचड़ वाली सड़क बनवाई और स्कूल के पास एक छोटा क्लीनिक भी खड़ा किया। "यह सब किसने चुकाया?" तुमने पूछा। "सबने, थोड़ा-थोड़ा," गुल्लू बोला। "देश में यह साझा मटका करों से बनता है। लोग कमाई और ख़रीद पर कर देते हैं। सरकार उससे सड़कें, स्कूल, क्लीनिक, पानी, पुलिस और बहुत कुछ चलाती है। जिन चीज़ों का इस्तेमाल सब करते हैं, उनका ख़र्च सब मिलकर उठाते हैं।"`,
+        `तुम्हें दुकान का वह बिल याद आया जिसमें GST के पाँच रुपये ज़्यादा थे। तुमने ब्लैकबोर्ड पर तीर बनाए: बिल, फिर साझा मटका, फिर कुआँ और स्कूल। "तो कॉपी ख़रीदने पर मेरे पैसों का एक नन्हा हिस्सा मटके में जाता है?" तुमने पूछा। "हाँ," गुल्लू बोला। "बड़े लोग कमाई पर आयकर भी देते हैं, पर तभी जब कमाई एक सीमा से ऊपर हो। कर किसी को दिया गया तोहफ़ा नहीं है। यह उन चीज़ों में हमारा हिस्सा है जिन्हें हम साथ इस्तेमाल करते हैं।"`,
+        `कुछ महीने बाद तुम अपने दोस्तों के साथ नए रंगे स्कूल के फाटक पर खड़[[े|ी]] थ[[े|ीं]]। पास से एक चमकती नई सड़क गुज़रती थी और कुएँ से साफ़ पानी बह रहा था। "कर कोई जादू नहीं है," गुल्लू बोला। "किसी को तय करना होता है कि उसे अच्छे से कैसे ख़र्च करें, और नागरिक सवाल पूछ सकते हैं और पढ़ सकते हैं कि पैसा कैसे इस्तेमाल हुआ। बड़े होकर जब तुम कमाओ[[गे|गी]] तो अपना हिस्सा भी दो[[गे|गी]], और जानो[[गे|गी]] कि क्यों।"`
+      ],
+      mr: [
+        `एका उन्हाळ्यात गावची विहीर आटली आणि सगळं गाव जुन्या झाडाखाली जमलं. "नवी विहीर खणायला खूप खर्च येतो," वडीलधारी म्हणाले. "कोणतंही एक कुटुंब तो उचलू शकत नाही. पण सगळ्यांनी थोडे थोडे पैसे एका मोठ्या मडक्यात टाकले तर जमू शकतं." आजीने नाणं टाकलं. तू पण नाणं टाकलंस. लवकरच मडकं भरलं. "सामायिक निधी असाच काम करतो," गल्लू कुजबुजला.`,
+        `मडक्यातल्या पैशांतून गावाने नवी विहीर खणली, चिखलाचा रस्ता बांधला आणि शाळेशेजारी एक छोटा दवाखानाही उभा केला. "हे सगळं कोणी भरलं?" तू विचारलंस. "सगळ्यांनी, थोडं थोडं," गल्लू म्हणाला. "देशात हे सामायिक मडकं करांपासून बनतं. लोक कमाईवर आणि खरेदीवर कर भरतात. सरकार त्यातून रस्ते, शाळा, दवाखाने, पाणी, पोलीस आणि बरंच काही चालवतं. ज्या गोष्टी सगळे वापरतात त्यांचा खर्च सगळे मिळून उचलतात."`,
+        `तुला दुकानातलं ते बिल आठवलं ज्यात GST चे जादा पाच रुपये होते. तू फळ्यावर बाण काढलेस: बिल, मग सामायिक मडकं, मग विहीर आणि शाळा. "म्हणजे वही घेताना माझ्या पैशांचा एक इवलासा भाग मडक्यात जातो?" तू विचारलंस. "हो," गल्लू म्हणाला. "मोठी माणसं कमाईवर आयकरही भरतात, पण फक्त तेव्हा जेव्हा कमाई एका मर्यादेपेक्षा जास्त असते. कर म्हणजे कोणाला दिलेली भेट नाही. आपण सगळे एकत्र वापरतो त्या गोष्टींतला हा आपला वाटा आहे."`,
+        `काही महिन्यांनी तू मित्रांसोबत नव्याने रंगवलेल्या शाळेच्या फाटकाशी उभ[[ा|ी]] होत[[ास|ीस]]. बाजूने एक चमकता नवा रस्ता जात होता आणि विहिरीतून स्वच्छ पाणी वाहत होतं. "कर काही जादू नाही," गल्लू म्हणाला. "कोणाला तरी ठरवावं लागतं की तो नीट कसा खर्च करायचा, आणि नागरिक प्रश्न विचारू शकतात आणि पैसा कसा वापरला गेला ते वाचू शकतात. मोठ[[ा|ी]] झाल्यावर जेव्हा तू कमावशील तेव्हा तू पण तुझा वाटा देशील, आणि तुला कळेल का ते."`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`Taxes are money that people pay into a shared pot for things everyone uses.`, `The shared pot pays for roads, schools, clinics, water and more.`, `GST on a bill is one kind of tax. It is part of the price and is written on the bill.`, `Taxes are our share of things we use together, and citizens can ask how the money is used.`],
+        fill: {
+          bank: [`tax`, `GST`, `income`, `roads`, `share`, `gift`],
+          items: [
+            [`Money that people pay into a shared pot for common needs is called @@.`, `tax`],
+            [`The tax added to a shop bill is called @@.`, `GST`],
+            [`Grown-ups pay @@ tax on what they earn, above a limit.`, `income`],
+            [`Taxes help pay for @@, schools and clinics.`, `roads`],
+            [`A tax is our @@ of the things we use together.`, `share`]
+          ]
+        },
+        sortTitle: `Shared money or your own?`,
+        sortOpts: [{ k: "shared", t: `Paid from shared money` }, { k: "own", t: `You buy it yourself` }],
+        sort: [
+          { icon: "well", label: `The village well everyone drinks from`, a: "shared" },
+          { icon: "road", label: `The road to school`, a: "shared" },
+          { icon: "clinic", label: `The village clinic`, a: "shared" },
+          { icon: "football", label: `A new football for your own team`, a: "own" },
+          { icon: "lolly", label: `A lolly from the shop`, a: "own" }
+        ],
+        tf: [
+          { q: `Taxes are paid only by shopkeepers.`, a: false },
+          { q: `Taxes help pay for things like roads, schools and clinics.`, a: true },
+          { q: `Citizens can ask how tax money is used.`, a: true }
+        ],
+        think: [
+          { q: `A village needs 10,000 rupees for a new well. 100 families each pay the same amount. How much does each family pay?`, opts: [`100`, `1,000`, `10`], a: 0 },
+          { q: `A notebook costs 100 rupees plus 5 rupees tax. How much of your payment goes into the shared pot?`, opts: [`5`, `100`, `105`], a: 0 }
+        ],
+        promise: `I, {name}, promise to ask for a bill, to remember that taxes build shared things, and to pay my fair share when I earn.`
+      },
+      hi: {
+        remember: [`कर वह पैसा है जो लोग उन चीज़ों के लिए साझा मटके में देते हैं जिन्हें सब इस्तेमाल करते हैं।`, `साझा मटके से सड़कें, स्कूल, क्लीनिक, पानी और बहुत कुछ चलता है।`, `बिल पर GST एक तरह का कर है। वह क़ीमत का हिस्सा है और बिल पर लिखा होता है।`, `कर उन चीज़ों में हमारा हिस्सा है जिन्हें हम साथ इस्तेमाल करते हैं, और नागरिक पूछ सकते हैं कि पैसा कैसे इस्तेमाल हुआ।`],
+        fill: {
+          bank: [`कर`, `GST`, `आयकर`, `सड़कें`, `हिस्सा`, `तोहफ़ा`],
+          items: [
+            [`साझा ज़रूरतों के लिए लोग साझा मटके में जो पैसा देते हैं उसे @@ कहते हैं।`, `कर`],
+            [`दुकान के बिल में जुड़े कर को @@ कहते हैं।`, `GST`],
+            [`बड़े लोग एक सीमा से ऊपर की कमाई पर @@ देते हैं।`, `आयकर`],
+            [`करों से @@, स्कूल और क्लीनिक का ख़र्च चलता है।`, `सड़कें`],
+            [`कर उन चीज़ों में हमारा @@ है जिन्हें हम साथ इस्तेमाल करते हैं।`, `हिस्सा`]
+          ]
+        },
+        sortTitle: `साझा पैसा या अपना?`,
+        sortOpts: [{ k: "shared", t: `साझा पैसे से` }, { k: "own", t: `अपने पैसे से ख़रीदी जाए` }],
+        sort: [
+          { icon: "well", label: `गाँव का कुआँ जिससे सब पानी पीते हैं`, a: "shared" },
+          { icon: "road", label: `स्कूल जाने वाली सड़क`, a: "shared" },
+          { icon: "clinic", label: `गाँव का क्लीनिक`, a: "shared" },
+          { icon: "football", label: `अपनी टीम के लिए नया फ़ुटबॉल`, a: "own" },
+          { icon: "lolly", label: `दुकान से एक लॉलीपॉप`, a: "own" }
+        ],
+        tf: [
+          { q: `कर सिर्फ़ दुकानदार देते हैं।`, a: false },
+          { q: `कर से सड़क, स्कूल और क्लीनिक जैसी चीज़ों का ख़र्च चलता है।`, a: true },
+          { q: `नागरिक पूछ सकते हैं कि कर का पैसा कैसे इस्तेमाल होता है।`, a: true }
+        ],
+        think: [
+          { q: `गाँव को नए कुएँ के लिए 10,000 रुपये चाहिए। 100 परिवार बराबर-बराबर देते हैं। हर परिवार कितना देगा?`, opts: [`100`, `1,000`, `10`], a: 0 },
+          { q: `एक कॉपी 100 रुपये की है और उस पर 5 रुपये कर है। तुम्हारे भुगतान का कितना हिस्सा साझा मटके में जाता है?`, opts: [`5`, `100`, `105`], a: 0 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि बिल माँगूँग[[ा|ी]], याद रखूँग[[ा|ी]] कि कर से साझा चीज़ें बनती हैं, और कमाने पर अपना उचित हिस्सा दूँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`कर म्हणजे लोक ज्या गोष्टी सगळे वापरतात त्यांसाठी सामायिक मडक्यात भरतात तो पैसा.`, `सामायिक मडक्यातून रस्ते, शाळा, दवाखाने, पाणी आणि बरंच काही चालतं.`, `बिलावरचा GST हा एक प्रकारचा कर आहे. तो किमतीचा भाग असतो आणि बिलावर लिहिलेला असतो.`, `कर म्हणजे आपण एकत्र वापरतो त्या गोष्टींतला आपला वाटा, आणि नागरिक पैसा कसा वापरला ते विचारू शकतात.`],
+        fill: {
+          bank: [`कर`, `GST`, `आयकर`, `रस्ते`, `वाटा`, `भेट`],
+          items: [
+            [`सामायिक गरजांसाठी लोक सामायिक मडक्यात जो पैसा भरतात त्याला @@ म्हणतात.`, `कर`],
+            [`दुकानाच्या बिलात जोडलेल्या कराला @@ म्हणतात.`, `GST`],
+            [`मोठी माणसं एका मर्यादेपेक्षा जास्त कमाईवर @@ भरतात.`, `आयकर`],
+            [`करांतून @@, शाळा आणि दवाखान्यांचा खर्च चालतो.`, `रस्ते`],
+            [`कर म्हणजे आपण एकत्र वापरतो त्या गोष्टींतला आपला @@.`, `वाटा`]
+          ]
+        },
+        sortTitle: `सामायिक पैसा की स्वतःचा?`,
+        sortOpts: [{ k: "shared", t: `सामायिक पैशातून` }, { k: "own", t: `स्वतःच्या पैशांनी घ्यावं` }],
+        sort: [
+          { icon: "well", label: `सगळे पाणी पितात ती गावची विहीर`, a: "shared" },
+          { icon: "road", label: `शाळेला जाणारा रस्ता`, a: "shared" },
+          { icon: "clinic", label: `गावचा दवाखाना`, a: "shared" },
+          { icon: "football", label: `तुमच्या स्वतःच्या टीमसाठी नवा फुटबॉल`, a: "own" },
+          { icon: "lolly", label: `दुकानातला लॉलीपॉप`, a: "own" }
+        ],
+        tf: [
+          { q: `कर फक्त दुकानदार भरतात.`, a: false },
+          { q: `कराच्या पैशांतून रस्ते, शाळा आणि दवाखाने यांसारख्या गोष्टींचा खर्च चालतो.`, a: true },
+          { q: `नागरिक कराचा पैसा कसा वापरला जातो ते विचारू शकतात.`, a: true }
+        ],
+        think: [
+          { q: `गावाला नव्या विहिरीसाठी 10,000 रुपये हवेत. 100 कुटुंबं सारखे पैसे देतात. प्रत्येक कुटुंब किती देईल?`, opts: [`100`, `1,000`, `10`], a: 0 },
+          { q: `एका वहीची किंमत 100 रुपये आणि त्यावर 5 रुपये कर आहे. तुझ्या पैशांपैकी किती सामायिक मडक्यात जातात?`, opts: [`5`, `100`, `105`], a: 0 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की बिल मागेन, कर सामायिक गोष्टी उभारतो हे लक्षात ठेवीन, आणि कमवायला लागल्यावर माझा योग्य वाटा देईन.`
+      }
+    }
+  },
+  {
+    slug: "too-good-sale",
+    status: "live",
+    color: "#f4a9a8",
+    title: { en: `{name} and the Too-Good Sale`, hi: `{name} और हद से ज़्यादा अच्छी सेल`, mr: `{name} आणि खूपच भारी सेल` },
+    cardTitle: { en: `The Too-Good Sale`, hi: `हद से ज़्यादा अच्छी सेल`, mr: `खूपच भारी सेल` },
+    subtitle: { en: `Spotting fake online offers`, hi: `नक़ली ऑनलाइन ऑफ़र पहचानो`, mr: `फसवे ऑनलाइन ऑफर ओळखा` },
+    topic: { en: `Safety`, hi: `सुरक्षा`, mr: `सुरक्षा` },
+    stops: {
+      en: [`The Big Ad`, `Ask a Grown-up`, `Check Three Things`, `Pay on Delivery`],
+      hi: [`बड़ा विज्ञापन`, `बड़े से पूछो`, `तीन बातें जाँचो`, `डिलीवरी पर भुगतान`],
+      mr: [`मोठी जाहिरात`, `मोठ्यांना विचार`, `तीन गोष्टी तपास`, `डिलिव्हरीवर पेमेंट`]
+    },
+    scenes: [
+      `A huge phone shows a football with a 90 percent off tag and 99 rupees while you stare in shock.`,
+      `You ask Aaji about the message, a big question mark hangs above, and Aaji holds a magnifying glass.`,
+      `On the green board, a lock, a magnifying glass and a shield each have a green tick.`,
+      `A delivery person hands you a parcel while you pay, as a shield glows and a fox runs away.`
+    ],
+    story: {
+      en: [
+        `Late one evening a bright message popped up on Aaji's phone: "Football for 99 rupees! 90 percent off! Only 10 left!" Your eyes grew wide. The same football cost 1,000 rupees in the shop. "Quick, buy it now!" you said. But Gullu rolled in front of the screen. "Hold on, {name}. If something is 90 percent cheaper than everywhere else, ask: how can they make money? A hook with a juicy tag might be hiding a fox."`,
+        `You showed the message to Aaji. "Never rush," she said. "Fake sales hurry you with 'only 10 left' and 'ends in 5 minutes'. They want you to click before you think." She even fetched her reading magnifier to read the tiny words. Gullu laughed. "Let us look closely, then. A grown-up should always be part of any online buying."`,
+        `On the blackboard, Gullu and you made a checklist of three things. One: the lock. Does the page address start with https and show the right name, with no spelling tricks? Two: the magnifier. Do other buyers have honest reviews, a return policy and a way to contact the seller? Three: the shield. Is it a known, trusted shop or app, opened from its official place and not from a message link, with a safe way to pay?`,
+        `The next week, you really needed a new football. With Aaji, you ordered from a trusted shop's official app and chose "pay on delivery". When the delivery person arrived, you checked the name and the parcel, then paid. Far away, a fox ran off with a long face. Gullu said, "A real bargain does not rush you, does not ask for an OTP or PIN, and does not have to hide. Too good to be true usually is."`
+      ],
+      hi: [
+        `एक देर शाम दादी के फ़ोन पर चमकता संदेश आया: "फ़ुटबॉल सिर्फ़ 99 रुपये में! 90 प्रतिशत छूट! बस 10 बचे हैं!" तुम्हारी आँखें फैल गईं। वही फ़ुटबॉल दुकान में 1,000 रुपये का था। "जल्दी, अभी ख़रीद लो!" तुमने कहा। पर गुल्लू स्क्रीन के सामने लुढ़क आया। "रुको {name}। जो चीज़ बाक़ी सब जगह से 90 प्रतिशत सस्ती हो, तो पूछो: वे कमाएँगे कैसे? रसीले टैग वाले काँटे के पीछे लोमड़ी छिपी हो सकती है।"`,
+        `तुमने संदेश दादी को दिखाया। "कभी जल्दबाज़ी मत करो," उन्होंने कहा। "नक़ली सेल 'बस 10 बचे' और '5 मिनट में ख़त्म' कहकर जल्दी मचाती हैं। वे चाहती हैं कि तुम सोचने से पहले क्लिक कर दो।" वे तो अपना पढ़ने वाला शीशा भी ले आईं ताकि छोटे अक्षर पढ़ सकें। गुल्लू हँस पड़ा। "तो ग़ौर से देखते हैं। ऑनलाइन ख़रीद में कोई बड़ा हमेशा साथ होना चाहिए।"`,
+        `ब्लैकबोर्ड पर गुल्लू और तुमने तीन बातों की सूची बनाई। एक: ताला। पेज का पता https से शुरू होता है और नाम सही लिखा है, कोई स्पेलिंग की चालाकी नहीं? दो: ग़ौर से देखना। दूसरे ख़रीदारों की ईमानदार समीक्षाएँ, वापसी की नीति और विक्रेता से संपर्क का तरीक़ा है? तीन: ढाल। क्या यह जानी-पहचानी, भरोसेमंद दुकान या ऐप है, जिसे उसकी आधिकारिक जगह से खोला गया है, किसी संदेश के लिंक से नहीं, और भुगतान का सुरक्षित तरीक़ा है?`,
+        `अगले हफ़्ते तुम्हें सचमुच नया फ़ुटबॉल चाहिए था। दादी के साथ तुमने एक भरोसेमंद दुकान के आधिकारिक ऐप से ऑर्डर किया और "डिलीवरी पर भुगतान" चुना। डिलीवरी वाले के आने पर तुमने नाम और पार्सल जाँचा, फिर पैसे दिए। दूर कहीं एक लोमड़ी मुँह लटकाए भाग गई। गुल्लू बोला, "असली सौदा जल्दी नहीं मचाता, OTP या पिन नहीं माँगता, और उसे छिपना नहीं पड़ता। हद से ज़्यादा अच्छी चीज़ अक्सर सच नहीं होती।"`
+      ],
+      mr: [
+        `एका उशिरा संध्याकाळी आजीच्या फोनवर एक झळकता मेसेज आला: "फुटबॉल फक्त 99 रुपयांत! 90 टक्के सूट! फक्त 10 उरले!" तुझे डोळे विस्फारले. तोच फुटबॉल दुकानात 1,000 रुपयांना होता. "लवकर, आत्ताच घे!" तू म्हणाल[[ास|ीस]]. पण गल्लू स्क्रीनसमोर घरंगळत आला. "थांब {name}. जी गोष्ट बाकी सगळीकडून 90 टक्के स्वस्त असते, तेव्हा विचार: ते कमावणार कसे? रसरशीत टॅग असलेल्या गळाच्या मागे कोल्हा लपलेला असू शकतो."`,
+        `तू मेसेज आजीला दाखवलास. "कधीही घाई करू नकोस," आजी म्हणाल्या. "बनावट सेल 'फक्त 10 उरले' आणि '5 मिनिटांत संपणार' म्हणून घाई करवतात. तू विचार करण्याआधी क्लिक करावंस असं त्यांना वाटतं." त्यांनी तर वाचायचं भिंगही आणलं, म्हणजे लहान अक्षरं वाचता येतील. गल्लू हसला. "मग नीट बघू या. ऑनलाइन खरेदीत एखादी मोठी व्यक्ती नेहमी बरोबर असावी."`,
+        `फळ्यावर गल्लूने आणि तू मिळून तीन गोष्टींची यादी केली. एक: कुलूप. पानाचा पत्ता https ने सुरू होतो आणि नाव बरोबर लिहिलं आहे, स्पेलिंगची काही चलाखी नाही ना? दोन: भिंग. इतर खरेदीदारांचे प्रामाणिक रिव्ह्यू, परताव्याचं धोरण आणि विक्रेत्याशी संपर्काचा मार्ग आहे का? तीन: ढाल. हे ओळखीचं, भरवशाचं दुकान किंवा अॅप आहे का, जे त्यांच्या अधिकृत जागेवरून उघडलं आहे, मेसेजच्या लिंकवरून नाही, आणि पैसे द्यायचा सुरक्षित मार्ग आहे का?`,
+        `पुढच्या आठवड्यात तुला खरंच नवा फुटबॉल हवा होता. आजीबरोबर तू भरवशाच्या दुकानाच्या अधिकृत अॅपवरून ऑर्डर दिलीस आणि "डिलिव्हरीवर पेमेंट" निवडलंस. डिलिव्हरीवाला आल्यावर तू नाव आणि पार्सल तपासलंस, मग पैसे दिलेस. दूर कुठे तरी एक कोल्हा तोंड पाडून पळाला. गल्लू म्हणाला, "खरा सौदा घाई करत नाही, OTP किंवा पिन मागत नाही, आणि त्याला लपावं लागत नाही. खूपच चांगलं वाटणारं बहुतेक खरं नसतं."`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`A deal that is far cheaper than everywhere else may be a trap.`, `Fake sales hurry you with words like "only 10 left". Slow down.`, `Check three things: the https address, honest reviews and return policy, and a trusted shop or app.`, `Never share an OTP or PIN, and ask a grown-up before buying online. Pay on delivery when you can.`],
+        fill: {
+          bank: [`trap`, `hurry`, `https`, `reviews`, `OTP`, `grown-up`],
+          items: [
+            [`A price that is far too low can be a @@.`, `trap`],
+            [`Fake sales try to @@ you so you cannot think.`, `hurry`],
+            [`A safe page address starts with @@.`, `https`],
+            [`Check honest @@ and the return policy.`, `reviews`],
+            [`Never tell anyone your @@ or PIN.`, `OTP`]
+          ]
+        },
+        sortTitle: `Safe or risky?`,
+        sortOpts: [{ k: "safe", t: `Safe` }, { k: "risk", t: `Risky` }],
+        sort: [
+          { icon: "shield", label: `Buying from a trusted shop's official app`, a: "safe" },
+          { icon: "tag", label: `A "90% off, only 5 minutes left" message`, a: "risk" },
+          { icon: "parcel", label: `Paying on delivery after checking the parcel`, a: "safe" },
+          { icon: "otp", label: `Sending your OTP to claim a prize`, a: "risk" },
+          { icon: "magnifier", label: `Reading reviews and the return policy first`, a: "safe" }
+        ],
+        tf: [
+          { q: `A price 90 percent lower than everywhere else is always a lucky chance.`, a: false },
+          { q: `Fake sales use hurry words like "only 10 left".`, a: true },
+          { q: `You should ask a grown-up before buying online.`, a: true }
+        ],
+        think: [
+          { q: `A football costs 1,000 rupees in the shop. If an ad says 90 percent off, how much would you pay?`, opts: [`100`, `900`, `10`], a: 0 },
+          { q: `A message says: "Pay a 200 rupee fee first to get a free phone." What should you do?`, opts: [`Pay quickly`, `Ignore it and tell a grown-up`, `Pay half`], a: 1 }
+        ],
+        promise: `I, {name}, promise to slow down when a deal hurries me, to check the three things, and to ask a grown-up before I buy online.`
+      },
+      hi: {
+        remember: [`जो सौदा बाक़ी सब जगह से बहुत सस्ता हो, वह जाल हो सकता है।`, `नक़ली सेल "बस 10 बचे" जैसे शब्दों से जल्दी मचाती हैं। धीमे चलो।`, `तीन बातें जाँचो: https वाला पता, ईमानदार समीक्षाएँ और वापसी की नीति, और भरोसेमंद दुकान या ऐप।`, `OTP या पिन कभी मत बताओ और ऑनलाइन ख़रीद से पहले किसी बड़े से पूछो। हो सके तो डिलीवरी पर भुगतान करो।`],
+        fill: {
+          bank: [`जाल`, `जल्दी`, `https`, `समीक्षाएँ`, `OTP`, `बड़े`],
+          items: [
+            [`बहुत ही कम क़ीमत एक @@ हो सकती है।`, `जाल`],
+            [`नक़ली सेल लोगों को @@ में डालती है ताकि वे सोच न सकें।`, `जल्दी`],
+            [`सुरक्षित पेज का पता @@ से शुरू होता है।`, `https`],
+            [`ईमानदार @@ और वापसी की नीति जाँचो।`, `समीक्षाएँ`],
+            [`अपना @@ या पिन किसी को कभी मत बताओ।`, `OTP`]
+          ]
+        },
+        sortTitle: `सुरक्षित या जोखिम भरा?`,
+        sortOpts: [{ k: "safe", t: `सुरक्षित` }, { k: "risk", t: `जोखिम भरा` }],
+        sort: [
+          { icon: "shield", label: `भरोसेमंद दुकान के आधिकारिक ऐप से ख़रीदना`, a: "safe" },
+          { icon: "tag", label: `"90% छूट, बस 5 मिनट बाक़ी" वाला संदेश`, a: "risk" },
+          { icon: "parcel", label: `पार्सल जाँचकर डिलीवरी पर भुगतान करना`, a: "safe" },
+          { icon: "otp", label: `इनाम लेने के लिए OTP भेजना`, a: "risk" },
+          { icon: "magnifier", label: `पहले समीक्षाएँ और वापसी की नीति पढ़ना`, a: "safe" }
+        ],
+        tf: [
+          { q: `बाक़ी सब जगह से 90 प्रतिशत कम क़ीमत हमेशा क़िस्मत की बात होती है।`, a: false },
+          { q: `नक़ली सेल "बस 10 बचे" जैसे जल्दी वाले शब्द इस्तेमाल करती हैं।`, a: true },
+          { q: `ऑनलाइन ख़रीद से पहले किसी बड़े से पूछना चाहिए।`, a: true }
+        ],
+        think: [
+          { q: `फ़ुटबॉल दुकान में 1,000 रुपये का है। 90 प्रतिशत छूट का मतलब है कि कितने रुपये देने पड़ेंगे?`, opts: [`100`, `900`, `10`], a: 0 },
+          { q: `एक संदेश कहता है: "मुफ़्त फ़ोन पाने के लिए पहले 200 रुपये फ़ीस दो।" क्या करना चाहिए?`, opts: [`जल्दी से दे देना`, `अनदेखा करना और बड़े को बताना`, `आधी फ़ीस देना`], a: 1 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि जब कोई सौदा जल्दी मचाए तो धीरे चलूँग[[ा|ी]], तीन बातें जाँचूँग[[ा|ी]], और ऑनलाइन ख़रीदने से पहले किसी बड़े से पूछूँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`बाकी सगळीकडून खूपच स्वस्त असलेला सौदा सापळा असू शकतो.`, `बनावट सेल "फक्त 10 उरले" अशा शब्दांनी घाई करवतात. सावकाश हो.`, `तीन गोष्टी तपास: https असलेला पत्ता, प्रामाणिक रिव्ह्यू आणि परताव्याचं धोरण, आणि भरवशाचं दुकान किंवा अॅप.`, `OTP किंवा पिन कधीही सांगू नकोस आणि ऑनलाइन खरेदीआधी मोठ्याला विचार. शक्य असेल तर डिलिव्हरीवर पेमेंट कर.`],
+        fill: {
+          bank: [`सापळा`, `घाई`, `https`, `रिव्ह्यू`, `OTP`, `मोठ्या`],
+          items: [
+            [`खूपच कमी किंमत हा एक @@ असू शकतो.`, `सापळा`],
+            [`बनावट सेल लोकांना @@ करायला लावतात, म्हणजे त्यांना विचार करता येत नाही.`, `घाई`],
+            [`सुरक्षित पानाचा पत्ता @@ ने सुरू होतो.`, `https`],
+            [`प्रामाणिक @@ आणि परताव्याचं धोरण तपास.`, `रिव्ह्यू`],
+            [`तुझा @@ किंवा पिन कोणालाही कधी सांगू नकोस.`, `OTP`]
+          ]
+        },
+        sortTitle: `सुरक्षित की धोकादायक?`,
+        sortOpts: [{ k: "safe", t: `सुरक्षित` }, { k: "risk", t: `धोकादायक` }],
+        sort: [
+          { icon: "shield", label: `भरवशाच्या दुकानाच्या अधिकृत अॅपवरून घेणं`, a: "safe" },
+          { icon: "tag", label: `"90% सूट, फक्त 5 मिनिटं बाकी" असा मेसेज`, a: "risk" },
+          { icon: "parcel", label: `पार्सल तपासून डिलिव्हरीवर पेमेंट करणं`, a: "safe" },
+          { icon: "otp", label: `बक्षीस मिळवायला OTP पाठवणं`, a: "risk" },
+          { icon: "magnifier", label: `आधी रिव्ह्यू आणि परताव्याचं धोरण वाचणं`, a: "safe" }
+        ],
+        tf: [
+          { q: `बाकी सगळीकडून 90 टक्के कमी किंमत ही नेहमी नशिबाची गोष्ट असते.`, a: false },
+          { q: `बनावट सेल "फक्त 10 उरले" असे घाईचे शब्द वापरतात.`, a: true },
+          { q: `ऑनलाइन खरेदीआधी मोठ्या व्यक्तीला विचारावं.`, a: true }
+        ],
+        think: [
+          { q: `फुटबॉल दुकानात 1,000 रुपयांना आहे. 90 टक्के सूट म्हणजे किती रुपये द्यावे लागतील?`, opts: [`100`, `900`, `10`], a: 0 },
+          { q: `एक मेसेज म्हणतो: "मोफत फोन मिळवायला आधी 200 रुपये फी भरा." काय करावं?`, opts: [`लगेच भरून टाकावी`, `दुर्लक्ष करून मोठ्याला सांगावं`, `निम्मी फी भरावी`], a: 1 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की सौदा घाई करवू लागला की सावकाश होईन, तीन गोष्टी तपासेन, आणि ऑनलाइन घेण्याआधी मोठ्याला विचारीन.`
+      }
+    }
+  },
+  {
+    slug: "growing-staircase",
+    status: "live",
+    color: "#a9def9",
+    title: { en: `{name} and the Growing Staircase`, hi: `{name} और बढ़ती सीढ़ी`, mr: `{name} आणि वाढता जिना` },
+    cardTitle: { en: `The Growing Staircase`, hi: `बढ़ती सीढ़ी`, mr: `वाढता जिना` },
+    subtitle: { en: `Simple and compound interest`, hi: `साधारण और चक्रवृद्धि ब्याज`, mr: `साधं आणि चक्रवाढ व्याज` },
+    topic: { en: `Interest`, hi: `ब्याज`, mr: `व्याज` },
+    stops: {
+      en: [`The Deposit`, `Year One`, `Year Two`, `Twenty Years`],
+      hi: [`जमा`, `पहला साल`, `दूसरा साल`, `बीस साल`],
+      mr: [`ठेव`, `पहिलं वर्ष`, `दुसरं वर्ष`, `वीस वर्षं`]
+    },
+    scenes: [
+      `You hand Meena Didi 1,000 rupees at the bank counter while a board shows 1,000 and a tag says 10 percent.`,
+      `A table shows a tall stack of coins and a new coin glowing beside it, with a plus 100 tag and a calendar tick.`,
+      `Three steps of coins grow taller, with a plus 110 tag, as you throw up your arm in surprise.`,
+      `A short stack of 3,000 stands beside a much taller stack of 6,727 under a board showing 20.`
+    ],
+    story: {
+      en: [
+        `Meena Didi smiled as you handed her 1,000 rupees for a deposit. "Let us imagine this bank pays 10 rupees on every 100 rupees each year," she said. "That is 10 percent. Real rates are usually lower, but 10 makes the maths easy." Gullu climbed onto the counter. "Today you are standing on the bottom step of a staircase, {name}. Watch it grow."`,
+        `After one year, 10 percent of 1,000 is 100 rupees. "1,000 plus 100 makes 1,100 rupees," said Gullu, writing on the blackboard. You ticked the first box on the calendar. "This is simple interest if you take the 100 out every year: always 100, on the first 1,000 only. But if you leave the 100 in, something magical begins."`,
+        `In the second year, the bank paid interest on 1,100, not just 1,000. 10 percent of 1,100 is 110 rupees. "1,100 plus 110 makes 1,210," said Gullu. "See the extra 10? That is interest on your interest! This is called compound interest. Each step of the staircase is taller than the last." You jumped for joy.`,
+        `Gullu showed you what happens after twenty years. With simple interest, you would have 1,000 plus 20 times 100, which is 3,000 rupees. With compound interest, the same 1,000 would grow to about 6,727 rupees, more than double! "Time is the secret," said Gullu. "Start early, add regularly and leave it alone. But remember, loans can compound too, against you. That is why even a small debt can grow big."`
+      ],
+      hi: [
+        `मीना दीदी मुस्कुराईं जब तुमने उन्हें जमा के लिए 1,000 रुपये दिए। "मान लो यह बैंक हर साल हर सौ रुपये पर दस रुपये देता है," उन्होंने कहा। "यानी दस प्रतिशत। असली दरें आम तौर पर कम होती हैं, पर दस से हिसाब आसान हो जाता है।" गुल्लू काउंटर पर चढ़ गया। "आज तुम सीढ़ी की सबसे नीचे वाली पायदान पर खड़[[े|ी]] हो, {name}। देखो यह कैसे बढ़ती है।"`,
+        `एक साल बाद 1,000 का दस प्रतिशत यानी 100 रुपये हुआ। "1,000 और 100 मिलकर 1,100 रुपये," गुल्लू ने ब्लैकबोर्ड पर लिखा। तुमने कैलेंडर का पहला ख़ाना टिक किया। "यह साधारण ब्याज है अगर हर साल वे 100 निकाल लो: हमेशा 100, सिर्फ़ पहले 1,000 पर। पर अगर तुम उन 100 को वहीं रहने दो, तो एक जादू शुरू होता है।"`,
+        `दूसरे साल बैंक ने सिर्फ़ 1,000 पर नहीं, 1,100 पर ब्याज दिया। 1,100 का दस प्रतिशत 110 रुपये है। "1,100 और 110 मिलकर 1,210," गुल्लू बोला। "वह अतिरिक्त 10 देखो? वह तुम्हारे ब्याज पर ब्याज है! इसे चक्रवृद्धि ब्याज कहते हैं। सीढ़ी की हर पायदान पिछली से ऊँची है।" तुम ख़ुशी से उछल पड़[[े|ीं]]।`,
+        `गुल्लू ने तुम्हें दिखाया कि बीस साल बाद क्या होता है। साधारण ब्याज में तुम्हारे पास 1,000 और 20 गुना 100 यानी 3,000 रुपये होते। चक्रवृद्धि ब्याज में वही 1,000 बढ़कर लगभग 6,727 रुपये हो जाते, दुगुने से भी ज़्यादा! "समय ही राज़ है," गुल्लू बोला। "जल्दी शुरू करो, नियम से जोड़ो, और छुओ मत। पर याद रखो, कर्ज़ भी चक्रवृद्धि से बढ़ सकता है, तुम्हारे ख़िलाफ़। इसीलिए छोटा कर्ज़ भी बड़ा हो सकता है।"`
+      ],
+      mr: [
+        `मीना ताई हसल्या जेव्हा तू त्यांना ठेवीसाठी 1,000 रुपये दिलेस. "समज ही बँक दर वर्षी प्रत्येक शंभर रुपयांवर दहा रुपये देते," त्या म्हणाल्या. "म्हणजे दहा टक्के. खरे दर सहसा कमी असतात, पण दहामुळे हिशोब सोपा होतो." गल्लू काउंटरवर चढला. "आज तू जिन्याच्या सगळ्यात खालच्या पायरीवर उभ[[ा|ी]] आहेस, {name}. बघ तो कसा वाढतो."`,
+        `एका वर्षानंतर 1,000 चे दहा टक्के म्हणजे 100 रुपये झाले. "1,000 आणि 100 मिळून 1,100 रुपये," गल्लूने फळ्यावर लिहिलं. तू कॅलेंडरचा पहिला चौकोन टिक केलास. "हे साधं व्याज आहे, जर दर वर्षी ते 100 काढून घेतलेस तर: नेहमी 100, फक्त पहिल्या 1,000 वर. पण जर तू ते 100 तिथेच राहू दिलेस, तर एक जादू सुरू होते."`,
+        `दुसऱ्या वर्षी बँकेने फक्त 1,000 वर नाही, 1,100 वर व्याज दिलं. 1,100 चे दहा टक्के 110 रुपये आहेत. "1,100 आणि 110 मिळून 1,210," गल्लू म्हणाला. "ते जादा 10 बघ? ते तुझ्या व्याजावरचं व्याज आहे! याला चक्रवाढ व्याज म्हणतात. जिन्याची प्रत्येक पायरी मागच्यापेक्षा उंच आहे." तू आनंदाने उड्या मारल्यास.`,
+        `गल्लूने तुला वीस वर्षांनंतर काय होतं ते दाखवलं. साध्या व्याजात तुझ्याकडे 1,000 आणि 20 गुणिले 100, म्हणजे 3,000 रुपये झाले असते. चक्रवाढ व्याजात तेच 1,000 वाढून सुमारे 6,727 रुपये झाले असते, दुपटीपेक्षाही जास्त! "वेळ हेच रहस्य आहे," गल्लू म्हणाला. "लवकर सुरुवात कर, नियमितपणे भर घाल, आणि हात लावू नकोस. पण लक्षात ठेव, कर्जही चक्रवाढीने वाढू शकतं, तुझ्या विरोधात. म्हणूनच छोटं कर्जही मोठं होऊ शकतं."`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`Simple interest is paid only on the money you first put in.`, `Compound interest is paid on the money plus the interest already earned.`, `1,000 at 10 percent: 1,100 after one year, 1,210 after two, and about 6,727 after twenty.`, `Start early and leave it alone. Loans can compound too, so borrow carefully.`],
+        fill: {
+          bank: [`simple`, `compound`, `1,100`, `1,210`, `early`, `interest`],
+          items: [
+            [`Interest on only the first amount is @@ interest.`, `simple`],
+            [`Interest on the amount plus past interest is @@ interest.`, `compound`],
+            [`After one year, 1,000 at 10 percent becomes @@ rupees.`, `1,100`],
+            [`After two years it becomes @@ rupees.`, `1,210`],
+            [`To make the staircase tall, start @@ and wait.`, `early`]
+          ]
+        },
+        sortTitle: `Simple or compound?`,
+        sortOpts: [{ k: "simple", t: `Simple` }, { k: "comp", t: `Compound` }],
+        sort: [
+          { icon: "ledger", label: `Interest is always counted on the first 1,000 only`, a: "simple" },
+          { icon: "stairs", label: `Interest is also counted on interest already earned`, a: "comp" },
+          { icon: "tree", label: `The money grows faster the longer you wait`, a: "comp" },
+          { icon: "coin", label: `You get the same 100 rupees every year`, a: "simple" },
+          { icon: "seed", label: `Year 2 interest is 110, bigger than year 1`, a: "comp" }
+        ],
+        tf: [
+          { q: `Compound interest is paid on interest already earned.`, a: true },
+          { q: `Simple interest grows faster than compound interest over many years.`, a: false },
+          { q: `Loans can also grow with compound interest.`, a: true }
+        ],
+        think: [
+          { q: `You put 2,000 rupees at 10 percent simple interest. How much interest do you get in one year?`, opts: [`200`, `20`, `2,200`], a: 0 },
+          { q: `In year two, 1,100 rupees earns 10 percent compound interest. How much is the interest?`, opts: [`110`, `100`, `11`], a: 0 }
+        ],
+        promise: `I, {name}, promise to start saving early, to let my money grow without touching it, and to think carefully before I borrow.`
+      },
+      hi: {
+        remember: [`साधारण ब्याज सिर्फ़ उस पैसे पर मिलता है जो तुमने शुरू में जमा किया।`, `चक्रवृद्धि ब्याज पैसे और अब तक मिले ब्याज, दोनों पर मिलता है।`, `10 प्रतिशत पर 1,000: एक साल बाद 1,100, दो साल बाद 1,210 और बीस साल बाद लगभग 6,727।`, `जल्दी शुरू करो और छुओ मत। कर्ज़ भी चक्रवृद्धि से बढ़ता है, इसलिए सोच-समझकर लो।`],
+        fill: {
+          bank: [`साधारण`, `चक्रवृद्धि`, `1,100`, `1,210`, `जल्दी`, `ब्याज`],
+          items: [
+            [`सिर्फ़ पहली रक़म पर मिलने वाला ब्याज @@ ब्याज कहलाता है।`, `साधारण`],
+            [`रक़म और पिछले ब्याज पर मिलने वाला ब्याज @@ ब्याज कहलाता है।`, `चक्रवृद्धि`],
+            [`10 प्रतिशत पर 1,000 रुपये एक साल बाद @@ रुपये हो जाते हैं।`, `1,100`],
+            [`दो साल बाद वे @@ रुपये हो जाते हैं।`, `1,210`],
+            [`सीढ़ी ऊँची करनी हो तो @@ शुरू करो और इंतज़ार करो।`, `जल्दी`]
+          ]
+        },
+        sortTitle: `साधारण या चक्रवृद्धि?`,
+        sortOpts: [{ k: "simple", t: `साधारण` }, { k: "comp", t: `चक्रवृद्धि` }],
+        sort: [
+          { icon: "ledger", label: `ब्याज हमेशा सिर्फ़ पहले 1,000 पर गिना जाता है`, a: "simple" },
+          { icon: "stairs", label: `मिले हुए ब्याज पर भी ब्याज गिना जाता है`, a: "comp" },
+          { icon: "tree", label: `जितना इंतज़ार, पैसा उतना तेज़ बढ़ता है`, a: "comp" },
+          { icon: "coin", label: `हर साल उतने ही 100 रुपये मिलते हैं`, a: "simple" },
+          { icon: "seed", label: `दूसरे साल का ब्याज 110 है, पहले साल से ज़्यादा`, a: "comp" }
+        ],
+        tf: [
+          { q: `चक्रवृद्धि ब्याज पहले से मिले ब्याज पर भी लगता है।`, a: true },
+          { q: `कई सालों में साधारण ब्याज चक्रवृद्धि ब्याज से तेज़ बढ़ता है।`, a: false },
+          { q: `कर्ज़ भी चक्रवृद्धि ब्याज से बढ़ सकता है।`, a: true }
+        ],
+        think: [
+          { q: `2,000 रुपये 10 प्रतिशत साधारण ब्याज पर रखे जाएँ, तो एक साल में कितना ब्याज मिलेगा?`, opts: [`200`, `20`, `2,200`], a: 0 },
+          { q: `दूसरे साल 1,100 रुपये पर 10 प्रतिशत चक्रवृद्धि ब्याज लगता है। ब्याज कितना हुआ?`, opts: [`110`, `100`, `11`], a: 0 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि जल्दी बचत शुरू करूँग[[ा|ी]], अपने पैसे को छुए बिना बढ़ने दूँग[[ा|ी]], और कर्ज़ लेने से पहले ध्यान से सोचूँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`साधं व्याज फक्त सुरुवातीला भरलेल्या पैशांवरच मिळतं.`, `चक्रवाढ व्याज पैसे आणि आतापर्यंत मिळालेलं व्याज, दोन्हींवर मिळतं.`, `10 टक्क्यांवर 1,000: एका वर्षानंतर 1,100, दोन वर्षांनी 1,210 आणि वीस वर्षांनी सुमारे 6,727.`, `लवकर सुरुवात कर आणि हात लावू नकोस. कर्जही चक्रवाढीने वाढतं, म्हणून विचारपूर्वक घे.`],
+        fill: {
+          bank: [`साधं`, `चक्रवाढ`, `1,100`, `1,210`, `लवकर`, `व्याज`],
+          items: [
+            [`फक्त पहिल्या रकमेवरचं व्याज म्हणजे @@ व्याज.`, `साधं`],
+            [`रक्कम आणि आधीच्या व्याजावरचं व्याज म्हणजे @@ व्याज.`, `चक्रवाढ`],
+            [`10 टक्क्यांवर 1,000 रुपये एका वर्षानंतर @@ रुपये होतात.`, `1,100`],
+            [`दोन वर्षांनी ते @@ रुपये होतात.`, `1,210`],
+            [`जिना उंच करायचा असेल तर @@ सुरुवात कर आणि थांब.`, `लवकर`]
+          ]
+        },
+        sortTitle: `साधं की चक्रवाढ?`,
+        sortOpts: [{ k: "simple", t: `साधं` }, { k: "comp", t: `चक्रवाढ` }],
+        sort: [
+          { icon: "ledger", label: `व्याज नेहमी फक्त पहिल्या 1,000 वरच मोजलं जातं`, a: "simple" },
+          { icon: "stairs", label: `मिळालेल्या व्याजावरही व्याज मोजलं जातं`, a: "comp" },
+          { icon: "tree", label: `जितकं जास्त थांबावं, पैसा तितका वेगाने वाढतो`, a: "comp" },
+          { icon: "coin", label: `दरवर्षी तेच 100 रुपये मिळतात`, a: "simple" },
+          { icon: "seed", label: `दुसऱ्या वर्षाचं व्याज 110 आहे, पहिल्या वर्षापेक्षा जास्त`, a: "comp" }
+        ],
+        tf: [
+          { q: `चक्रवाढ व्याज आधीच मिळालेल्या व्याजावरही लागतं.`, a: true },
+          { q: `अनेक वर्षांत साधं व्याज चक्रवाढ व्याजापेक्षा वेगाने वाढतं.`, a: false },
+          { q: `कर्जही चक्रवाढ व्याजाने वाढू शकतं.`, a: true }
+        ],
+        think: [
+          { q: `2,000 रुपये 10 टक्के साध्या व्याजावर ठेवले, तर एका वर्षात किती व्याज मिळेल?`, opts: [`200`, `20`, `2,200`], a: 0 },
+          { q: `दुसऱ्या वर्षी 1,100 रुपयांवर 10 टक्के चक्रवाढ व्याज लागतं. व्याज किती झालं?`, opts: [`110`, `100`, `11`], a: 0 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की लवकर बचत सुरू करीन, माझे पैसे हात न लावता वाढू देईन, आणि कर्ज घेण्याआधी नीट विचार करीन.`
+      }
+    }
+  },
+{
+    slug: "journey-of-50",
+    status: "live",
+    color: "#e4c1f9",
+    title: { en: `The Journey of {name}'s 50 Rupees`, hi: `{name} के 50 रुपये का सफ़र`, mr: `{name} च्या 50 रुपयांचा प्रवास` },
+    cardTitle: { en: `The Journey of 50 Rupees`, hi: `50 रुपये का सफ़र`, mr: `50 रुपयांचा प्रवास` },
+    subtitle: { en: `How a UPI payment really works`, hi: `UPI भुगतान असल में कैसे चलता है`, mr: `UPI पेमेंट प्रत्यक्षात कसं चालतं` },
+    topic: { en: `Digital money`, hi: `डिजिटल पैसा`, mr: `डिजिटल पैसा` },
+    stops: {
+      en: [`Scan the Code`, `Check the Name`, `PIN Is Private`, `The Green Tick`],
+      hi: [`कोड स्कैन करो`, `नाम जाँचो`, `पिन गुप्त है`, `हरा टिक`],
+      mr: [`कोड स्कॅन कर`, `नाव तपास`, `पिन गुप्त आहे`, `हिरवी टिक`]
+    },
+    scenes: [
+      `You hold a phone and scan a square QR code on Kaka's stall while a 50 rupee tag hovers above.`,
+      `The phone shows a name card and you hold a magnifying glass over it to check the name.`,
+      `You think about your private PIN while a fox on a phone call asks for it and a no sign blocks it.`,
+      `Kaka's phone shows a green tick and Kaka hands you a samosa while you smile.`
+    ],
+    story: {
+      en: [
+        `You were hungry after school, and the samosas at Kaka's stall smelled wonderful. Today you had no cash, only the phone Aaji lets you use for payments. "Scan the QR code and pay," said Kaka. Gullu curled up on your shoulder. "Let us follow your 50 rupees on their journey, {name}. A QR code is just a picture holding Kaka's payment address. When you scan it, your phone sends a message to your bank."`,
+        `Before you pressed pay, Gullu said, "Stop. Read the name first." Your phone showed the receiver's name. You lifted your magnifier and read it carefully. It matched Kaka's shop. "Always check the name and the amount before you pay," said Gullu. "If the name looks wrong, do not pay. A fake QR sticker can be pasted over a real one to send your money to a stranger."`,
+        `Just then, Aaji's phone rang. A smooth voice said, "I am from your bank. We are sending you a refund. Please tell me your UPI PIN to receive it." The fox was calling again! Gullu squeaked, "NO!" You remembered: "A PIN is only for sending money, and only I type it in my own phone. To receive money, I never need to enter a PIN or scan anything." You hung up and told Aaji.`,
+        `Back at the stall, you checked the name and amount, typed your private PIN where nobody could see, and pressed pay. The screen showed a green tick. On Kaka's phone, a happy sound said, "50 rupees received." Kaka gave you a hot samosa. "In a few seconds your money went from your bank to his bank," said Gullu. "Safe habits make it a quick, happy journey."`
+      ],
+      hi: [
+        `स्कूल के बाद तुम्हें भूख लगी थी और काका की दुकान के समोसे बहुत महक रहे थे। आज तुम्हारे पास नक़द नहीं था, बस वह फ़ोन जो दादी भुगतान के लिए तुम्हें देती हैं। "QR कोड स्कैन करो और पैसे दो," काका ने कहा। गुल्लू तुम्हारे कंधे पर सिमट गया। "चलो अपने 50 रुपये का सफ़र देखें, {name}। QR कोड बस एक तस्वीर है जिसमें काका का भुगतान पता छिपा है। उसे स्कैन करते ही तुम्हारा फ़ोन तुम्हारे बैंक को संदेश भेजता है।"`,
+        `भुगतान दबाने से पहले गुल्लू बोला, "रुको। पहले नाम पढ़ो।" फ़ोन पर पाने वाले का नाम दिखा। तुमने अपना शीशा उठाया और ध्यान से पढ़ा। वह काका की दुकान से मेल खाता था। "भुगतान से पहले हमेशा नाम और रक़म जाँचो," गुल्लू बोला। "अगर नाम ग़लत लगे तो पैसे मत दो। असली QR पर नक़ली स्टिकर चिपकाकर तुम्हारा पैसा किसी अजनबी को भेजा जा सकता है।"`,
+        `तभी दादी का फ़ोन बजा। एक मीठी आवाज़ बोली, "मैं आपके बैंक से हूँ। हम आपको रिफ़ंड भेज रहे हैं। उसे पाने के लिए अपना UPI पिन बताइए।" लोमड़ी फिर फ़ोन कर रही थी! गुल्लू चीख़ा, "नहीं!" तुम्हें याद आया: "पिन सिर्फ़ पैसे भेजने के लिए है, और उसे सिर्फ़ मैं अपने फ़ोन में डालता हूँ। पैसे पाने के लिए मुझे कभी पिन डालने या कुछ स्कैन करने की ज़रूरत नहीं होती।" तुमने फ़ोन काट दिया और दादी को बताया।`,
+        `दुकान पर लौटकर तुमने नाम और रक़म जाँची, अपना निजी पिन ऐसे डाला कि कोई देख न सके, और भुगतान दबाया। स्क्रीन पर हरा टिक आया। काका के फ़ोन पर ख़ुशी की आवाज़ आई, "50 रुपये मिले।" काका ने तुम्हें गरम समोसा दिया। "कुछ ही सेकंड में तुम्हारे बैंक से उनके बैंक तक पैसा पहुँच गया," गुल्लू बोला। "सुरक्षित आदतें इस सफ़र को तेज़ और ख़ुशनुमा बनाती हैं।"`
+      ],
+      mr: [
+        `शाळेनंतर तुला भूक लागली होती आणि काकांच्या स्टॉलवरच्या समोशांचा वास सुटला होता. आज तुझ्याकडे रोख नव्हती, फक्त तो फोन होता जो आजी पेमेंटसाठी तुला देते. "QR कोड स्कॅन कर आणि पैसे दे," काका म्हणाले. गल्लू तुझ्या खांद्यावर गुरफटला. "चल, तुझ्या 50 रुपयांचा प्रवास बघू, {name}. QR कोड म्हणजे फक्त एक चित्र, ज्यात काकांचा पेमेंट पत्ता दडलेला असतो. तू तो स्कॅन केलास की तुझा फोन तुझ्या बँकेला संदेश पाठवतो."`,
+        `पे दाबण्याआधी गल्लू म्हणाला, "थांब. आधी नाव वाच." फोनवर घेणाऱ्याचं नाव दिसलं. तू भिंग उचललंस आणि नीट वाचलंस. ते काकांच्या दुकानाशी जुळत होतं. "पैसे देण्याआधी नेहमी नाव आणि रक्कम तपास," गल्लू म्हणाला. "नाव चुकीचं वाटलं तर पैसे देऊ नकोस. खऱ्या QR वर खोटा स्टिकर चिकटवून तुझे पैसे एखाद्या अनोळखी माणसाकडे पाठवले जाऊ शकतात."`,
+        `तेवढ्यात आजीचा फोन वाजला. एक गोड आवाज म्हणाला, "मी तुमच्या बँकेतून बोलतोय. आम्ही तुम्हाला रिफंड पाठवतोय. तो मिळवण्यासाठी तुमचा UPI पिन सांगा." कोल्हा पुन्हा फोन करत होता! गल्लू ओरडला, "नाही!" तुला आठवलं: "पिन फक्त पैसे पाठवण्यासाठी असतो, आणि तो फक्त मी माझ्या फोनमध्ये टाकतो. पैसे मिळवण्यासाठी मला कधीही पिन टाकायची किंवा काही स्कॅन करायची गरज नसते." तू फोन ठेवून दिलास आणि आजीला सांगितलंस.`,
+        `स्टॉलवर परत येऊन तू नाव आणि रक्कम तपासलीस, तुझा खासगी पिन कोणाला दिसणार नाही असा टाकलास, आणि पे दाबलंस. स्क्रीनवर हिरवी टिक आली. काकांच्या फोनवर आनंदी आवाज आला, "50 रुपये मिळाले." काकांनी तुला गरम समोसा दिला. "काही सेकंदांत तुझ्या बँकेतून त्यांच्या बँकेत पैसे पोहोचले," गल्लू म्हणाला. "सुरक्षित सवयींमुळे हा प्रवास झटपट आणि आनंदी होतो."`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`A QR code holds a payment address. Scanning it starts a payment message to your bank.`, `Check the name and the amount before you press pay.`, `Your PIN is private. It is only for sending money, and only you type it.`, `You never need a PIN, OTP or a scan to receive money. A caller asking for it is a scam.`],
+        fill: {
+          bank: [`QR`, `name`, `PIN`, `receive`, `tick`, `private`],
+          items: [
+            [`A @@ code holds a payment address.`, `QR`],
+            [`Before paying, check the @@ and the amount.`, `name`],
+            [`Your UPI @@ is only for sending money.`, `PIN`],
+            [`You never need a PIN to @@ money.`, `receive`],
+            [`After a payment, a green @@ shows it went through.`, `tick`]
+          ]
+        },
+        sortTitle: `Safe habit or risky habit?`,
+        sortOpts: [{ k: "safe", t: `Safe habit` }, { k: "risk", t: `Risky habit` }],
+        sort: [
+          { icon: "nametag", label: `Checking the receiver's name before paying`, a: "safe" },
+          { icon: "fakecall", label: `Telling a caller your PIN to get a refund`, a: "risk" },
+          { icon: "lock", label: `Typing your PIN so nobody can see`, a: "safe" },
+          { icon: "qr", label: `Scanning a QR code sent by a stranger to receive money`, a: "risk" },
+          { icon: "phone", label: `Keeping your phone locked`, a: "safe" }
+        ],
+        tf: [
+          { q: `You need to enter your PIN to receive money.`, a: false },
+          { q: `You should check the receiver's name before you pay.`, a: true },
+          { q: `A bank will call to ask for your UPI PIN.`, a: false }
+        ],
+        think: [
+          { q: `A samosa costs 25 rupees and you buy 2. How much do you pay?`, opts: [`50`, `25`, `75`], a: 0 },
+          { q: `A stranger says: "Scan this code to receive 500 rupees." What should you do?`, opts: [`Scan it quickly`, `Refuse and tell a grown-up`, `Share your PIN`], a: 1 }
+        ],
+        promise: `I, {name}, promise to check the name and amount before I pay, to keep my PIN private, and to tell a grown-up about any strange call.`
+      },
+      hi: {
+        remember: [`QR कोड में भुगतान का पता होता है। उसे स्कैन करने से तुम्हारे बैंक को भुगतान का संदेश जाता है।`, `भुगतान दबाने से पहले नाम और रक़म जाँचो।`, `तुम्हारा पिन गुप्त है। वह सिर्फ़ पैसे भेजने के लिए है और उसे सिर्फ़ तुम डालते हो।`, `पैसे पाने के लिए पिन, OTP या स्कैन की कभी ज़रूरत नहीं होती। माँगने वाला कॉलर ठग है।`],
+        fill: {
+          bank: [`QR`, `नाम`, `पिन`, `पाने`, `टिक`, `गुप्त`],
+          items: [
+            [`@@ कोड में भुगतान का पता होता है।`, `QR`],
+            [`भुगतान से पहले @@ और रक़म जाँचो।`, `नाम`],
+            [`तुम्हारा UPI @@ सिर्फ़ पैसे भेजने के लिए है।`, `पिन`],
+            [`पैसे @@ के लिए पिन की कभी ज़रूरत नहीं होती।`, `पाने`],
+            [`भुगतान के बाद हरा @@ दिखता है कि वह पूरा हो गया।`, `टिक`]
+          ]
+        },
+        sortTitle: `सुरक्षित आदत या जोखिम भरी?`,
+        sortOpts: [{ k: "safe", t: `सुरक्षित आदत` }, { k: "risk", t: `जोखिम भरी आदत` }],
+        sort: [
+          { icon: "nametag", label: `भुगतान से पहले पाने वाले का नाम जाँचना`, a: "safe" },
+          { icon: "fakecall", label: `रिफ़ंड के लिए कॉल करने वाले को पिन बताना`, a: "risk" },
+          { icon: "lock", label: `पिन ऐसे डालना कि कोई देख न सके`, a: "safe" },
+          { icon: "qr", label: `पैसे पाने के लिए अजनबी का भेजा QR कोड स्कैन करना`, a: "risk" },
+          { icon: "phone", label: `फ़ोन को लॉक रखना`, a: "safe" }
+        ],
+        tf: [
+          { q: `पैसे पाने के लिए अपना पिन डालना पड़ता है।`, a: false },
+          { q: `भुगतान से पहले पाने वाले का नाम जाँचना चाहिए।`, a: true },
+          { q: `बैंक फ़ोन करके तुम्हारा UPI पिन माँगता है।`, a: false }
+        ],
+        think: [
+          { q: `एक समोसा 25 रुपये का है और तुम 2 ख़रीदते हो। कुल कितने रुपये दोगे?`, opts: [`50`, `25`, `75`], a: 0 },
+          { q: `कोई अजनबी कहता है: "500 रुपये पाने के लिए यह कोड स्कैन करो।" क्या करना चाहिए?`, opts: [`जल्दी से स्कैन करना`, `मना करना और बड़े को बताना`, `पिन बता देना`], a: 1 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि भुगतान से पहले नाम और रक़म जाँचूँग[[ा|ी]], अपना पिन गुप्त रखूँग[[ा|ी]], और किसी भी अजीब कॉल के बारे में किसी बड़े को बताऊँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`QR कोडमध्ये पेमेंटचा पत्ता असतो. तो स्कॅन केला की तुझ्या बँकेला पेमेंटचा संदेश जातो.`, `पे दाबण्याआधी नाव आणि रक्कम तपास.`, `तुझा पिन गुप्त असतो. तो फक्त पैसे पाठवण्यासाठी आहे आणि फक्त तूच टाकतोस.`, `पैसे मिळवण्यासाठी पिन, OTP किंवा स्कॅनची कधीही गरज नसते. मागणारा कॉलर फसवणारा असतो.`],
+        fill: {
+          bank: [`QR`, `नाव`, `पिन`, `मिळवायला`, `टिक`, `गुप्त`],
+          items: [
+            [`@@ कोडमध्ये पेमेंटचा पत्ता असतो.`, `QR`],
+            [`पैसे देण्याआधी @@ आणि रक्कम तपास.`, `नाव`],
+            [`तुझा UPI @@ फक्त पैसे पाठवण्यासाठी आहे.`, `पिन`],
+            [`पैसे @@ पिनची कधीही गरज नसते.`, `मिळवायला`],
+            [`पेमेंटनंतर हिरवी @@ दिसते, म्हणजे ते पूर्ण झालं.`, `टिक`]
+          ]
+        },
+        sortTitle: `सुरक्षित सवय की धोकादायक?`,
+        sortOpts: [{ k: "safe", t: `सुरक्षित सवय` }, { k: "risk", t: `धोकादायक सवय` }],
+        sort: [
+          { icon: "nametag", label: `पैसे देण्याआधी घेणाऱ्याचं नाव तपासणं`, a: "safe" },
+          { icon: "fakecall", label: `रिफंडसाठी कॉल करणाऱ्याला पिन सांगणं`, a: "risk" },
+          { icon: "lock", label: `पिन कोणाला दिसणार नाही असा टाकणं`, a: "safe" },
+          { icon: "qr", label: `पैसे मिळवण्यासाठी अनोळखी माणसाने पाठवलेला QR कोड स्कॅन करणं`, a: "risk" },
+          { icon: "phone", label: `फोन लॉक ठेवणं`, a: "safe" }
+        ],
+        tf: [
+          { q: `पैसे मिळवण्यासाठी तुझा पिन टाकावा लागतो.`, a: false },
+          { q: `पैसे देण्याआधी घेणाऱ्याचं नाव तपासावं.`, a: true },
+          { q: `बँक फोन करून तुझा UPI पिन मागते.`, a: false }
+        ],
+        think: [
+          { q: `एक समोसा 25 रुपयांचा आहे आणि तू 2 घेतलेस. एकूण किती रुपये द्यावे लागतील?`, opts: [`50`, `25`, `75`], a: 0 },
+          { q: `एक अनोळखी माणूस म्हणतो: "500 रुपये मिळवायला हा कोड स्कॅन कर." काय करावं?`, opts: [`लगेच स्कॅन करावा`, `नकार देऊन मोठ्याला सांगावं`, `पिन सांगावा`], a: 1 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की पैसे देण्याआधी नाव आणि रक्कम तपासेन, माझा पिन गुप्त ठेवेन, आणि कोणत्याही विचित्र कॉलबद्दल मोठ्याला सांगेन.`
+      }
+    }
+  },
+  {
+    slug: "first-salary",
+    status: "live",
+    color: "#fcf6bd",
+    title: { en: `{name}'s First Salary`, hi: `{name} की पहली तनख़्वाह`, mr: `{name} चा पहिला पगार` },
+    cardTitle: { en: `The First Salary`, hi: `पहली तनख़्वाह`, mr: `पहिला पगार` },
+    subtitle: { en: `Salary, deductions and take-home`, hi: `तनख़्वाह, कटौती और हाथ में आई रक़म`, mr: `पगार, कपात आणि हातात येणारी रक्कम` },
+    topic: { en: `Earning`, hi: `कमाई`, mr: `कमाई` },
+    stops: {
+      en: [`The Offer`, `The Payslip`, `The SMS`, `Three Envelopes`],
+      hi: [`नौकरी का प्रस्ताव`, `पे-स्लिप`, `वह एसएमएस`, `तीन लिफ़ाफ़े`],
+      mr: [`नोकरीची ऑफर`, `पे-स्लिप`, `तो एसएमएस`, `तीन पाकिटं`]
+    },
+    scenes: [
+      `You stand in front of an office building holding a note that says 20,000 while envelopes float around.`,
+      `A payslip shows 20,000 minus 1,200 minus 800 equals 18,000 while you study it with Gullu.`,
+      `A phone shows an SMS with plus 18,000 and you cheer with your arms up.`,
+      `Three envelopes sit on a table: a passbook for saving, bread for needs, and a football for wants.`
+    ],
+    story: {
+      en: [
+        `Imagine it is many years from now. You have studied hard, and today you got your very first job offer. The letter says: "Salary: 20,000 rupees per month." You ran to show Gullu, who now lived on your bookshelf. "Wonderful!" he cheered. "That 20,000 is your gross salary, the amount before anything is taken out. But wait until payday to see what lands in your bank."`,
+        `On payday, you got your payslip. It said: gross salary 20,000. Then two lines of deductions. 1,200 went to a provident fund, a savings for your future that the law helps you build. 800 went as tax. "Let us do the maths," said Gullu. "20,000 minus 1,200 minus 800 equals 18,000. That 18,000 is your take-home salary, what you really receive." You nodded. Provident fund money is yours, just saved for later.`,
+        `Your phone buzzed with an SMS from the bank: "Credited: 18,000 rupees." You jumped with joy. The first money you ever earned for yourself! "Now comes the real test," said Gullu. "Money that arrives can leave quickly. The people who stay calm with money are the ones who decide, before it arrives, where each rupee goes."`,
+        `On the table, you placed three envelopes. One for saving, with a passbook. One for needs, with bread: rent, food and bills. One for wants, with a football: fun things. "Save first, not last," said Gullu. "Pay for needs next. Spend on wants from what is left." You put some money in each envelope and smiled. Your first salary was not just money. It was a plan.`
+      ],
+      hi: [
+        `सोचो कि कई साल बीत चुके हैं। तुमने ख़ूब पढ़ाई की है और आज तुम्हें अपनी पहली नौकरी का प्रस्ताव मिला है। पत्र में लिखा है: "वेतन: 20,000 रुपये प्रति माह।" तुम दौड़कर गुल्लू को दिखाने गए, जो अब तुम्हारी किताबों की अलमारी में रहता है। "वाह!" वह चहका। "यह 20,000 तुम्हारा सकल वेतन है, यानी कुछ भी कटने से पहले की रक़म। पर तनख़्वाह के दिन तक रुको, देखो बैंक में क्या आता है।"`,
+        `तनख़्वाह के दिन तुम्हें पे-स्लिप मिली। उसमें लिखा था: सकल वेतन 20,000। फिर कटौती की दो पंक्तियाँ। 1,200 भविष्य निधि में गए, यानी तुम्हारे भविष्य की बचत जिसे बनाने में क़ानून तुम्हारी मदद करता है। 800 कर में गए। "चलो हिसाब लगाएँ," गुल्लू बोला। "20,000 में से 1,200 और 800 घटाओ तो 18,000 बचते हैं। यह 18,000 तुम्हारा हाथ में आने वाला वेतन है, जो तुम्हें सचमुच मिलता है।" तुमने सिर हिलाया। भविष्य निधि का पैसा तुम्हारा ही है, बस आगे के लिए जमा है।`,
+        `तुम्हारे फ़ोन पर बैंक का एसएमएस आया: "जमा: 18,000 रुपये।" तुम ख़ुशी से उछल पड़[[े|ीं]]। पहली बार अपने लिए कमाया हुआ पैसा! "अब असली परीक्षा आती है," गुल्लू बोला। "जो पैसा आता है वह जल्दी जा भी सकता है। पैसे के साथ शांत वही रहते हैं जो उसके आने से पहले तय कर लेते हैं कि हर रुपया कहाँ जाएगा।"`,
+        `तुमने मेज़ पर तीन लिफ़ाफ़े रखे। एक बचत का, पासबुक वाला। एक ज़रूरतों का, रोटी वाला: किराया, खाना और बिल। एक चाहतों का, फ़ुटबॉल वाला: मज़े की चीज़ें। "बचत पहले करो, आख़िर में नहीं," गुल्लू बोला। "फिर ज़रूरतों का ख़र्च दो। जो बचे उसमें से चाहतों पर ख़र्च करो।" तुमने हर लिफ़ाफ़े में कुछ पैसे रखे और मुस्कुरा[[ए|ईं]]। तुम्हारी पहली तनख़्वाह सिर्फ़ पैसा नहीं थी। वह एक योजना थी।`
+      ],
+      mr: [
+        `कल्पना कर की अनेक वर्षं उलटून गेली आहेत. तू खूप अभ्यास केला आहेस आणि आज तुला तुझ्या पहिल्या नोकरीची ऑफर मिळाली. पत्रात लिहिलंय: "पगार: दरमहा 20,000 रुपये." तू धावत जाऊन गल्लूला दाखवलंस, जो आता तुझ्या पुस्तकांच्या कपाटात राहतो. "वा!" तो ओरडला. "हे 20,000 म्हणजे तुझा एकूण पगार, काहीही कापलं जाण्याआधीची रक्कम. पण पगाराच्या दिवशी बँकेत काय येतं ते बघ."`,
+        `पगाराच्या दिवशी तुला पे-स्लिप मिळाली. त्यात लिहिलं होतं: एकूण पगार 20,000. मग कपातीच्या दोन ओळी. 1,200 भविष्य निर्वाह निधीत गेले, म्हणजे तुझ्या भविष्यासाठीची बचत, जी बनवायला कायदा तुला मदत करतो. 800 कर म्हणून गेले. "चल हिशोब करू," गल्लू म्हणाला. "20,000 वजा 1,200 वजा 800 बरोबर 18,000. हे 18,000 म्हणजे तुझा हातात येणारा पगार, जो तुला खरोखर मिळतो." तू मान हलवलीस. भविष्य निर्वाह निधीचा पैसा तुझाच आहे, फक्त पुढच्या काळासाठी साठवलेला.`,
+        `तुझ्या फोनवर बँकेचा एसएमएस आला: "जमा: 18,000 रुपये." तू आनंदाने उड्या मारल्यास. स्वतःसाठी कमावलेला पहिला पैसा! "आता खरी परीक्षा आहे," गल्लू म्हणाला. "जो पैसा येतो तो लवकर जाऊही शकतो. पैशांबाबत शांत राहतात ते लोक जे तो येण्याआधीच ठरवतात की प्रत्येक रुपया कुठे जाणार."`,
+        `तू टेबलावर तीन पाकिटं ठेवलीस. एक बचतीचं, पासबुकवालं. एक गरजांचं, भाकरीवालं: भाडं, जेवण आणि बिलं. एक इच्छांचं, फुटबॉलवालं: मौजमजेच्या गोष्टी. "बचत आधी कर, शेवटी नाही," गल्लू म्हणाला. "मग गरजांचा खर्च दे. जे उरेल त्यातून इच्छांवर खर्च कर." तू प्रत्येक पाकिटात थोडे पैसे ठेवलेस आणि हसल[[ास|ीस]]. तुझा पहिला पगार फक्त पैसा नव्हता. ती एक योजना होती.`
+      ]
+    },
+    recap: {
+      en: {
+        remember: [`Gross salary is the amount before anything is taken out.`, `Deductions, such as provident fund and tax, are taken out before you are paid.`, `Take-home salary is gross minus deductions. 20,000 minus 1,200 minus 800 equals 18,000.`, `Decide before payday: save first, pay for needs next, and spend on wants from what is left.`],
+        fill: {
+          bank: [`gross`, `deductions`, `take-home`, `18,000`, `save`, `wants`],
+          items: [
+            [`Salary before anything is taken out is the @@ salary.`, `gross`],
+            [`Provident fund and tax are @@.`, `deductions`],
+            [`What lands in your bank is your @@ salary.`, `take-home`],
+            [`20,000 minus 1,200 minus 800 leaves @@ rupees.`, `18,000`],
+            [`Decide first, then @@ first, before you spend.`, `save`]
+          ]
+        },
+        sortTitle: `Before or after deductions?`,
+        sortOpts: [{ k: "gross", t: `Gross (before)` }, { k: "net", t: `Take-home (after)` }],
+        sort: [
+          { icon: "note", label: `The 20,000 written in the offer letter`, a: "gross" },
+          { icon: "bank", label: `The 18,000 that lands in your bank`, a: "net" },
+          { icon: "payslip", label: `Salary before the provident fund and tax are cut`, a: "gross" },
+          { icon: "coin", label: `The amount you can really spend`, a: "net" },
+          { icon: "passbook", label: `Salary after all deductions`, a: "net" }
+        ],
+        tf: [
+          { q: `Take-home salary is always the same as gross salary.`, a: false },
+          { q: `Provident fund money is saved for your future.`, a: true },
+          { q: `It helps to decide where your money will go before payday.`, a: true }
+        ],
+        think: [
+          { q: `Gross salary is 30,000. Deductions are 2,000 and 1,000. What is the take-home salary?`, opts: [`27,000`, `33,000`, `29,000`], a: 0 },
+          { q: `You decide to save one-fifth of your 18,000 take-home. How much do you save?`, opts: [`3,600`, `1,800`, `5,400`], a: 0 }
+        ],
+        promise: `I, {name}, promise to read my payslip, to decide where my money goes before it arrives, and to save first.`
+      },
+      hi: {
+        remember: [`सकल वेतन वह रक़म है जो कुछ भी कटने से पहले की होती है।`, `भविष्य निधि और कर जैसी कटौतियाँ तनख़्वाह मिलने से पहले कट जाती हैं।`, `हाथ में आने वाला वेतन सकल वेतन में से कटौती घटाकर बनता है। 20,000 में से 1,200 और 800 घटाओ तो 18,000।`, `तनख़्वाह से पहले तय करो: पहले बचत, फिर ज़रूरतें, और जो बचे उसमें से चाहतें।`],
+        fill: {
+          bank: [`सकल`, `कटौती`, `हाथ में आने वाला`, `18,000`, `बचत`, `चाहतों`],
+          items: [
+            [`कुछ भी कटने से पहले का वेतन @@ वेतन कहलाता है।`, `सकल`],
+            [`भविष्य निधि और कर @@ हैं।`, `कटौती`],
+            [`जो रक़म तुम्हारे बैंक में आती है वह @@ वेतन है।`, `हाथ में आने वाला`],
+            [`20,000 में से 1,200 और 800 घटाने पर @@ रुपये बचते हैं।`, `18,000`],
+            [`ख़र्च करने से पहले तय करो और पहले @@ करो।`, `बचत`]
+          ]
+        },
+        sortTitle: `कटौती से पहले या बाद?`,
+        sortOpts: [{ k: "gross", t: `सकल (पहले)` }, { k: "net", t: `हाथ में आया (बाद में)` }],
+        sort: [
+          { icon: "note", label: `प्रस्ताव-पत्र में लिखे 20,000`, a: "gross" },
+          { icon: "bank", label: `बैंक में आए 18,000`, a: "net" },
+          { icon: "payslip", label: `भविष्य निधि और कर कटने से पहले का वेतन`, a: "gross" },
+          { icon: "coin", label: `वह रक़म जो सचमुच ख़र्च कर सकते हो`, a: "net" },
+          { icon: "passbook", label: `सारी कटौती के बाद का वेतन`, a: "net" }
+        ],
+        tf: [
+          { q: `हाथ में आने वाला वेतन हमेशा सकल वेतन के बराबर होता है।`, a: false },
+          { q: `भविष्य निधि का पैसा तुम्हारे भविष्य के लिए जमा होता है।`, a: true },
+          { q: `तनख़्वाह से पहले तय करना मददगार है कि पैसा कहाँ जाएगा।`, a: true }
+        ],
+        think: [
+          { q: `सकल वेतन 30,000 है। कटौतियाँ 2,000 और 1,000 हैं। हाथ में आने वाला वेतन कितना है?`, opts: [`27,000`, `33,000`, `29,000`], a: 0 },
+          { q: `तुम 18,000 के हाथ में आए वेतन का पाँचवाँ हिस्सा बचाने का तय करते हो। कितना बचाओगे?`, opts: [`3,600`, `1,800`, `5,400`], a: 0 }
+        ],
+        promise: `मैं, {name}, वादा करत[[ा|ी]] हूँ कि अपनी पे-स्लिप पढ़ूँग[[ा|ी]], पैसे आने से पहले तय करूँग[[ा|ी]] कि वह कहाँ जाएगा, और सबसे पहले बचत करूँग[[ा|ी]]।`
+      },
+      mr: {
+        remember: [`एकूण पगार म्हणजे काहीही कापलं जाण्याआधीची रक्कम.`, `भविष्य निर्वाह निधी आणि कर यांसारख्या कपाती पगार मिळण्याआधीच कापल्या जातात.`, `हातात येणारा पगार म्हणजे एकूण पगारातून कपात वजा केलेली रक्कम. 20,000 वजा 1,200 वजा 800 बरोबर 18,000.`, `पगाराआधी ठरव: आधी बचत, मग गरजा, आणि जे उरेल त्यातून इच्छा.`],
+        fill: {
+          bank: [`एकूण`, `कपात`, `हातात येणारा`, `18,000`, `बचत`, `इच्छांवर`],
+          items: [
+            [`काहीही कापलं जाण्याआधीच्या पगाराला @@ पगार म्हणतात.`, `एकूण`],
+            [`भविष्य निर्वाह निधी आणि कर या @@ आहेत.`, `कपात`],
+            [`तुझ्या बँकेत जी रक्कम येते तो @@ पगार.`, `हातात येणारा`],
+            [`20,000 वजा 1,200 वजा 800 केल्यावर @@ रुपये उरतात.`, `18,000`],
+            [`खर्च करण्याआधी ठरव आणि आधी @@ कर.`, `बचत`]
+          ]
+        },
+        sortTitle: `कपातीआधी की नंतर?`,
+        sortOpts: [{ k: "gross", t: `एकूण (आधी)` }, { k: "net", t: `हातात आलेला (नंतर)` }],
+        sort: [
+          { icon: "note", label: `ऑफर लेटरमध्ये लिहिलेले 20,000`, a: "gross" },
+          { icon: "bank", label: `बँकेत आलेले 18,000`, a: "net" },
+          { icon: "payslip", label: `भविष्य निर्वाह निधी आणि कर कापण्याआधीचा पगार`, a: "gross" },
+          { icon: "coin", label: `जी रक्कम तू खरोखर खर्च करू शकतोस`, a: "net" },
+          { icon: "passbook", label: `सर्व कपातींनंतरचा पगार`, a: "net" }
+        ],
+        tf: [
+          { q: `हातात येणारा पगार नेहमी एकूण पगाराइतकाच असतो.`, a: false },
+          { q: `भविष्य निर्वाह निधीचा पैसा तुझ्या भविष्यासाठी साठवला जातो.`, a: true },
+          { q: `पगाराआधी पैसे कुठे जाणार ते ठरवणं उपयोगी असतं.`, a: true }
+        ],
+        think: [
+          { q: `एकूण पगार 30,000 आहे. कपाती 2,000 आणि 1,000 आहेत. हातात येणारा पगार किती?`, opts: [`27,000`, `33,000`, `29,000`], a: 0 },
+          { q: `तू हातात आलेल्या 18,000 पैकी पाचवा भाग वाचवायचं ठरवलंस. किती वाचवशील?`, opts: [`3,600`, `1,800`, `5,400`], a: 0 }
+        ],
+        promise: `मी, {name}, वचन देत[[ो|े]] की माझी पे-स्लिप वाचेन, पैसे येण्याआधी ठरवेन की ते कुठे जाणार, आणि सर्वात आधी बचत करेन.`
+      }
+    }
   }
 ];

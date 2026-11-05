@@ -802,7 +802,459 @@
     return o;
   }
 
-  var SCENES = { "needs-vs-wants": sceneNeeds, "piggy-jar": sceneWish, "inside-a-bank": sceneBank, "family-budget": sceneBudget, "what-is-interest": sceneInterest, "why-prices-rise": sceneInflation, "phone-scams": sceneScam, "moneylender-or-bank": sceneBorrow, "insurance": sceneInsure, "emergency-fund": sceneEmergency };
+  /* ---------- New props for books 11 to 20 ---------- */
+  function billPaper(x, y, s, r, rows) {
+    var b = `<path d="M-24 -36 L24 -36 L24 32 L19 37 L13 32 L7 37 L1 32 L-5 37 L-11 32 L-17 37 L-24 32 Z" fill="#fff"${S}/><rect x="-16" y="-30" width="32" height="6" rx="2" fill="#e63946"/>`;
+    if (rows) rows.forEach(function (t, i) { b += `<text x="0" y="${-8 + i * 15}" text-anchor="middle" font-size="12" font-weight="700" ${FONT} fill="${INK}">${t}</text>`; });
+    else b += `<path d="M-16 -14 H16 M-16 -6 H16 M-16 2 H10 M-16 10 H16 M-16 18 H8" stroke="#9aa0b4" stroke-width="2.4"/>`;
+    return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, b);
+  }
+  function payslip(x, y, s, r, rows) {
+    var b = `<rect x="-33" y="-40" width="66" height="80" rx="3" fill="#fff"${S}/><rect x="-33" y="-40" width="66" height="10" rx="3" fill="#3a86ff"${S}/>`;
+    if (rows) rows.forEach(function (t, i) { b += `<text x="0" y="${-14 + i * 16}" text-anchor="middle" font-size="11" font-weight="700" ${FONT} fill="${INK}">${t}</text>`; });
+    else b += `<path d="M-22 -16 H22 M-22 -6 H22 M-22 4 H12 M-22 14 H22" stroke="#9aa0b4" stroke-width="2.4"/>`;
+    return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, b);
+  }
+  function kite(x, y, s, r, c, notail) {
+    var b = `<path d="M0 -30 L20 -4 L0 34 L-20 -4 Z" fill="${c || "#e63946"}"${S}/><path d="M0 -30 L20 -4 L0 -4 Z" fill="#fff" opacity=".35"/><path d="M0 -30 L0 34 M-20 -4 L20 -4" stroke="${INK}" stroke-width="2" fill="none"/>`;
+    if (!notail) b += `<path d="M0 34 Q-10 46 0 54 Q10 62 0 72 Q-8 80 2 90" fill="none" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/><path d="M-7 54 L7 54 L0 47 Z M-7 74 L7 74 L0 67 Z" fill="#ffd23f"${S2}/>`;
+    return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, b);
+  }
+  function pie(x, y, r, n, pull) {
+    var cols = ["#ffd23f", "#ff70a6", "#4cc9f0", "#b7e4a0", "#f4a261"], b = "";
+    for (var i = 0; i < n; i++) {
+      var a0 = -Math.PI / 2 + i * 2 * Math.PI / n, a1 = -Math.PI / 2 + (i + 1) * 2 * Math.PI / n, am = (a0 + a1) / 2, d = pull === i ? 12 : 0, ox = Math.cos(am) * d, oy = Math.sin(am) * d;
+      b += `<path d="M${ox.toFixed(1)} ${oy.toFixed(1)} L${(ox + Math.cos(a0) * r).toFixed(1)} ${(oy + Math.sin(a0) * r).toFixed(1)} A${r} ${r} 0 0 1 ${(ox + Math.cos(a1) * r).toFixed(1)} ${(oy + Math.sin(a1) * r).toFixed(1)} Z" fill="${cols[i % 5]}"${S2}/>`;
+    }
+    return T(`translate(${x} ${y})`, b);
+  }
+  function cert(x, y, s, r) {
+    return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, `<rect x="-30" y="-22" width="60" height="44" rx="3" fill="#fffaf0"${S}/><rect x="-25" y="-17" width="50" height="34" rx="2" fill="none" stroke="#e0a800" stroke-width="2"/>` + kite(-4, -2, 0.36, 0, "#e63946", true) + `<path d="M8 -8 H20 M8 -1 H20 M8 6 H16" stroke="#9aa0b4" stroke-width="2.2"/><circle cx="17" cy="14" r="6" fill="#e63946"${S2}/>`);
+  }
+  function lemon(x, y, s, r) { return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, `<path d="M-16 0 Q-14 -13 0 -13 Q14 -13 16 0 Q14 13 0 13 Q-14 13 -16 0 Z" fill="#ffe14d"${S2}/><path d="M-16 0 L-21 -2 M16 0 L21 2" stroke="${INK}" stroke-width="2.4" stroke-linecap="round"/><path d="M2 -13 Q8 -21 15 -17 Q9 -11 2 -13 Z" fill="#2e9a3a"${S2}/><ellipse cx="-5" cy="-4" rx="3.5" ry="2" fill="#fff" opacity=".65"/>`); }
+  function glassDrink(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<path d="M-15 -36 L15 -36 L11 0 L-11 0 Z" fill="#fff3a8" fill-opacity=".92"${S}/><path d="M-13 -26 L13 -26" stroke="#fff" stroke-width="2.4" opacity=".85"/><line x1="5" y1="-54" x2="2" y2="-14" stroke="#e63946" stroke-width="4" stroke-linecap="round"/><circle cx="-14" cy="-36" r="8.5" fill="#ffe14d"${S2}/><path d="M-20 -36 H-8 M-14 -42 V-30" stroke="#f9a825" stroke-width="1.6"/>`); }
+  function coinJar(x, y, s, n) {
+    var b = `<rect x="-27" y="-92" width="54" height="14" rx="5" fill="#2a9d8f"${S}/><path d="M-30 -78 L30 -78 L30 -10 Q30 0 20 0 L-20 0 Q-30 0 -30 -10 Z" fill="#e8f6ff" fill-opacity=".85"${S}/>`;
+    for (var i = 0; i < (n || 0); i++) {
+      var cx = -20 + (i % 4) * 13.4 + (Math.floor(i / 4) % 2) * 6, cy = -10 - Math.floor(i / 4) * 11;
+      if (cy < -70) break;
+      b += `<ellipse cx="${cx}" cy="${cy}" rx="9.5" ry="6" fill="#ffd23f"${S2}/>`;
+    }
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+  function well(x, y, s) {
+    var b = `<rect x="-34" y="-38" width="68" height="38" rx="4" fill="#c9c9d6"${S}/><ellipse cx="0" cy="-38" rx="34" ry="9" fill="#3a4a66"${S}/>`;
+    b += `<path d="M-34 -20 H34 M-12 -20 V0 M12 -20 V0 M-22 -38 V-20 M2 -38 V-20 M24 -38 V-20" stroke="${INK}" stroke-width="2" opacity=".45" fill="none"/>`;
+    b += `<rect x="-32" y="-98" width="7" height="62" fill="#8d5a3b"${S2}/><rect x="25" y="-98" width="7" height="62" fill="#8d5a3b"${S2}/>`;
+    b += `<path d="M-46 -98 L0 -128 L46 -98 Z" fill="#b5543a"${S}/><line x1="0" y1="-106" x2="0" y2="-64" stroke="${INK}" stroke-width="2.5"/><path d="M-10 -64 L10 -64 L8 -48 L-8 -48 Z" fill="#9aa5b8"${S2}/>`;
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+  function school(x, y, s) {
+    var b = `<rect x="-62" y="-70" width="124" height="70" fill="#f6c86a"${S}/><path d="M-70 -70 L0 -108 L70 -70 Z" fill="#b5543a"${S}/>`;
+    b += `<line x1="0" y1="-108" x2="0" y2="-134" stroke="${INK}" stroke-width="3" stroke-linecap="round"/><path d="M0 -134 L24 -127 L0 -120 Z" fill="#e63946"${S2}/>`;
+    b += `<rect x="-52" y="-52" width="26" height="24" rx="2" fill="#bde0fe"${S2}/><rect x="26" y="-52" width="26" height="24" rx="2" fill="#bde0fe"${S2}/><rect x="-11" y="-38" width="22" height="38" rx="3" fill="#8d5a3b"${S2}/>`;
+    b += `<circle cx="0" cy="-84" r="9" fill="#fff"${S2}/><path d="M0 -90 V-84 H5" stroke="${INK}" stroke-width="2" fill="none" stroke-linecap="round"/>`;
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+  function clinic(x, y, s) {
+    var b = `<rect x="-52" y="-70" width="104" height="70" fill="#fffaf0"${S}/><rect x="-58" y="-78" width="116" height="12" rx="3" fill="#2a9d8f"${S}/>`;
+    b += `<rect x="-11" y="-36" width="22" height="36" rx="3" fill="#bde0fe"${S2}/><rect x="-44" y="-52" width="22" height="20" rx="2" fill="#bde0fe"${S2}/><rect x="22" y="-52" width="22" height="20" rx="2" fill="#bde0fe"${S2}/>`;
+    b += `<circle cx="0" cy="-96" r="17" fill="#fff"${S}/><path d="M-4 -108 H4 V-100 H12 V-92 H4 V-84 H-4 V-92 H-12 V-100 H-4 Z" fill="#e63946"/>`;
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+  function road(y, h) {
+    var o = `<rect x="-400" y="${y}" width="1200" height="${h}" fill="#8d96a3"/><rect x="-400" y="${y}" width="1200" height="5" fill="#6d7686"/>`;
+    for (var i = -380; i < 800; i += 70) o += `<rect x="${i}" y="${y + h / 2 - 3}" width="38" height="6" rx="3" fill="#fff"/>`;
+    return o;
+  }
+  function parcel(x, y, s, r) { return T(`translate(${x} ${y}) rotate(${r || 0}) scale(${s})`, `<rect x="-28" y="-22" width="56" height="44" rx="3" fill="#d9a566"${S}/><rect x="-6" y="-22" width="12" height="44" fill="#f2d6a2"/><path d="M-28 -22 L-6 -22 M6 -22 L28 -22 M-28 22 L28 22" stroke="${INK}" stroke-width="3"/><path d="M-6 -22 V22 M6 -22 V22" stroke="${INK}" stroke-width="2"/><path d="M-20 4 H-12 M-20 10 H-14" stroke="${INK}" stroke-width="2" opacity=".5"/>`); }
+  function hook(x, topY, y, txt) {
+    return `<line x1="${x}" y1="${topY}" x2="${x}" y2="${y}" stroke="${INK}" stroke-width="3"/><path d="M${x} ${y} L${x} ${y + 26} Q${x} ${y + 44} ${x - 16} ${y + 38} Q${x - 24} ${y + 34} ${x - 22} ${y + 26}" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>` + tag(x - 8, y + 66, 1.15, txt, 14);
+  }
+  function upG(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<path d="M-10 10 L-10 -2 L-19 -2 L0 -24 L19 -2 L10 -2 L10 10 Z" fill="#2e9a3a"${S2}/>`); }
+  function downR(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<path d="M-10 -10 L-10 2 L-19 2 L0 24 L19 2 L10 2 L10 -10 Z" fill="#e63946"${S2}/>`); }
+  function arrowR(x1, y, x2, c) { return `<path d="M${x1} ${y} L${x2} ${y} M${x2 - 11} ${y - 9} L${x2} ${y} L${x2 - 11} ${y + 9}" fill="none" stroke="${c || INK}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`; }
+  function stairs(x, y, n, w, h) {
+    var o = "", cols = ["#d9a566", "#e0b27a", "#d9a566", "#e0b27a", "#d9a566", "#e0b27a"];
+    for (var i = 0; i < n; i++) o += `<rect x="${x + i * w}" y="${y - (i + 1) * h}" width="${w}" height="${(i + 1) * h}" fill="${cols[i]}"${S}/>`;
+    return o;
+  }
+  function cupboard(x, y, s, open) {
+    var b = `<rect x="-42" y="-130" width="84" height="130" rx="4" fill="#a8683a"${S}/><rect x="-36" y="-124" width="72" height="118" rx="2" fill="#c58b4e"/>`;
+    if (open) {
+      b += `<rect x="-36" y="-124" width="72" height="118" fill="#6b4129"/><rect x="-36" y="-90" width="72" height="5" fill="#a8683a"/><rect x="-36" y="-50" width="72" height="5" fill="#a8683a"/>`;
+      b += envelope(-14, -104, 0.45, "#e63946", -6) + envelope(14, -66, 0.45, "#3a86ff", 5) + `<rect x="-26" y="-34" width="50" height="22" rx="3" fill="#b7e4a0"${S2}/><circle cx="-1" cy="-23" r="6" fill="#8fce73"/>`;
+      b += `<path d="M-36 -124 L-70 -112 L-70 -12 L-36 -6 Z" fill="#c58b4e"${S}/><circle cx="-62" cy="-62" r="3.5" fill="${INK}"/>`;
+    } else {
+      b += `<line x1="0" y1="-124" x2="0" y2="-6" stroke="${INK}" stroke-width="3"/><circle cx="-8" cy="-62" r="3.5" fill="${INK}"/><circle cx="8" cy="-62" r="3.5" fill="${INK}"/><rect x="-28" y="-112" width="22" height="42" rx="2" fill="none" stroke="#a8683a" stroke-width="2.5"/><rect x="6" y="-112" width="22" height="42" rx="2" fill="none" stroke="#a8683a" stroke-width="2.5"/>`;
+    }
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+  function mouse(x, y, s, flip) {
+    return T(`translate(${x} ${y}) scale(${flip ? -s : s} ${s})`, `<path d="M-22 -4 Q-40 -2 -44 -14 Q-46 -22 -38 -24" fill="none" stroke="#f4a6a0" stroke-width="3" stroke-linecap="round"/><ellipse cx="0" cy="-12" rx="24" ry="14" fill="#b8bfc7"${S}/><circle cx="14" cy="-24" r="9" fill="#b8bfc7"${S2}/><circle cx="22" cy="-20" r="9" fill="#b8bfc7"${S}/><circle cx="26" cy="-20" r="2.6" fill="#f4a6a0"/><circle cx="20" cy="-23" r="2.2" fill="${INK}"/><circle cx="12" cy="-28" r="5" fill="#f4a6a0"${S2}/>`);
+  }
+  function officeBldg(x, y, s) {
+    var b = `<rect x="-50" y="-170" width="100" height="170" fill="#9fb4d8"${S}/>`;
+    for (var r = 0; r < 4; r++) for (var c = 0; c < 3; c++) b += `<rect x="${-38 + c * 28}" y="${-156 + r * 30}" width="18" height="20" rx="2" fill="${(r + c) % 3 === 0 ? "#fff3b0" : "#e6f2ff"}"${S2}/>`;
+    b += `<rect x="-12" y="-36" width="24" height="36" rx="3" fill="#8d5a3b"${S2}/><rect x="-56" y="-178" width="112" height="10" rx="3" fill="#6c8ebf"${S}/>`;
+    return T(`translate(${x} ${y}) scale(${s})`, b);
+  }
+  function bigPhone(x, y, s, inner) {
+    return T(`translate(${x} ${y}) scale(${s})`, `<rect x="-31" y="-52" width="62" height="104" rx="9" fill="${INK}"/><rect x="-27" y="-44" width="54" height="84" rx="3" fill="#e6f2ff"/>` + inner + `<circle cx="0" cy="46" r="3" fill="#fff"/>`);
+  }
+  function tick(x, y, s) { return T(`translate(${x} ${y}) scale(${s})`, `<circle r="15" fill="#fff"${S2}/><path d="M-7 1 L-2 7 L8 -6" fill="none" stroke="#2e9a3a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`); }
+
+  /* ---------- BOOK 11: The Buy-Now Trap (buy-now-trap) ---------- */
+  function sceneEmi(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + sun(352, 56, 20) + cloud(250, 62, 0.8) + ground("#9ccf7e", 300);
+      o += `<rect x="12" y="120" width="182" height="182" fill="#f6e7c8"${S}/><rect x="4" y="100" width="198" height="26" rx="4" fill="#e63946"${S}/><text x="103" y="120" text-anchor="middle" font-size="19" font-weight="700" ${FONT} fill="#fff">EMI</text>`;
+      o += `<rect x="28" y="146" width="150" height="116" rx="6" fill="#bde0fe"${S}/><path d="M40 158 L66 158 M40 168 L52 168" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".85"/><rect x="34" y="262" width="138" height="14" fill="#c58b4e"${S2}/>`;
+      o += phoneT(76, 214, 2.0, "") + tag(146, 170, 1.0, "₹12,000", 12);
+      o += hero(280, 394, 1.15, g, "up", "happy") + gullu(358, 396, 0.8) + spark(222, 150, 0.9) + spark(344, 190, 0.7);
+    } else if (n === 1) {
+      o += room("#fff1d6", 336, "#c98f5a") + window2(24, 44, 84, 76, false);
+      o += `<rect x="206" y="270" width="70" height="66" rx="4" fill="#e9d3a8"${S}/>` + phoneT(241, 242, 1.2, "") + tag(241, 304, 0.85, "₹12,000", 12);
+      o += T(`translate(338 0) scale(-1 1)`, officer(0, 398, 1.0));
+      o += bubble(268, 108, 92, 52, 338, 224) + `<text x="268" y="118" text-anchor="middle" font-size="28" font-weight="700" ${FONT} fill="#e63946">₹1,100</text>`;
+      o += hero(86, 398, 1.1, g, "down", "wow") + gullu(158, 398, 0.75) + sweat(120, 214);
+    } else if (n === 2) {
+      o += room("#fde8c8", 336, "#b98150");
+      o += chalkboard(200, 82, 352, 120, ["₹1,100 × 12 = ₹13,200", "₹13,200 − ₹12,000 = ₹1,200"], 21);
+      o += table(128, 300, 160) + phoneT(208, 270, 1.15, "") + tag(268, 262, 0.95, "+₹1,200", 12);
+      o += hero(62, 398, 1.1, g, "down", "think") + gullu(350, 398, 0.78) + sweat(366, 340);
+    } else if (n === 3) {
+      o += room("#fde8c8", 336, "#b98150");
+      o += calendar(340, 190, 0.95, 9);
+      o += bubble(190, 84, 88, 52, 206, 178) + phoneT(190, 84, 0.95, "");
+      o += table(118, 300, 176) + coinJar(206, 300, 1.35, 12);
+      o += hero(58, 398, 1.1, g, "give", "happy") + coin(128, 262, 0.9) + `<path d="M128 276 L128 288" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/>`;
+      o += gullu(352, 398, 0.78);
+    } else {
+      o += room("#fff1d6", 334, "#c98f5a");
+      o += T(`translate(290 0)`, officer(0, 334, 1.0));
+      o += counterFront(292);
+      o += note(236, 274, 0.7, -8) + note(262, 270, 0.7, 6) + tag(210, 252, 0.8, "₹12,000", 12);
+      o += gullu(364, 292, 0.75);
+      o += hero(104, 398, 1.1, g, "high", "happy") + phoneT(158, 184, 1.05, "") + spark(196, 160, 0.9) + spark(118, 130, 0.7);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 12: Read Your Bill (shop-bill) ---------- */
+  function sceneBill(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + cloud(70, 56, 0.8) + ground("#9ccf7e", 300);
+      o += bank(330, 250, 0.52);
+      o += billPaper(196, 190, 2.4, -5, ["₹100", "+ ₹5", "₹105"]) + magnifier(270, 238, 1.5, 28);
+      o += coin(246, 84, 0.9) + coin(282, 66, 0.9) + coin(318, 62, 0.9) + spark(224, 100, 0.8);
+      o += hero(70, 394, 1.1, g, "up", "happy") + gullu(350, 396, 0.8);
+    } else if (n === 1) {
+      o += sky("#bfe9ff", 300) + hills(300) + ground("#9ccf7e", 300) + cloud(80, 56, 0.8);
+      o += kaka(300, 292, 1.0) + kiosk(300, 292, "#3a86ff", "#fff");
+      o += notebook(262, 272, 1.0, -6) + pencil(330, 274, 0.9, 70) + tag(220, 204, 0.95, "₹100", 14);
+      o += hero(82, 398, 1.1, g, "give", "happy") + note(146, 298, 0.55, 10) + gullu(180, 398, 0.75);
+    } else if (n === 2) {
+      o += room("#ffe9c7", 336, "#c98f5a");
+      o += kaka(318, 322, 1.0) + kiosk(318, 322, "#3a86ff", "#fff");
+      o += billPaper(170, 170, 2.3, -4, ["₹100", "+ ₹5", "₹105"]) + magnifier(224, 214, 1.3, 25);
+      o += hero(76, 398, 1.1, g, "recv", "think") + gullu(160, 398, 0.72);
+    } else if (n === 3) {
+      o += sky("#bfe9ff", 300) + hills(300) + ground("#9ccf7e", 300) + cloud(220, 50, 0.7);
+      o += billPaper(66, 150, 1.5, -6, ["₹100", "+ ₹5", "₹105"]) + arrowR(116, 150, 160, "#e63946");
+      o += pot(238, 190, 1.0) + coin(222, 110, 0.8) + coin(246, 94, 0.8) + coin(262, 124, 0.8);
+      o += school(318, 190, 0.5) + clinic(366, 190, 0.32) + spark(316, 80, 0.8);
+      o += road(340, 60);
+      o += hero(88, 394, 1.1, g, "up", "happy") + gullu(190, 396, 0.8) + aaji(318, 398, 0.9, true, "down");
+    } else {
+      o += room("#ffe9c7", 336, "#c98f5a");
+      o += `<rect x="150" y="30" width="226" height="110" rx="6" fill="#d9a566"${S}/><rect x="158" y="38" width="210" height="94" rx="3" fill="#e6c08a"/>`;
+      o += paper(190, 84, 1.1, -6) + paper(262, 84, 1.1, 4) + paper(334, 84, 1.1, -3);
+      o += aaji(306, 398, 0.95, true, "down") + gullu(236, 398, 0.75);
+      o += hero(92, 398, 1.1, g, "high", "happy") + billPaper(150, 166, 0.95, 10) + tick(176, 126, 0.9);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 13: Where to Keep Your Savings (safe-place) ---------- */
+  function sceneSafe(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + ground("#9ccf7e", 300);
+      [100, 200, 300].forEach(function (cx, i) {
+        o += `<circle cx="${cx}" cy="76" r="38" fill="#fff"${S}/>`;
+        o += i === 0 ? shield(cx, 76, 1.05) : i === 1 ? clock(cx, 76, 1.25) : mangoTree(cx, 104, 0.26, "coin", 5);
+      });
+      o += cupboard(58, 392, 0.78, false) + hero(206, 394, 1.15, g, "up", "happy") + gullu(334, 396, 0.85) + passbook(278, 330, 0.9, -10);
+    } else if (n === 1) {
+      o += room("#ffe9c7", 336, "#c98f5a") + window2(24, 44, 84, 76, false);
+      o += cupboard(214, 340, 1.15, true) + note(300, 350, 0.6, 8) + mouse(280, 356, 1.1);
+      o += hero(64, 398, 1.1, g, "down", "think") + aaji(356, 398, 0.82, true, "down") + sweat(340, 214);
+    } else if (n === 2) {
+      o += room("#e6f2ff", 336, "#b98150") + clock(58, 76, 1.5) + shield(342, 80, 1.3);
+      o += didi(268, 304, 1.1) + counterFront(300) + passbook(212, 282, 1.0, -8);
+      o += hero(74, 398, 1.1, g, "give", "happy") + gullu(352, 300, 0.7);
+    } else if (n === 3) {
+      o += sky("#bfe9ff", 290) + hills(290) + cloud(60, 50, 0.8) + ground("#79c86a", 290);
+      o += fox(296, 296, 1.3) + bush(296, 334, 1.3);
+      o += bubble(262, 112, 126, 66, 294, 232) + `<text x="262" y="106" text-anchor="middle" font-size="21" font-weight="700" ${FONT} fill="${INK}">₹1,000 → ₹2,000</text><text x="262" y="142" text-anchor="middle" font-size="30" font-weight="700" ${FONT} fill="#e63946">×2</text>`;
+      o += hero(80, 398, 1.1, g, "give", "think") + gullu(178, 398, 0.78) + sweat(204, 340);
+    } else {
+      o += sky("#bfe9ff", 290) + hills(290) + cloud(70, 56, 0.8) + ground("#79c86a", 290);
+      o += bank(66, 296, 0.5);
+      o += mangoTree(292, 394, 0.86, "coin", 8);
+      o += hero(126, 394, 1.1, g, "high", "happy") + passbook(182, 186, 0.9, 10) + gullu(210, 396, 0.76) + spark(240, 130, 0.8);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 14: The Kite Company (kite-company) ---------- */
+  function sceneKite(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + cloud(100, 190, 0.8) + ground("#9ccf7e", 300);
+      o += pie(54, 66, 34, 10, -1) + kite(150, 100, 0.9, -12, "#3a86ff") + kite(336, 66, 1.0, 14, "#ffd23f") + kite(262, 150, 1.2, 8, "#e63946");
+      o += `<path d="M202 232 Q238 200 254 190" fill="none" stroke="${INK}" stroke-width="2.2"/>`;
+      o += hero(154, 394, 1.15, g, "up", "happy") + gullu(300, 396, 0.85);
+    } else if (n === 1) {
+      o += room("#e6f2ff", 336, "#c98f5a");
+      o += chalkboard(200, 62, 200, 66, ["₹1,000"], 32);
+      o += table(14, 252, 372) + kite(130, 220, 0.8, -12, "#e63946", true) + kite(270, 220, 0.8, 10, "#3a86ff", true) + kite(200, 210, 0.7, 0, "#ffd23f", true);
+      o += hero(62, 398, 1.0, g, "give", "happy") + coin(122, 306, 0.8);
+      o += hero(196, 398, 1.0, "b", "up", "happy", { top: "#e63946", low: "#2a9d8f" });
+      o += hero(326, 398, 1.0, "g", "give", "happy", { top: "#6a4c93", low: "#ffd23f" });
+    } else if (n === 2) {
+      o += room("#e6f2ff", 336, "#c98f5a");
+      o += chalkboard(200, 56, 350, 74, ["₹1,000 ÷ 10 = ₹100"], 27);
+      o += pie(210, 220, 78, 10, 0) + tag(318, 176, 0.95, "₹100", 13) + cert(340, 258, 1.15, 8);
+      o += hero(58, 398, 1.1, g, "give", "happy") + gullu(340, 398, 0.75);
+    } else if (n === 3) {
+      o += `<rect x="-400" y="-400" width="600" height="1200" fill="#bfe9ff"/><rect x="200" y="-400" width="600" height="1200" fill="#cfd8e8"/>`;
+      o += sun(58, 60, 20) + cloud(150, 56, 0.7) + rainCloud(300, 60, 1.3, 5);
+      o += `<rect x="-400" y="316" width="600" height="400" fill="#79c86a"/><rect x="200" y="316" width="600" height="400" fill="#6fae66"/>`;
+      o += kite(66, 150, 1.0, -10, "#e63946") + kite(150, 214, 0.8, 8, "#ffd23f") + kite(312, 306, 0.8, 72, "#3a86ff");
+      o += tag(70, 280, 0.95, "₹120", 13) + upG(30, 280, 0.9) + tag(330, 250, 0.95, "₹80", 13) + downR(372, 250, 0.9);
+      o += `<line x1="200" y1="0" x2="200" y2="400" stroke="${INK}" stroke-width="3" stroke-dasharray="3 10" stroke-linecap="round"/>`;
+      o += hero(200, 398, 1.1, g, "down", "think");
+    } else {
+      o += room("#fde8c8", 336, "#b98150") + window2(24, 44, 84, 76, false);
+      o += `<rect x="256" y="40" width="124" height="104" rx="5" fill="#a8683a"${S}/><rect x="264" y="48" width="108" height="88" rx="2" fill="#fff3d6"/>` + cert(318, 92, 1.5, -3);
+      o += table(30, 300, 120) + glassJar(90, 300, 1.35, 16);
+      o += hero(214, 398, 1.1, g, "high", "happy") + gullu(344, 398, 0.8) + spark(180, 190, 0.8);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 15: The Nimbu Pani Stall (nimbu-pani-stall) ---------- */
+  function sceneStall(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + sun(60, 60, 24) + cloud(290, 66, 0.9) + ground("#9ccf7e", 300);
+      o += hero(200, 332, 1.0, g, "up", "happy") + kiosk(200, 300, "#ffd23f", "#fff");
+      o += glassDrink(134, 296, 1.0) + glassDrink(156, 296, 1.0) + lemon(246, 285, 0.95) + lemon(266, 286, 0.95, 20) + lemon(256, 268, 0.95, -10);
+      o += tag(200, 352, 1.2, "₹10", 18) + gullu(340, 396, 0.85) + spark(98, 220, 0.8);
+    } else if (n === 1) {
+      o += sky("#bfe9ff", 300) + hills(300) + ground("#9ccf7e", 300) + cloud(90, 56, 0.8);
+      o += kaka(300, 292, 1.0) + kiosk(300, 292, "#2a9d8f", "#fff");
+      o += lemon(256, 280, 1.1) + lemon(282, 282, 1.1, 15) + lemon(268, 262, 1.1, -10) + sack(342, 292, 0.7);
+      o += tag(204, 262, 0.95, "₹6", 16);
+      o += hero(86, 398, 1.1, g, "give", "happy") + note(150, 298, 0.55, 8) + gullu(168, 398, 0.75);
+    } else if (n === 2) {
+      o += room("#fde8c8", 336, "#b98150");
+      o += chalkboard(200, 68, 340, 92, ["₹10 − ₹6 = ₹4"], 32);
+      o += table(106, 304, 190) + lemon(140, 290, 1.0) + lemon(166, 292, 1.0, 14) + lemon(152, 274, 1.0, -8) + glassDrink(242, 304, 1.45);
+      o += tag(150, 240, 0.9, "₹6", 15) + tag(300, 236, 0.9, "₹10", 15);
+      o += hero(52, 398, 1.05, g, "down", "think") + gullu(352, 398, 0.78);
+    } else if (n === 3) {
+      o += sky("#bfe9ff", 300) + hills(300) + sun(350, 54, 20) + ground("#9ccf7e", 300);
+      o += chalkboard(72, 62, 132, 74, ["₹4 × 50", "= ₹200"], 20);
+      o += hero(200, 332, 1.0, g, "high", "happy") + kiosk(200, 300, "#ffd23f", "#fff");
+      o += glassDrink(134, 296, 1.0) + glassDrink(156, 296, 1.0) + coinStack(252, 296, 0.8, 5);
+      o += hero(44, 398, 0.9, "b", "give", "happy", { top: "#e63946", low: "#2a9d8f" }) + hero(98, 398, 0.9, "g", "up", "happy", { top: "#6a4c93", low: "#ffd23f" }) + hero(334, 398, 0.95, "b", "give", "happy", { top: "#2a9d8f", low: "#3a86ff" });
+    } else {
+      o += `<rect x="-400" y="-400" width="1200" height="1200" fill="#ffd9a8"/>` + `<circle cx="330" cy="268" r="44" fill="#ffb703"/>` + ground("#8bcf73", 290);
+      o += cloud(90, 70, 0.8) + cloud(210, 120, 0.6);
+      o += table(100, 304, 200) + coinStack(140, 304, 1.5, 6) + coinStack(188, 304, 1.5, 8) + coinStack(236, 304, 1.5, 5) + coinStack(274, 304, 1.5, 7);
+      o += tag(200, 200, 1.2, "₹200", 16) + spark(120, 214, 0.9) + spark(284, 190, 0.8);
+      o += hero(50, 398, 1.05, g, "up", "happy") + gullu(350, 398, 0.8);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 16: The Shared Well (shared-well) ---------- */
+  function sceneWell(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + sun(344, 58, 22) + cloud(90, 60, 0.8) + ground("#9ccf7e", 300);
+      o += school(62, 292, 0.62) + clinic(344, 292, 0.62) + road(338, 62);
+      o += well(206, 340, 1.5);
+      o += hero(104, 394, 1.12, g, "up", "happy") + gullu(310, 396, 0.85) + spark(150, 160, 0.8);
+    } else if (n === 1) {
+      o += sky("#bfe9ff", 300) + hills(300) + ground("#9ccf7e", 300) + cloud(80, 56, 0.8);
+      o += pot(200, 356, 1.5);
+      o += coin(180, 170, 0.9) + coin(204, 130, 0.9) + coin(228, 190, 0.9) + `<path d="M180 190 V204 M204 150 V166 M228 210 V224" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/>`;
+      o += hero(66, 398, 1.1, g, "give", "happy") + coin(130, 284, 0.9) + aaji(346, 398, 0.88, true, "give");
+    } else if (n === 2) {
+      o += sky("#bfe9ff", 300) + hills(300) + cloud(300, 52, 0.8) + ground("#9ccf7e", 300);
+      o += school(196, 296, 0.95) + clinic(332, 296, 0.82) + road(338, 62);
+      o += hero(68, 394, 1.12, g, "up", "happy") + gullu(262, 396, 0.8) + spark(110, 190, 0.8);
+    } else if (n === 3) {
+      o += sky("#bfe9ff", 300) + hills(300) + ground("#9ccf7e", 300) + cloud(220, 44, 0.7);
+      o += billPaper(60, 140, 1.4, -6, ["₹100", "+ ₹5", "₹105"]) + arrowR(104, 140, 142, "#e63946");
+      o += pot(188, 188, 0.85) + arrowR(224, 140, 262, "#e63946");
+      o += well(332, 190, 0.8);
+      o += coin(168, 94, 0.8) + coin(190, 78, 0.8) + coin(210, 98, 0.8);
+      o += hero(84, 398, 1.1, g, "down", "think") + gullu(198, 398, 0.78) + aaji(316, 398, 0.9, true, "down");
+    } else {
+      o += sky("#bfe9ff", 300) + hills(300) + sun(56, 56, 20) + ground("#9ccf7e", 300);
+      o += school(190, 340, 1.5) + road(354, 46);
+      o += hero(70, 396, 1.1, g, "high", "happy") + hero(322, 396, 1.0, "b", "up", "happy", { top: "#e63946", low: "#2a9d8f" }) + gullu(194, 398, 0.78);
+      o += spark(110, 190, 0.8) + spark(300, 190, 0.8);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 17: Too Good to Be True (too-good-sale) ---------- */
+  function sceneSale(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + cloud(80, 60, 0.8) + ground("#79c86a", 300);
+      o += hook(300, -10, 110, "-90%");
+      o += fox(338, 300, 1.2) + bush(338, 338, 1.2);
+      o += hero(100, 394, 1.15, g, "up", "think") + phoneT(150, 196, 1.05, "₹99") + gullu(210, 396, 0.8) + sweat(236, 340);
+    } else if (n === 1) {
+      o += room("#fff1d6", 336, "#c98f5a");
+      o += bigPhone(206, 196, 3.0, football(0, -6, 0.95) + tag(12, -30, 0.62, "-90%", 14) + `<text y="32" text-anchor="middle" font-size="15" font-weight="700" ${FONT} fill="#e63946">₹99</text>`);
+      o += spark(84, 120, 0.9) + spark(330, 110, 1.0) + spark(318, 300, 0.8);
+      o += hero(52, 398, 1.0, g, "down", "wow") + gullu(362, 398, 0.78);
+    } else if (n === 2) {
+      o += room("#fff1d6", 336, "#c98f5a") + window2(24, 44, 84, 76, false);
+      o += bubble(238, 80, 72, 44, 236, 190) + `<text x="238" y="102" text-anchor="middle" font-size="58" font-weight="700" ${FONT} fill="#e63946">?</text>`;
+      o += hero(92, 398, 1.1, g, "up", "think") + phoneT(140, 196, 1.0, "₹99");
+      o += aaji(318, 398, 1.0, true, "give") + magnifier(234, 262, 1.3, 30) + gullu(218, 398, 0.72);
+    } else if (n === 3) {
+      o += room("#e8f1e0", 336, "#c9a46a");
+      o += `<rect x="30" y="34" width="340" height="168" rx="10" fill="#2f6f4f" stroke="#8d5a3b" stroke-width="8"/>`;
+      o += lock(98, 110, 1.6) + magnifier(200, 104, 1.4) + shield(302, 108, 1.7);
+      o += tick(130, 160, 0.95) + tick(232, 160, 0.95) + tick(334, 160, 0.95);
+      o += hero(96, 398, 1.1, g, "high", "happy") + gullu(322, 398, 0.9);
+    } else {
+      o += room("#fff1d6", 334, "#c98f5a");
+      o += shield(210, 112, 1.6) + spark(160, 84, 0.8) + spark(262, 78, 0.9);
+      o += T(`translate(348 0) scale(-1 1)`, officer(0, 398, 1.0)) + parcel(278, 318, 1.0, -6);
+      o += hero(104, 398, 1.1, g, "give", "happy") + note(170, 296, 0.6, 8) + gullu(196, 398, 0.75);
+      o += fox(52, 74, 0.7) + sweat(80, 56) + `<path d="M96 66 L114 66 M92 78 L110 78 M98 90 L114 90" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/>`;
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 18: The Growing Staircase (growing-staircase) ---------- */
+  function sceneStairs(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + sun(60, 56, 22) + cloud(260, 56, 0.8) + ground("#9ccf7e", 300);
+      o += stairs(100, 330, 5, 56, 34);
+      [1, 1, 2, 3, 5].forEach(function (k, i) { o += coinStack(100 + i * 56 + 28, 330 - (i + 1) * 34, 0.95, k); });
+      o += gullu(354, 140, 0.7) + spark(300, 70, 0.9) + spark(372, 110, 0.7);
+      o += hero(56, 394, 1.12, g, "up", "happy");
+    } else if (n === 1) {
+      o += room("#e6f2ff", 336, "#b98150");
+      o += chalkboard(112, 76, 200, 72, ["₹1,000"], 32);
+      o += didi(268, 304, 1.1) + counterFront(300) + passbook(214, 282, 1.0, -8) + tag(338, 120, 1.15, "10%", 18);
+      o += hero(70, 398, 1.1, g, "give", "happy") + note(134, 296, 0.6, 6);
+    } else if (n === 2) {
+      o += room("#fde8c8", 336, "#b98150");
+      o += chalkboard(200, 62, 352, 80, ["₹1,000 + ₹100 = ₹1,100"], 24);
+      o += calendar(58, 202, 0.9, 1);
+      o += table(112, 304, 190) + coinStack(180, 304, 1.5, 9) + coinStack(240, 304, 1.5, 1) + spark(244, 242, 0.9) + tag(278, 244, 0.9, "+₹100", 12);
+      o += hero(46, 398, 1.0, g, "down", "think") + gullu(354, 398, 0.78);
+    } else if (n === 3) {
+      o += room("#fde8c8", 336, "#b98150");
+      o += chalkboard(200, 62, 352, 80, ["₹1,100 + ₹110 = ₹1,210"], 24);
+      o += stairs(106, 330, 3, 64, 12);
+      [8, 9, 10].forEach(function (k, i) { o += coinStack(106 + i * 64 + 32, 330 - (i + 1) * 12, 1.3, k); });
+      o += tag(258, 190, 1.0, "+₹110", 14) + spark(212, 162, 0.9) + spark(292, 150, 0.8);
+      o += hero(46, 398, 1.0, g, "high", "wow") + gullu(354, 398, 0.78);
+    } else {
+      o += room("#e6f2ff", 336, "#b98150");
+      o += chalkboard(200, 54, 130, 62, ["20"], 38);
+      o += coinStack(104, 332, 1.6, 5) + tag(104, 240, 1.0, "₹3,000", 14);
+      o += coinStack(300, 332, 1.6, 11) + tag(300, 150, 1.0, "₹6,727", 14) + spark(340, 120, 0.9) + spark(262, 110, 0.7);
+      o += hero(200, 398, 1.05, g, "up", "wow");
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 19: The Journey of Fifty Rupees (journey-of-50) ---------- */
+  function sceneUpi(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + cloud(90, 190, 0.7) + ground("#9ccf7e", 300);
+      o += phoneT(46, 98, 1.0, "₹50") + arrowR(78, 104, 112, "#2a9d8f");
+      o += bank(150, 140, 0.3) + arrowR(190, 104, 222, "#2a9d8f");
+      o += bank(262, 140, 0.3) + arrowR(302, 104, 332, "#2a9d8f");
+      o += T(`translate(366 150) scale(0.34)`, stall(0, 0, "#e63946", "#fff"));
+      o += tag(128, 40, 0.9, "₹50", 14) + spark(210, 60, 0.8);
+      o += hero(124, 394, 1.15, g, "up", "happy") + phoneT(178, 218, 1.0, "") + gullu(320, 396, 0.85);
+    } else if (n === 1) {
+      o += sky("#bfe9ff", 300) + hills(300) + ground("#9ccf7e", 300) + cloud(80, 56, 0.8);
+      o += kaka(310, 290, 1.0) + kiosk(310, 290, "#e63946", "#fff") + qr(352, 262, 1.0);
+      o += hero(92, 398, 1.1, g, "up", "happy") + phoneT(144, 208, 1.0, "") + `<path d="M162 206 L330 252" stroke="#2a9d8f" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round" fill="none"/>` + spark(240, 190, 0.8);
+      o += gullu(190, 398, 0.75);
+    } else if (n === 2) {
+      o += room("#e8f1e0", 336, "#c9a46a");
+      o += bigPhone(214, 190, 3.0, nametag(0, -14, 1.3) + `<text y="22" text-anchor="middle" font-size="16" font-weight="700" ${FONT} fill="${INK}">₹50</text>`);
+      o += magnifier(246, 160, 1.5, 32);
+      o += hero(54, 398, 1.0, g, "down", "think") + gullu(356, 398, 0.78);
+    } else if (n === 3) {
+      o += room("#fff1d6", 334, "#c98f5a");
+      o += callPhone(176, 270, 1.1) + noSign(176, 270, 1.55);
+      o += bubble(296, 100, 88, 50, 214, 220) + `<text x="296" y="116" text-anchor="middle" font-size="36" font-weight="700" ${FONT} fill="${INK}">• • • •</text>` + noSign(296, 100, 2.1);
+      o += hero(70, 398, 1.1, g, "give", "think") + gullu(262, 398, 0.78) + aaji(350, 398, 0.85, true, "down");
+    } else {
+      o += sky("#bfe9ff", 300) + hills(300) + ground("#9ccf7e", 300) + cloud(80, 56, 0.8);
+      o += kaka(300, 290, 1.0) + kiosk(300, 290, "#e63946", "#fff");
+      o += phoneT(262, 258, 1.15, "") + `<path d="M250 258 l8 9 l16 -18" stroke="#2e9a3a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+      o += hero(88, 398, 1.1, g, "high", "happy") + samosa(146, 186, 1.0, -10) + gullu(184, 398, 0.78) + spark(112, 120, 0.8) + spark(214, 150, 0.7);
+    }
+    return o;
+  }
+
+  /* ---------- BOOK 20: My First Salary (first-salary) ---------- */
+  function sceneSalary(n, g) {
+    var o = "";
+    if (n === 0) {
+      o += sky("#bfe9ff", 300) + hills(300) + sun(60, 54, 20) + cloud(250, 50, 0.8) + ground("#9ccf7e", 300);
+      o += officeBldg(326, 304, 1.0);
+      o += envelope(120, 70, 0.8, "#e63946", -10) + envelope(184, 54, 0.8, "#ffd23f", 6) + envelope(246, 76, 0.8, "#3a86ff", -4);
+      o += hero(160, 394, 1.15, g, "high", "happy") + note(216, 178, 1.0, -10) + gullu(60, 396, 0.85) + spark(90, 190, 0.8);
+    } else if (n === 1) {
+      o += room("#fff1d6", 336, "#c98f5a") + window2(24, 44, 84, 76, false);
+      o += payslip(206, 176, 2.3, -4, ["", "₹20,000"]);
+      o += spark(118, 140, 0.9) + spark(310, 100, 1.0);
+      o += hero(60, 398, 1.1, g, "up", "wow") + aaji(336, 398, 0.95, true, "give") + gullu(262, 398, 0.7);
+    } else if (n === 2) {
+      o += room("#fde8c8", 336, "#b98150");
+      o += payslip(206, 184, 2.6, 0, ["₹20,000", "− ₹1,200", "− ₹800", "= ₹18,000"]) + magnifier(312, 276, 1.3, 28);
+      o += hero(56, 398, 1.05, g, "down", "think") + gullu(354, 398, 0.78) + sweat(374, 340);
+    } else if (n === 3) {
+      o += room("#e6f2ff", 336, "#b98150");
+      o += bigPhone(206, 190, 3.0, `<text y="-18" text-anchor="middle" font-size="11" font-weight="700" ${FONT} fill="${INK}">+₹18,000</text>` + passbook(0, 10, 1.0, 0));
+      o += coin(100, 100, 0.9) + coin(318, 84, 0.9) + coin(330, 230, 0.9) + spark(88, 190, 0.9) + spark(340, 150, 0.8);
+      o += hero(58, 398, 1.1, g, "up", "happy") + gullu(354, 398, 0.78);
+    } else {
+      o += room("#fde8c8", 336, "#b98150");
+      o += table(100, 304, 280);
+      o += envelope(150, 284, 1.1, "#2a9d8f", -4) + envelope(240, 284, 1.1, "#ffd23f", 3) + envelope(330, 284, 1.1, "#ff70a6", -3);
+      o += passbook(150, 214, 1.1, -6) + bread(240, 220, 1.7) + football(330, 214, 0.9);
+      o += hero(46, 398, 1.0, g, "give", "happy") + spark(190, 168, 0.8) + spark(290, 164, 0.8);
+    }
+    return o;
+  }
+
+  var SCENES = { "needs-vs-wants": sceneNeeds, "piggy-jar": sceneWish, "inside-a-bank": sceneBank, "family-budget": sceneBudget, "what-is-interest": sceneInterest, "why-prices-rise": sceneInflation, "phone-scams": sceneScam, "moneylender-or-bank": sceneBorrow, "insurance": sceneInsure, "emergency-fund": sceneEmergency, "buy-now-trap": sceneEmi, "shop-bill": sceneBill, "safe-place": sceneSafe, "kite-company": sceneKite, "nimbu-pani-stall": sceneStall, "shared-well": sceneWell, "too-good-sale": sceneSale, "growing-staircase": sceneStairs, "journey-of-50": sceneUpi, "first-salary": sceneSalary };
   var SKIES = {
     "needs-vs-wants": ["#bfe9ff", "#d6f0ff", "#bfe9ff", "#ffe3b3", "#ffd9a8"],
     "piggy-jar": ["#bfe9ff", "#d6f0ff", "#e4f4ff", "#ffe9c7", "#bfe9ff"],
@@ -813,7 +1265,17 @@
     "phone-scams": ["#bfe9ff", "#fff1d6", "#fff1d6", "#e8f1e0", "#fff1d6"],
     "moneylender-or-bank": ["#bfe9ff", "#ffe9c7", "#f5e1c4", "#e6f2ff", "#bfe9ff"],
     "insurance": ["#cfd8e8", "#cfd8e8", "#e4f4ff", "#e4f4ff", "#bfe9ff"],
-    "emergency-fund": ["#bfe9ff", "#ffe9c7", "#ffe9c7", "#fde8c8", "#fde8c8"]
+    "emergency-fund": ["#bfe9ff", "#ffe9c7", "#ffe9c7", "#fde8c8", "#fde8c8"],
+    "buy-now-trap": ["#bfe9ff", "#fff1d6", "#fde8c8", "#fde8c8", "#fff1d6"],
+    "shop-bill": ["#bfe9ff", "#bfe9ff", "#ffe9c7", "#bfe9ff", "#ffe9c7"],
+    "safe-place": ["#bfe9ff", "#ffe9c7", "#e6f2ff", "#bfe9ff", "#bfe9ff"],
+    "kite-company": ["#bfe9ff", "#e6f2ff", "#e6f2ff", "#bfe9ff", "#fde8c8"],
+    "nimbu-pani-stall": ["#bfe9ff", "#bfe9ff", "#fde8c8", "#bfe9ff", "#ffd9a8"],
+    "shared-well": ["#bfe9ff", "#bfe9ff", "#bfe9ff", "#bfe9ff", "#bfe9ff"],
+    "too-good-sale": ["#bfe9ff", "#fff1d6", "#fff1d6", "#e8f1e0", "#fff1d6"],
+    "growing-staircase": ["#bfe9ff", "#e6f2ff", "#fde8c8", "#fde8c8", "#e6f2ff"],
+    "journey-of-50": ["#bfe9ff", "#bfe9ff", "#e8f1e0", "#fff1d6", "#bfe9ff"],
+    "first-salary": ["#bfe9ff", "#fff1d6", "#fde8c8", "#e6f2ff", "#fde8c8"]
   };
 
   /* Art.scene(n, gender, slug): n = 0 (cover) to 4. Returns an SVG string. */
@@ -844,7 +1306,11 @@
       fakecall: callPhone(0, 0, 1.0), qr: qr(0, 0, 1.25), shield: shield(0, 0, 1.05), fox: fox(0, 6, 0.85), otp: otpMsg(0, -2, 0.85),
       paper: paper(0, 0, 1.3), ledger: ledger(0, 0, 1.2), stamp: stamp(0, 10, 1.4), house: houseIcon(0, 4, 1.15),
       plus: plusSign(0, 0, 1.3), wheat: wheat(0, 14, 0.8), wrench: wrench(0, -4, 1.0, 40), cooker: cooker(0, 24, 0.5, false), jar: glassJar(0, 34, 0.62, 6),
-      umbrella: umbrella(0, 10, 0.5, "#e63946", 36), pot: pot(0, 34, 0.7), clipboard: clipboard(0, 0, 1.2), magnifier: magnifier(0, -6, 1.0), bucket: bucket(0, 20, 1.0)
+      bill: billPaper(0, 0, 0.85), tag: tag(0, 0, 1.0, "₹", 20), kite: kite(0, -14, 0.5, 0, "#e63946"), up: upG(0, 0, 1.3), down: downR(0, 0, 1.3), pie: pie(0, 0, 26, 10, -1),
+      cert: cert(0, 0, 1.0), lemon: lemon(0, 0, 1.5), glass: glassDrink(0, 22, 0.9), well: well(0, 30, 0.45), school: school(0, 26, 0.38), clinic: clinic(0, 26, 0.42),
+      road: '<rect x="-30" y="-12" width="60" height="24" rx="3" fill="#8d96a3"' + S + '/><rect x="-22" y="-2" width="16" height="4" rx="2" fill="#fff"/><rect x="6" y="-2" width="16" height="4" rx="2" fill="#fff"/>',
+      parcel: parcel(0, 0, 0.95), stairs: stairs(-24, 22, 4, 12, 10), payslip: payslip(0, 0, 0.8), cupboard: cupboard(0, 32, 0.45, false), mouse: mouse(0, 18, 0.85),
+      clock: clock(0, 0, 1.3), trunk: trunk(0, 22, 0.55), office: officeBldg(0, 32, 0.3), tick: tick(0, 0, 1.8), coinjar: coinJar(0, 34, 0.62, 6), umbrella: umbrella(0, 10, 0.5, "#e63946", 36), pot: pot(0, 34, 0.7), clipboard: clipboard(0, 0, 1.2), magnifier: magnifier(0, -6, 1.0), bucket: bucket(0, 20, 1.0)
     };
     return `<svg viewBox="-34 -34 68 68" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;flex:none" aria-hidden="true">${m[name] || ""}</svg>`;
   }
